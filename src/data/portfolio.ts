@@ -360,6 +360,31 @@ export const projects: Project[] = [
       "Uses Upstash Redis rate limiting and progressive context compression to control usage while keeping conversations responsive."
     ]
   },
+  {
+    title: "Dead Code Explorer",
+    description: "A VS Code extension that helps you identify dead code from your project with confidence-ranked evidence.",
+    image: "/assets/projects/dead-code-explorer-pic1.png",
+    icon: "/assets/projects/dead-code-explorer-icon.png",
+    gallery: {
+      images: [
+        {
+          src: "/assets/projects/dead-code-explorer-pic-2.png",
+          alt: "Dead Code Explorer screenshot 2"
+        },
+        {
+          src: "/assets/projects/dead-code-explorer-pic-1.png",
+          alt: "Dead Code Explorer screenshot 3"
+        }
+      ]
+    },
+    github: "https://github.com/ansonnchan/dead-code-explorer",
+    techStack: ["TypeScript", "VS Code API", "TypeScript Compiler API", "ts-morph"],
+    details: [
+      "Detects potentially unreachable files, functions, classes, types, and exports using compiler-backed file and symbol dependency graphs.",
+      "Handles path aliases, barrel re-exports, dynamic imports, and dead dependency chains, validated across 400K+ LOC and 3,000+ files.",
+    ]
+
+  }
   /**
   {
     title: "The Wallfacer Project",
