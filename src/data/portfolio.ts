@@ -14,6 +14,8 @@ export type GalleryImage = {
   alt: string;
   caption?: string;
   fit?: "cover" | "natural" | "fill";
+  mediaType?: "image" | "video";
+  fallbackSrc?: string;
 };
 
 export type ImageGallery = {
@@ -312,8 +314,10 @@ export const projects: Project[] = [
           alt: "Pear Programming collaborative code editor"
         },
         {
-          src: "/assets/projects/pear-program-pic2.png",
-          alt: "Pear Programming shared workspace"
+          src: "/assets/projects/pear-program-demo.mp4",
+          alt: "Pear Programming shared workspace demo",
+          mediaType: "video",
+          fallbackSrc: "/assets/projects/pear-program-demo.gif"
         }
       ]
     },

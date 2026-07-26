@@ -29,18 +29,42 @@ export default function CardGallery({ gallery }: CardGalleryProps) {
             }`}
             key={image.src}
           >
-            <img
-              alt={image.alt}
-              className={
-                image.fit === "natural"
-                  ? "h-auto w-full"
-                  : image.fit === "fill"
-                    ? "h-full w-full"
-                  : "aspect-video w-full object-cover"
-              }
-              loading="lazy"
-              src={image.src}
-            />
+            {image.mediaType === "video" ? (
+              <video
+                aria-label={image.alt}
+                autoPlay
+                className="pointer-events-none aspect-video w-full object-cover"
+                disablePictureInPicture
+                disableRemotePlayback
+                loop
+                muted
+                playsInline
+                preload="metadata"
+              >
+                <source src={image.src} type="video/mp4" />
+                {image.fallbackSrc ? (
+                  <img
+                    alt={image.alt}
+                    className="aspect-video w-full object-cover"
+                    loading="lazy"
+                    src={image.fallbackSrc}
+                  />
+                ) : null}
+              </video>
+            ) : (
+              <img
+                alt={image.alt}
+                className={
+                  image.fit === "natural"
+                    ? "h-auto w-full"
+                    : image.fit === "fill"
+                      ? "h-full w-full"
+                      : "aspect-video w-full object-cover"
+                }
+                loading="lazy"
+                src={image.src}
+              />
+            )}
             {image.caption ? (
               <figcaption className="px-3 py-2 text-center text-sm leading-6 text-zinc-600 dark:text-zinc-300">
                 {image.caption}
