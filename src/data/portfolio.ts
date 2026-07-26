@@ -13,6 +13,7 @@ export type GalleryImage = {
   src: string;
   alt: string;
   caption?: string;
+  fit?: "cover" | "natural" | "fill";
 };
 
 export type ImageGallery = {
@@ -369,11 +370,13 @@ export const projects: Project[] = [
       images: [
         {
           src: "/assets/projects/dead-code-explorer-pic-2.png",
-          alt: "Dead Code Explorer screenshot 2"
+          alt: "Dead Code Explorer screenshot 2",
+          fit: "fill"
         },
         {
           src: "/assets/projects/dead-code-explorer-pic-1.png",
-          alt: "Dead Code Explorer screenshot 3"
+          alt: "Dead Code Explorer screenshot 3",
+          fit: "natural"
         }
       ]
     },

@@ -24,12 +24,20 @@ export default function CardGallery({ gallery }: CardGalleryProps) {
       <div className="grid gap-3 sm:grid-cols-2">
         {gallery.images.map((image) => (
           <figure
-            className="overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm dark:border-white/10 dark:bg-zinc-900"
+            className={`overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm dark:border-white/10 dark:bg-zinc-900 ${
+              image.fit === "natural" ? "self-start" : ""
+            }`}
             key={image.src}
           >
             <img
               alt={image.alt}
-              className="aspect-video w-full object-cover"
+              className={
+                image.fit === "natural"
+                  ? "h-auto w-full"
+                  : image.fit === "fill"
+                    ? "h-full w-full"
+                  : "aspect-video w-full object-cover"
+              }
               loading="lazy"
               src={image.src}
             />
