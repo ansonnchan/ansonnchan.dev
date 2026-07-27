@@ -65,8 +65,8 @@ export default function Portfolio() {
           <img
             alt=""
             aria-hidden="true"
-            className="side-quest-trauma-sticker"
-            src="/assets/stickers/trauma.png"
+            className="side-quest-peak-sticker"
+            src="/assets/stickers/peak.png"
           />
           <div className="mx-auto max-w-6xl">
             <SectionHeading 

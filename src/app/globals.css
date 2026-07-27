@@ -127,7 +127,7 @@ button {
   position: relative;
 }
 
-.side-quest-trauma-sticker {
+.side-quest-peak-sticker {
   position: absolute;
   top: clamp(-3.2rem, -2.8vw, -1.35rem);
   left: clamp(1.25rem, 8vw, 8rem);
@@ -137,7 +137,7 @@ button {
   max-height: 16rem;
   object-fit: contain;
   pointer-events: none;
-  rotate: -7deg;
+  rotate: 0deg;
   filter: drop-shadow(0 18px 20px rgba(38, 34, 29, 0.12));
 }
 
@@ -650,7 +650,7 @@ button {
 }
 
 @media (min-width: 1024px) {
-  .side-quest-trauma-sticker {
+  .side-quest-peak-sticker {
     display: block;
   }
 }
