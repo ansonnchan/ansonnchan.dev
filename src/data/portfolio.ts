@@ -351,8 +351,10 @@ export const projects: Project[] = [
           alt: "Hear Me Out AI personality selection screen"
         },
         {
-          src: "/assets/projects/hear-me-out/vent.ai_pic2.png",
-          alt: "Hear Me Out AI conversation screen"
+          src: "/assets/projects/hear-me-out/hear-me-out-demo.mp4",
+          alt: "Hear Me Out AI conversation demo",
+          mediaType: "video",
+          fallbackSrc: "/assets/projects/hear-me-out/vent.ai_pic2.png"
         }
       ]
     },
