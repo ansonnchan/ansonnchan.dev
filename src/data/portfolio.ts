@@ -278,16 +278,16 @@ export const projects: Project[] = [
     title: "Personal Portfolio",
     description:
       "You're on it now silly 🤦. I've done a lot of revamping since the first version. I hope you enjoy the design and features.",
-    image: "/assets/projects/portfolio_pic1.png",
+    image: "/assets/projects/personal-portfolio/portfolio_pic1.png",
     icon: "/assets/stickers/kaori-surprised.png",
     gallery: {
       images: [
         {
-          src: "/assets/projects/portfolio_pic1.png",
+          src: "/assets/projects/personal-portfolio/portfolio_pic1.png",
           alt: "Personal portfolio home page"
         },
         {
-          src: "/assets/projects/portfolio_pic2.png",
+          src: "/assets/projects/personal-portfolio/portfolio_pic2.png",
           alt: "Personal portfolio projects section"
         }
       ]
@@ -305,19 +305,19 @@ export const projects: Project[] = [
     title: "Pear Programming",
     description:
       "A collaborative coding editor with real-time editing, shared workspaces, and AI-assisted coding features.",
-    image: "/assets/projects/pear-program-pic2.png",
-    icon: "/assets/projects/pear-programming-favicon.png",
+    image: "/assets/projects/pear-programming/pear-program-pic2.png",
+    icon: "/assets/projects/pear-programming/pear-programming-favicon.png",
     gallery: {
       images: [
         {
-          src: "/assets/projects/pear-program-pic3.png",
+          src: "/assets/projects/pear-programming/pear-program-pic3.png",
           alt: "Pear Programming collaborative code editor"
         },
         {
-          src: "/assets/projects/pear-program-demo.mp4",
+          src: "/assets/projects/pear-programming/pear-program-demo.mp4",
           alt: "Pear Programming shared workspace demo",
           mediaType: "video",
-          fallbackSrc: "/assets/projects/pear-program-demo.gif"
+          fallbackSrc: "/assets/projects/pear-programming/pear-program-demo.gif"
         }
       ]
     },
@@ -342,16 +342,16 @@ export const projects: Project[] = [
     title: "hear me out",
     description:
       "An AI-powered venting app where users can talk to five different AI personalities and crash out to their heart’s content.",
-    image: "/assets/projects/vent.ai_pic1.png",
-    icon: "/assets/projects/vent.ai_icon.png",
+    image: "/assets/projects/hear-me-out/vent.ai_pic1.png",
+    icon: "/assets/projects/hear-me-out/vent.ai_icon.png",
     gallery: {
       images: [
         {
-          src: "/assets/projects/vent.ai_pic1.png",
+          src: "/assets/projects/hear-me-out/vent.ai_pic1.png",
           alt: "Hear Me Out AI personality selection screen"
         },
         {
-          src: "/assets/projects/vent.ai_pic2.png",
+          src: "/assets/projects/hear-me-out/vent.ai_pic2.png",
           alt: "Hear Me Out AI conversation screen"
         }
       ]
@@ -368,17 +368,17 @@ export const projects: Project[] = [
   {
     title: "Dead Code Explorer",
     description: "A VS Code extension that helps you identify dead code from your project with confidence-ranked evidence.",
-    image: "/assets/projects/dead-code-explorer-pic1.png",
-    icon: "/assets/projects/dead-code-explorer-icon.png",
+    image: "/assets/projects/dead-code-explorer/dead-code-explorer-pic-1.png",
+    icon: "/assets/projects/dead-code-explorer/dead-code-explorer-icon.png",
     gallery: {
       images: [
         {
-          src: "/assets/projects/dead-code-explorer-pic-2.png",
+          src: "/assets/projects/dead-code-explorer/dead-code-explorer-pic-2.png",
           alt: "Dead Code Explorer screenshot 2",
           fit: "fill"
         },
         {
-          src: "/assets/projects/dead-code-explorer-pic-1.png",
+          src: "/assets/projects/dead-code-explorer/dead-code-explorer-pic-1.png",
           alt: "Dead Code Explorer screenshot 3",
           fit: "natural"
         }
@@ -397,16 +397,16 @@ export const projects: Project[] = [
     title: "The Wallfacer Project",
     description:
       "An AI-assisted hidden-state social deduction game inspired by Liu Cixin’s The Three-Body Problem. The player must figure out which alien civilizations are hostile by reading clues, transmissions, contradictions, and asking strategic questions.",
-    image: "/assets/projects/wallfacer_pic1.png",
-    icon: "/assets/projects/wallfacer_icon.png",
+    image: "/assets/projects/wallfacer/wallfacer_pic1.png",
+    icon: "/assets/projects/wallfacer/wallfacer_icon.png",
     gallery: {
       images: [
         {
-          src: "/assets/projects/wallfacer_pic1.png",
+          src: "/assets/projects/wallfacer/wallfacer_pic1.png",
           alt: "The Wallfacer Project game screen"
         },
         {
-          src: "/assets/projects/wallfacer_pic2.png",
+          src: "/assets/projects/wallfacer/wallfacer_pic2.png",
           alt: "The Wallfacer Project review screen"
         }
       ]
