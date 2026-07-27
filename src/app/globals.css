@@ -127,18 +127,72 @@ button {
   position: relative;
 }
 
-.side-quest-peak-sticker {
+.side-quest-peak-panel {
   position: absolute;
   top: clamp(-3.2rem, -2.8vw, -1.35rem);
   left: clamp(1.25rem, 8vw, 8rem);
   z-index: 1;
   display: none;
   width: clamp(7.2rem, 14.4vw, 14.4rem);
+  pointer-events: none;
+}
+
+.side-quest-peak-sticker {
+  width: 100%;
   max-height: 16rem;
   object-fit: contain;
-  pointer-events: none;
   rotate: 0deg;
   filter: drop-shadow(0 18px 20px rgba(38, 34, 29, 0.12));
+}
+
+.side-quest-peak-comment {
+  position: absolute;
+  top: 7%;
+  left: 75%;
+  width: clamp(8rem, 10.5vw, 10.8rem);
+  aspect-ratio: 1.9;
+  margin: 0;
+  color: #171a16;
+  font-family: var(--font-hand), "Comic Sans MS", cursive;
+  font-size: clamp(0.92rem, 1.25vw, 1.18rem);
+  line-height: 0.92;
+  transform: rotate(2deg);
+}
+
+.side-quest-peak-comment-outline {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.side-quest-peak-comment-surface {
+  fill: #fffefb;
+  stroke: #171a16;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+  vector-effect: non-scaling-stroke;
+}
+
+.side-quest-peak-comment-border-accent {
+  fill: #171a16;
+}
+
+.side-quest-peak-comment-copy {
+  position: absolute;
+  top: 13%;
+  right: 8%;
+  left: 10%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.side-quest-peak-comment-copy strong {
+  display: block;
+  margin-top: 0.12rem;
+  font-size: 1.28em;
+  letter-spacing: 0.04em;
 }
 
 .comic-action {
@@ -650,7 +704,7 @@ button {
 }
 
 @media (min-width: 1024px) {
-  .side-quest-peak-sticker {
+  .side-quest-peak-panel {
     display: block;
   }
 }
