@@ -123,18 +123,45 @@ button {
   filter: drop-shadow(0 14px 18px rgba(38, 34, 29, 0.14));
 }
 
+.projects-section,
 .side-quests-section {
   position: relative;
 }
 
+.section-git-sticker {
+  position: absolute;
+  z-index: 0;
+  display: none;
+  max-height: 25rem;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 16px 20px rgba(38, 34, 29, 0.08));
+}
+
+.projects-git-sticker {
+  top: clamp(-10rem, -7vw, -7rem);
+  right: clamp(1.5rem, 4.5vw, 5.5rem);
+  width: clamp(18rem, 23vw, 28rem);
+  rotate: 3deg;
+}
+
+.side-quests-git-sticker {
+  top: clamp(-4rem, -3vw, -2.5rem);
+  left: clamp(0.75rem, 4vw, 4.5rem);
+  width: clamp(15rem, 19vw, 22rem);
+  rotate: -3deg;
+}
+
 .side-quest-peak-panel {
   position: absolute;
-  top: clamp(-3.2rem, -2.8vw, -1.35rem);
-  left: clamp(1.25rem, 8vw, 8rem);
+  bottom: clamp(-7rem, -5vw, -4.5rem);
+  left: clamp(10rem, 18vw, 22rem);
   z-index: 1;
   display: none;
   width: clamp(7.2rem, 14.4vw, 14.4rem);
   pointer-events: none;
+  transform: translateX(-50%);
 }
 
 .side-quest-peak-sticker {
@@ -704,6 +731,13 @@ button {
 }
 
 @media (min-width: 1024px) {
+  .side-quests-git-sticker {
+    display: block;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-git-sticker,
   .side-quest-peak-panel {
     display: block;
   }

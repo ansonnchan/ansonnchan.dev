@@ -38,7 +38,14 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <section className="responsive-section scroll-fade scroll-mt-24 px-4 sm:px-6 lg:px-8" id="projects">
+        <section className="projects-section responsive-section scroll-fade scroll-mt-24 px-4 sm:px-6 lg:px-8" id="projects">
+          <img
+            alt=""
+            aria-hidden="true"
+            className="section-git-sticker projects-git-sticker"
+            draggable={false}
+            src="/assets/about/git-reset-transparent.png"
+          />
           <div className="mx-auto max-w-7xl">
             <SectionHeading
   title="Projects"
@@ -62,6 +69,13 @@ export default function Portfolio() {
         </section>
 
         <section className="side-quests-section responsive-section scroll-fade scroll-mt-24 px-4 sm:px-6 lg:px-8" id="side-quests">
+          <img
+            alt=""
+            aria-hidden="true"
+            className="section-git-sticker side-quests-git-sticker"
+            draggable={false}
+            src="/assets/about/git-pull-transparent.png"
+          />
           <aside className="side-quest-peak-panel" aria-label="Manga reaction">
             <img
               alt=""
