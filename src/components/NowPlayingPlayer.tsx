@@ -25,95 +25,81 @@ type PlaylistTrack = {
 
 const playlist: PlaylistTrack[] = [
   {
-    albumArt: "/assets/playlist/album/fifty_fifty_cupid.jpg",
-    artist: "FIFTY FIFTY",
-    audioSrc: "/assets/playlist/soundtrack/cupid.mp3",
-    duration: "2:54",
-    title: "Cupid"
-  },
-  {
-    albumArt: "/assets/playlist/album/newjeans_ditto.jpg",
-    artist: "NewJeans",
-    audioSrc: "/assets/playlist/soundtrack/newjeans_ditto.mp3",
-    duration: "3:05",
-    title: "Ditto"
-  },
-  {
-    albumArt: "/assets/playlist/album/zb1_doctor_doctor.jpeg",
-    artist: "ZEROBASEONE",
-    audioSrc: "/assets/playlist/soundtrack/zb1_doctor_doctor.mp3",
-    duration: "2:32",
-    title: "Doctor! Doctor!"
-  },
-  {
-    albumArt: "/assets/playlist/album/gidle_fate.jpg",
-    artist: "(G)I-DLE",
-    audioSrc: "/assets/playlist/soundtrack/gidle_fate.mp3",
-    duration: "2:41",
-    title: "Fate"
-  },
-  {
-    albumArt: "/assets/playlist/album/ikon_love_scenario.jpeg",
-    artist: "iKON",
-    audioSrc: "/assets/playlist/soundtrack/love_scenario.mp3",
-    duration: "3:31",
-    title: "Love Scenario"
-  },
-  {
-    albumArt: "/assets/playlist/album/illit_midnight_fiction.jpg",
-    artist: "ILLIT",
-    audioSrc: "/assets/playlist/soundtrack/Midnight Fiction.mp3",
-    duration: "2:48",
-    title: "Midnight Fiction"
-  },
-  {
-    albumArt: "/assets/playlist/album/lngshot_next2u.png",
-    artist: "OHYUL, LOUIS of LNGSHOT",
-    audioSrc: "/assets/playlist/soundtrack/lngshot_next_2_u.mp3",
-    duration: "3:00",
-    title: "Next 2 U"
-  },
-  {
-    albumArt: "/assets/playlist/album/illit_not_cute_anymore.webp",
-    artist: "ILLIT",
-    audioSrc: "/assets/playlist/soundtrack/illit_not_cute_anymore.mp3",
-    duration: "2:10",
-    title: "Not Cute Anymore"
-  },
-  {
-    albumArt: "/assets/playlist/album/lesserafim_perfect_night.jpg",
-    artist: "LE SSERAFIM",
-    audioSrc: "/assets/playlist/soundtrack/lesserafim_perfect_night.mp3",
-    duration: "2:38",
-    title: "Perfect Night"
-  },
-  {
-    albumArt: "/assets/playlist/album/enhypen_polaroid_love.webp",
-    artist: "ENHYPEN",
-    audioSrc: "/assets/playlist/soundtrack/polaroid_love.mp3",
-    duration: "3:04",
-    title: "Polaroid Love"
-  },
-  {
-    albumArt: "/assets/playlist/album/qwer_tbh.jpg",
-    artist: "QWER",
-    audioSrc: "/assets/playlist/soundtrack/qwer_tbh.mp3",
-    duration: "2:55",
-    title: "T.B.H"
-  },
-  {
-    albumArt: "/assets/playlist/album/unlove_zion_t.jpeg",
-    artist: "Zion.T",
-    audioSrc: "/assets/playlist/soundtrack/zion_t_unlove.mp3",
-    duration: "3:00",
-    title: "Unlove (prod. HONNE)"
-  },
-  {
-    albumArt: "/assets/playlist/album/shaun_way_back_home.jpeg",
-    artist: "SHAUN",
-    audioSrc: "/assets/playlist/soundtrack/shaun_way_back_home.mp3",
+    albumArt: "/assets/new_playlist/album/blue.png",
+    artist: "yung kai",
+    audioSrc: "/assets/new_playlist/soundtrack/blue.mp3",
     duration: "3:34",
-    title: "Way Back Home"
+    title: "Blue"
+  },
+  {
+    albumArt: "/assets/new_playlist/album/l4dy.jpeg",
+    artist: "Lavt",
+    audioSrc: "/assets/new_playlist/soundtrack/L4DY.mp3",
+    duration: "2:33",
+    title: "L4DY"
+  },
+  {
+    albumArt: "/assets/new_playlist/album/moonlight.jpeg",
+    artist: "Yo-Sea",
+    audioSrc: "/assets/new_playlist/soundtrack/Moonlight.mp3",
+    duration: "3:30",
+    title: "Moonlight"
+  },
+  {
+    albumArt: "/assets/new_playlist/album/my_light.jpg",
+    artist: "yung kai",
+    audioSrc: "/assets/new_playlist/soundtrack/my_light.mp3",
+    duration: "3:18",
+    title: "My Light (我的光)"
+  },
+  {
+    albumArt: "/assets/new_playlist/album/odoriko.png",
+    artist: "Vaundy",
+    audioSrc: "/assets/new_playlist/soundtrack/odoriko.mp3",
+    duration: "3:49",
+    title: "Odoriko (踊り子)"
+  },
+  {
+    albumArt: "/assets/new_playlist/album/send_to_you.png",
+    artist: "luv",
+    audioSrc: "/assets/new_playlist/soundtrack/Send To You.mp3",
+    duration: "3:42",
+    title: "Send To You"
+  },
+  {
+    albumArt: "/assets/new_playlist/album/story_that_never_ends.jpeg",
+    artist: "CONSTANCE",
+    audioSrc: "/assets/new_playlist/soundtrack/story that never ends.mp3",
+    duration: "3:28",
+    title: "story that never ends"
+  },
+  {
+    albumArt: "/assets/new_playlist/album/the_cutest_pair.jpeg",
+    artist: "Regina Song",
+    audioSrc: "/assets/new_playlist/soundtrack/the cutest pair.mp3",
+    duration: "2:39",
+    title: "the cutest pair"
+  },
+  {
+    albumArt: "/assets/new_playlist/album/WIFTY.jpeg",
+    artist: "Loft Youth (阁楼演奏班)",
+    audioSrc: "/assets/new_playlist/soundtrack/WIFTY.mp3",
+    duration: "4:35",
+    title: "Paige’s Summer (佩奇的夏天)"
+  },  
+  {
+    albumArt: "/assets/new_playlist/album/kaijitsu.jpg",
+    artist: "AKASAKI",
+    audioSrc: "/assets/new_playlist/soundtrack/kaijitsu.mp3",
+    duration: "5:09",
+    title: "Kaijitsu (夏実)"
+  },
+  {
+    albumArt: "/assets/new_playlist/album/i_like_you_so_much_you_know_it.jpeg",
+    artist: "Wang Jun Qi (王俊琪)",
+    audioSrc: "/assets/new_playlist/soundtrack/like_you_so_much.mp3",
+    duration: "3:19",
+    title: "I Like You So Much, You Know It (我多喜歡你,你會知道)"
   }
 ];
 
