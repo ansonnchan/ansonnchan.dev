@@ -85,7 +85,7 @@ const playlist: PlaylistTrack[] = [
     artist: "Loft Youth (阁楼演奏班)",
     audioSrc: "/assets/new_playlist/soundtrack/WIFTY.mp3",
     duration: "4:35",
-    title: "Paige’s Summer (佩奇的夏天)"
+    title: "佩奇的夏天"
   },  
   {
     albumArt: "/assets/new_playlist/album/kaijitsu.jpg",
@@ -99,7 +99,7 @@ const playlist: PlaylistTrack[] = [
     artist: "Wang Jun Qi (王俊琪)",
     audioSrc: "/assets/new_playlist/soundtrack/like_you_so_much.mp3",
     duration: "3:19",
-    title: "I Like You So Much, You Know It (我多喜歡你,你會知道)"
+    title: "我多喜歡你,你會知道"
   }
 ];
 
@@ -413,7 +413,7 @@ export default function NowPlayingPlayer() {
               <Minimize2 aria-hidden="true" className="h-3.5 w-3.5" />
             </motion.button>
 
-            <div className="grid min-h-[4.5rem] grid-cols-[3rem_minmax(0,1fr)] items-center gap-2 px-2 pt-11 sm:grid-cols-[3.5rem_minmax(0,1fr)_6.5rem] sm:gap-2.5 sm:px-3 sm:pt-2.5">
+            <div className="grid min-h-[4.5rem] grid-cols-[3rem_minmax(0,1fr)] items-center gap-2 px-2 pt-11 sm:grid-cols-[3.5rem_minmax(0,1fr)_5.5rem] sm:gap-1.5 sm:px-2.5 sm:pt-2.5">
               <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden bg-white text-emerald-700 shadow-sm sm:h-14 sm:w-14">
                 <Music2 aria-hidden="true" className="h-6 w-6" strokeWidth={1.8} />
                 <AnimatePresence initial={false} mode="wait">
@@ -456,11 +456,11 @@ export default function NowPlayingPlayer() {
               </div>
 
               <div className="col-span-2 flex items-center justify-between pr-1 sm:col-span-1 sm:flex-col sm:items-end">
-                <div className="flex items-center justify-end gap-1">
+                <div className="flex items-center justify-end gap-0.5">
                   <motion.button
                     {...buttonMotion}
                     aria-label="Shuffle playlist"
-                    className="flex h-11 w-11 items-center justify-center rounded-full text-zinc-600 transition-colors hover:text-emerald-700 sm:h-8 sm:w-8"
+                    className="flex h-11 w-11 items-center justify-center rounded-full text-zinc-600 transition-colors hover:text-emerald-700 sm:h-7 sm:w-7"
                     onClick={handleShuffle}
                     title="Shuffle"
                     type="button"
@@ -470,7 +470,7 @@ export default function NowPlayingPlayer() {
                   <motion.button
                     {...buttonMotion}
                     aria-label={isPlaying ? "Pause playlist" : "Play playlist"}
-                    className="flex h-11 w-11 items-center justify-center rounded-full text-zinc-800 transition-colors hover:text-emerald-700 sm:h-8 sm:w-8"
+                    className="flex h-11 w-11 items-center justify-center rounded-full text-zinc-800 transition-colors hover:text-emerald-700 sm:h-7 sm:w-7"
                     onClick={handleTogglePlay}
                     title={isPlaying ? "Pause" : "Play"}
                     type="button"
@@ -493,7 +493,7 @@ export default function NowPlayingPlayer() {
                     {...buttonMotion}
                     aria-label={isMuted ? "Unmute player" : "Mute player"}
                     aria-pressed={isMuted}
-                    className="flex h-11 w-11 items-center justify-center rounded-full text-zinc-600 transition-colors hover:text-emerald-700 sm:h-8 sm:w-8"
+                    className="flex h-11 w-11 items-center justify-center rounded-full text-zinc-600 transition-colors hover:text-emerald-700 sm:h-7 sm:w-7"
                     onClick={() => setIsMuted((current) => !current)}
                     title={isMuted ? "Unmute" : "Mute"}
                     type="button"
@@ -513,7 +513,7 @@ export default function NowPlayingPlayer() {
                 </div>
                 <input
                   aria-label="Player volume"
-                  className="music-volume-slider w-28 sm:mt-1.5 sm:w-24"
+                  className="music-volume-slider w-28 sm:mt-1.5 sm:w-[5.5rem]"
                   max="100"
                   min="0"
                   onChange={(event) => handleVolumeChange(Number(event.target.value))}
