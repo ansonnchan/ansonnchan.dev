@@ -32,6 +32,13 @@ const playlist: PlaylistTrack[] = [
     title: "Blue"
   },
   {
+    albumArt: "/assets/new_playlist/album/fifty_fifty_cupid.jpg",
+    artist: "FIFTY FIFTY",
+    audioSrc: "/assets/new_playlist/soundtrack/cupid.mp3",
+    duration: "2:54",
+    title: "Cupid"
+  },
+  {
     albumArt: "/assets/new_playlist/album/l4dy.jpeg",
     artist: "Lavt",
     audioSrc: "/assets/new_playlist/soundtrack/L4DY.mp3",
