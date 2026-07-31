@@ -79,15 +79,10 @@ export default async function NotePage({ params }: NotePageProps) {
             </p>
 
             <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex flex-wrap items-center gap-2">
-                <time className="mr-1 text-sm text-zinc-500 dark:text-zinc-400" dateTime={note.updated}>
+              <div>
+                <time className="text-sm text-zinc-500 dark:text-zinc-400" dateTime={note.updated}>
                   Updated {formatNoteDate(note.updated)}
                 </time>
-                {note.tags.map((tag) => (
-                  <span className="sticker-tag px-2.5 py-1 text-xs" key={tag}>
-                    {tag}
-                  </span>
-                ))}
               </div>
 
               <a
