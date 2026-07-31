@@ -10,7 +10,4 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Local handoff notes for the GitHub-backed learning archive
-src/app/learnings/AGENTS.md
-
 public/assets/
