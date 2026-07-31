@@ -37,8 +37,13 @@ const contactLinks: ContactLink[] = [
 ];
 
 const mainLinks = [
-  { label: "Home", href: "#top" },
-  { label: "Resume", href: "/resume" }
+  { label: "Home", href: "/", iconSrc: "/assets/icons/home.svg" },
+  { label: "Notes", href: "/learnings", iconSrc: "/assets/icons/notes.svg" },
+  {
+    label: "View Resume",
+    href: "/resume",
+    iconSrc: "/assets/icons/resume_download.svg"
+  }
 ];
 
 function getLinkTarget(href: string) {
@@ -48,12 +53,12 @@ function getLinkTarget(href: string) {
 export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-zinc-950/10 bg-[#fffefb] dark:border-white/10 dark:bg-[#10140f]">
-      <div className="flex h-[4.5rem] w-full items-center justify-between gap-3 px-6s  sm:h-[4.75rem] sm:px-11">
+      <div className="flex h-[4.5rem] w-full items-center justify-between gap-3 px-3 sm:h-[4.75rem] sm:px-11">
         <nav aria-label="Contact links" className="flex min-w-0 items-center gap-0">
           {contactLinks.map((link) => (
             <a
               aria-label={link.label}
-              className="group inline-flex h-12 w-10 shrink-0 items-center justify-center rounded-md text-zinc-700 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 dark:text-zinc-200 sm:h-[3.25rem] sm:w-11"
+              className="group inline-flex h-12 w-9 shrink-0 items-center justify-center rounded-md text-zinc-700 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 dark:text-zinc-200 sm:h-[3.25rem] sm:w-11"
               href={link.href}
               key={link.label}
               rel={link.href.startsWith("http") ? "noreferrer" : undefined}
@@ -82,17 +87,24 @@ export default function Navbar() {
 
         <nav
           aria-label="Main navigation"
-          className="handwritten-display flex shrink-0 items-center gap-6 text-[1.45rem] leading-none text-zinc-700 sm:gap-8 sm:text-[1.6rem] dark:text-zinc-200"
+          className="handwritten-display flex shrink-0 items-stretch gap-1 text-zinc-700 sm:gap-4 dark:text-zinc-200"
         >
           {mainLinks.map((link) => (
             <a
-              className="rounded-sm py-2 transition hover:text-emerald-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-600 dark:hover:text-emerald-300"
+              aria-label={link.label}
+              className="group flex min-w-[2.75rem] flex-col items-center justify-center gap-1 rounded-md px-0.5 py-1 text-center text-xs leading-none transition hover:text-emerald-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 sm:min-w-[4rem] sm:px-2 sm:text-base dark:hover:text-emerald-300"
               href={link.href}
               key={link.label}
               rel={link.href.startsWith("http") ? "noreferrer" : undefined}
               target={getLinkTarget(link.href)}
             >
-              {link.label}
+              <img
+                alt=""
+                aria-hidden="true"
+                className="h-6 w-6 object-contain opacity-80 transition group-hover:opacity-100 dark:invert"
+                src={link.iconSrc}
+              />
+              <span className="whitespace-nowrap">{link.label}</span>
             </a>
           ))}
         </nav>
