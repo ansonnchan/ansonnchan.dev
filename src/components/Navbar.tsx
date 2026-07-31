@@ -38,7 +38,6 @@ const contactLinks: ContactLink[] = [
 
 const mainLinks = [
   { label: "Home", href: "/", iconSrc: "/assets/icons/home.svg" },
-  { label: "Notes", href: "/learnings", iconSrc: "/assets/icons/notes.svg" },
   {
     label: "View Resume",
     href: "/resume",
