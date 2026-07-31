@@ -100,7 +100,7 @@ export default function Navbar() {
               <img
                 alt=""
                 aria-hidden="true"
-                className="h-6 w-6 object-contain opacity-80 transition group-hover:opacity-100 dark:invert"
+                className="h-7 w-7 object-contain opacity-80 transition group-hover:opacity-100 dark:invert"
                 src={link.iconSrc}
               />
               <span className="whitespace-nowrap">{link.label}</span>
