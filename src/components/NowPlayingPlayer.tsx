@@ -74,6 +74,14 @@ const playlist: PlaylistTrack[] = [
     title: "Send To You"
   },
   {
+    albumArt: "/assets/new_playlist/album/mina_twice.jpg",
+    artist: "MINA (TWICE)",
+    audioSrc:
+      "/assets/new_playlist/soundtrack/MINA MELODY PROJECT Snowman (Sia) Cover by MINA - TWICE (128k).mp3",
+    duration: "2:46",
+    title: "Snowman (original by Sia)"
+  },
+  {
     albumArt: "/assets/new_playlist/album/story_that_never_ends.jpeg",
     artist: "CONSTANCE",
     audioSrc: "/assets/new_playlist/soundtrack/story that never ends.mp3",
@@ -364,7 +372,13 @@ export default function NowPlayingPlayer() {
                       src={playlistTrack.albumArt}
                     />
                     <span className="min-w-0 flex-1">
-                      <span className="block truncate text-xs font-bold">
+                      <span
+                        className={`block truncate font-bold ${
+                          playlistTrack.title.startsWith("Snowman")
+                            ? "text-[11px] leading-tight tracking-tight"
+                            : "text-xs"
+                        }`}
+                      >
                         {playlistTrack.title}
                       </span>
                       <span className="block truncate text-[11px] text-zinc-500">
@@ -452,7 +466,11 @@ export default function NowPlayingPlayer() {
                     transition={transition}
                   >
                     <p
-                      className="truncate font-mono text-sm font-bold"
+                      className={`truncate font-mono font-bold ${
+                        track.title.startsWith("Snowman")
+                          ? "text-xs leading-tight tracking-[-0.04em]"
+                          : "text-sm"
+                      }`}
                       title={track.title}
                     >
                       {track.title}
@@ -573,7 +591,11 @@ export default function NowPlayingPlayer() {
 
             <div className="min-w-0 flex-1">
               <p
-                className="truncate font-mono text-sm font-bold"
+                className={`truncate font-mono font-bold ${
+                  track.title.startsWith("Snowman")
+                    ? "text-xs leading-tight tracking-[-0.04em]"
+                    : "text-sm"
+                }`}
                 title={track.title}
               >
                 {track.title}
