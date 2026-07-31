@@ -10,8 +10,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# public/assets/photos/
-# public/assets/about/
-# public/assets/Anson_Resume.pdf
-# public/assets/resume.pdf
-# public/assets/pfp.jpeg
+# Local handoff notes for the GitHub-backed learning archive
+src/app/learnings/AGENTS.md
+
+public/assets/
