@@ -372,13 +372,7 @@ export default function NowPlayingPlayer() {
                       src={playlistTrack.albumArt}
                     />
                     <span className="min-w-0 flex-1">
-                      <span
-                        className={`block truncate font-bold ${
-                          playlistTrack.title.startsWith("Snowman")
-                            ? "text-[11px] leading-tight tracking-tight"
-                            : "text-xs"
-                        }`}
-                      >
+                      <span className="block truncate text-xs font-bold">
                         {playlistTrack.title}
                       </span>
                       <span className="block truncate text-[11px] text-zinc-500">
