@@ -339,9 +339,9 @@ export const projects: Project[] = [
     ]
   },
   {
-    title: "hear me out",
+    title: "Jukebox",
     description:
-      "An AI-powered venting app where users can talk to five different AI personalities and crash out to their heart’s content.",
+      "Drop a coin in the jukebox of your feelings. Five AI personalities ready to spin whatever mood you're in.",
     image: "/assets/projects/hear-me-out/vent.ai_pic1.png",
     icon: "/assets/projects/hear-me-out/vent.ai_icon.png",
     gallery: {
@@ -359,8 +359,8 @@ export const projects: Project[] = [
       ]
     },
     techStack: ["TypeScript", "React", "Next.js", "Groq", "Redis"],
-    github: "https://github.com/ansonnchan/hear-me-out",
-    live: "https://hear-me-out-web.vercel.app/",
+    github: "https://github.com/ansonnchan/jukebox",
+    live: "https://my-jukebox-web.vercel.app/",
     details: [
       "Supports five AI personalities powered by Groq, ranging from ancient wisdom to straight-up tiger mom energy.",
       "Zero persistent storage of user data, with all conversations stored in memory and cleared after the session ends.",
