@@ -670,58 +670,6 @@ button {
   animation-range: entry 0% cover 26%;
 }
 
-.playlist-scrollbar {
-  scrollbar-color: #ded9d1 transparent;
-  scrollbar-width: thin;
-}
-
-.playlist-scrollbar::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
-.playlist-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.playlist-scrollbar::-webkit-scrollbar-thumb {
-  border: 2px solid #faf8f4;
-  border-radius: 9999px;
-  background: #ded9d1;
-}
-
-.playlist-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #cec8be;
-}
-
-.music-progress-slider,
-.music-volume-slider {
-  height: 0.25rem;
-  appearance: none;
-  border-radius: 9999px;
-  cursor: pointer;
-}
-
-.music-progress-slider::-webkit-slider-thumb,
-.music-volume-slider::-webkit-slider-thumb {
-  height: 0.75rem;
-  width: 0.75rem;
-  appearance: none;
-  border: 2px solid #faf8f4;
-  border-radius: 50%;
-  background: #16803f;
-  box-shadow: 0 1px 4px rgba(22, 128, 63, 0.28);
-}
-
-.music-progress-slider::-moz-range-thumb,
-.music-volume-slider::-moz-range-thumb {
-  height: 0.6rem;
-  width: 0.6rem;
-  border: 2px solid #faf8f4;
-  border-radius: 50%;
-  background: #16803f;
-  box-shadow: 0 1px 4px rgba(22, 128, 63, 0.28);
-}
-
 @supports not (animation-timeline: view()) {
   .scroll-fade {
     opacity: 1;

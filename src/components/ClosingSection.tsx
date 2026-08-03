@@ -75,8 +75,7 @@ export default function ClosingSection() {
 
           <p>
             Hopefully you found something interesting, whether it was a project, a fun
-            fact, or a song from the playlist (you have excellent taste if you liked the
-            same ones I do).
+            fact, or a little detail tucked into the page.
           </p>
 
           <p>Before you take off, here's a question I get asked quite a bit:</p>

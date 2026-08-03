@@ -4,7 +4,6 @@ import ExperienceCard from "@/components/ExperienceCard";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
-import NowPlayingPlayer from "@/components/NowPlayingPlayer";
 import ProjectCard from "@/components/ProjectCard";
 import SectionHeading from "@/components/SectionHeading";
 import SideQuestGallery from "@/components/SideQuestGallery";
@@ -123,7 +122,6 @@ export default function Portfolio() {
       </main>
 
       <Footer />
-      <NowPlayingPlayer />
     </div>
   );
 }
