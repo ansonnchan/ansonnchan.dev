@@ -122,20 +122,22 @@ export const about = {
     [
       { text: "I was born in " },
       { text: "Hong Kong", highlight: true },
-      { text: " but lived in " },
+      { text: " but I spent 15 years growing up in " },
       { text: "Australia", highlight: true },
-      { text: " for 15 years. I moved to " },
-      { text: "Canada", highlight: true },
-      {
-        text: " in late 2021. I play every racket sport, including tennis, badminton, and table tennis. "
-      },
-
-      {text: "Like any other SoCal Asian, I also like playing volleyball, drinking boba, and watching C-dramas. "},
-      {
-        text: "Right now, I'm watching \"When I Fly Towards You\" and it's really good. ",
-      },
-    ],[
-      {text: "In the future, I also want to study abroad. I have a few ideas in mind: Germany, Korea, China, Australia and the UK. If you have any suggestions, please let me know!" },
+      { text: "While my Aussie accent has faded slightly, I will forever be an Aussie at heart after (barely) surviving the brutal heat and giant spiders, snakes, and super swole kangaroos. 🦘🦘 " },
+     
+    ],    
+    [
+      { text: "Outside of coding, you’ll probably find me playing " },
+      { text: "tennis, badminton, or table tennis", highlight: true },
+      { text: ", or working on my " },
+      { text: "Cantonese and Mandarin pronunciation", highlight: true },
+      { text: " because I cannot stop being a target at family gatherings. " }
+    ],
+    [
+      { text: "I love building " },
+      { text: "software people actually use", highlight: true },
+      { text: " and hope to create products that make everyday life a little easier, a little better, and a little more fun. ✨" }
     ]
   ],
   /** 
@@ -147,7 +149,7 @@ export const about = {
   },
   */
   closing:
-    "If you like what you see and want to chat, I’m always down to connect :)", highlight: true
+    "If you like what you see and want to chat, I would love to connect :)", highlight: true
 }; //maybe highlight doesn't work??
 
 export const githubActivity = {
