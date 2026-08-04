@@ -109,7 +109,7 @@ export default function ClosingSection() {
         </div>
 <br></br>
         <p className="handwritten-display mt-7 text-center text-2xl text-zinc-800 dark:text-zinc-100">
-          "Better to have a short life that is full of what you like doing than a long life spent in a miserable way." - Alan Watts
+          "Penguins may stumble, but they always get back up and waddle on" 
         </p>
 
       </div>
