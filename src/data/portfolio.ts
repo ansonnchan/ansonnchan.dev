@@ -181,8 +181,8 @@ export const experiences: Experience[] = [
       [
         { text: "Designed a "},
         {text: "shared comments API ", highlight: true},
-        {text: "that unified domain-specific implementations into one reusable service, upholding the " },
-        { text: "clean code cult.", highlight: true}
+        {text: "that unified domain-specific implementations into one reusable service, upholding " },
+        { text: "clean code culture.", highlight: true}
       ],
       [
         { text: "Still learning that around here, an account, a client, and a user are three completely different things." }
@@ -210,7 +210,7 @@ export const experiences: Experience[] = [
         { text: "marketplace", highlight: true },
         { text: " for borrowing and sharing items before "},
         {text : "beta launch", highlight: true},
-        {text:  " helping turn ideas into a product users could actually use." }
+       
       ],
       [
         { text: "Built the platform's authorization system " },
@@ -224,7 +224,9 @@ export const experiences: Experience[] = [
       [
         { text: "Expanded the " },
         { text: "CI/CD", highlight: true },
-        { text: " pipeline with automated integration and Playwright end-to-end tests, maintaining 90%+ coverage across features I developed." }
+        { text: " pipeline with automated integration and Playwright end-to-end tests, maintaining"},
+        { text: " 90%+ coverage", highlight:true},
+        { text: " across features I developed." }
       ]
     ]
   },
