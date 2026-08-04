@@ -39,10 +39,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link
-          as="video"
-          href="/assets/closing/kiki.mp4"
+          as="image"
+          href="/assets/closing/goodbye.gif"
           rel="preload"
-          type="video/mp4"
+          type="image/gif"
         />
         <link
           as="image"
