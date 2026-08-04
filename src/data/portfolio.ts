@@ -453,8 +453,8 @@ export const sideQuests = {
   bullets: [
     "I’ve played the violin and the trumpet for 12 years and 10 years respectively. I’m hoping to join UBC’s symphony orchestra before I graduate.",
     "I like to play tennis and badminton regularly. Fun fact: two of my high school friends in Australia have played in professional events.",
-    "I'm an avid lover of thrillers, mysteries, and sci-fi.",
-    "My favorite anime is Your Lie in April, both from an emotional and musical perspective.",
+    "My favorite animals are penguins (noot noot). Pingu has never failed to make me laugh (and I'm not embarassed to admit that 😭).",
+    `I'm currently reading "The Tunnel to Summer, the Exit of Goodbyes" by Mei Hachimoku. It is such an amazing read and I highly recommend it to everyone.`
   ],
   shows: [
     {
