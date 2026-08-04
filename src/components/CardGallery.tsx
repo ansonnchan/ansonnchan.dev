@@ -46,7 +46,8 @@ export default function CardGallery({ gallery }: CardGalleryProps) {
                   <img
                     alt={image.alt}
                     className="aspect-video w-full object-cover"
-                    loading="lazy"
+                    decoding="async"
+                    loading="eager"
                     src={image.fallbackSrc}
                   />
                 ) : null}
@@ -61,7 +62,8 @@ export default function CardGallery({ gallery }: CardGalleryProps) {
                       ? "h-full w-full"
                       : "aspect-video w-full object-cover"
                 }
-                loading="lazy"
+                decoding="async"
+                loading="eager"
                 src={image.src}
               />
             )}

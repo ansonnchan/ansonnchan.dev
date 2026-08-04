@@ -12,6 +12,7 @@ export default function SideQuestGallery() {
             <img
               alt={show.alt}
               className="h-full w-full object-cover"
+              decoding="async"
               loading="lazy"
               src={show.src}
             />

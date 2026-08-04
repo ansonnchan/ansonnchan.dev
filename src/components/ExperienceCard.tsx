@@ -5,6 +5,7 @@ import { useState } from "react";
 import type { Experience } from "@/data/portfolio";
 import CardGallery from "@/components/CardGallery";
 import RichText from "@/components/RichText";
+import { preloadGalleryImages } from "@/lib/preloadGalleryImages";
 
 type ExperienceCardProps = {
   experience: Experience;
@@ -13,6 +14,7 @@ type ExperienceCardProps = {
 export default function ExperienceCard({ experience }: ExperienceCardProps) {
   const [isOpen, setIsOpen] = useState(Boolean(experience.defaultOpen));
   const toggleOpen = () => setIsOpen((current) => !current);
+  const preloadGallery = () => preloadGalleryImages(experience.gallery);
 
   const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
     if (event.target !== event.currentTarget) {
@@ -28,8 +30,11 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
   return (
     <article
       className="comic-card doodle-corner surface-card cursor-pointer p-4 transition hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/35 sm:p-5"
+      onFocus={preloadGallery}
       onClick={toggleOpen}
       onKeyDown={handleKeyDown}
+      onPointerEnter={preloadGallery}
+      onPointerDown={preloadGallery}
       role="button"
       tabIndex={0}
     >

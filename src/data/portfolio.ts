@@ -191,7 +191,7 @@ export const experiences: Experience[] = [
     gallery: {
       images: [
         {
-          src: "/assets/experiences/scalepad_volunteer.jpg",
+          src: "/assets/experiences/scalepad_volunteer.webp",
           alt: "The ScalePad team together during a company Serve Day",
           caption: "ScalePad Volunteering @ David Lam Park, Vancouver, BC"
         }
@@ -302,16 +302,16 @@ export const projects: Project[] = [
     title: "Personal Portfolio",
     description:
       "You're on it now silly 🤦. I've done a lot of revamping since the first version. I hope you enjoy the design and features.",
-    image: "/assets/projects/personal-portfolio/portfolio_pic1.png",
+    image: "/assets/projects/personal-portfolio/portfolio_pic1.webp",
     icon: "/assets/test_favicon.jpg",
     gallery: {
       images: [
         {
-          src: "/assets/projects/personal-portfolio/portfolio_pic1.png",
+          src: "/assets/projects/personal-portfolio/portfolio_pic1.webp",
           alt: "Personal portfolio home page"
         },
         {
-          src: "/assets/projects/personal-portfolio/portfolio_pic2.png",
+          src: "/assets/projects/personal-portfolio/portfolio_pic2.webp",
           alt: "Personal portfolio projects section"
         }
       ]
@@ -321,6 +321,7 @@ export const projects: Project[] = [
     live: "https://www.ansonnchan.dev/",
     details: [
       "Added a server-side API route that calls GitHub’s GraphQL contributionCalendar API.",
+      "Optimized hard-refresh gallery performance by compressing oversized media and preloading key accordion images.",
       //"Please enjoy :)"
       //"Rendered the contribution data as a Jan-Dec activity heatmap with normalized weeks, month labels, hover titles, dark-mode styling, and future days greyed out."
     ]
@@ -329,12 +330,12 @@ export const projects: Project[] = [
     title: "Pear Programming",
     description:
       "A collaborative coding editor with real-time editing, shared workspaces, and AI-assisted coding features.",
-    image: "/assets/projects/pear-programming/pear-program-pic2.png",
+    image: "/assets/projects/pear-programming/pear-program-pic2.webp",
     icon: "/assets/projects/pear-programming/pear-programming-favicon.png",
     gallery: {
       images: [
         {
-          src: "/assets/projects/pear-programming/pear-program-pic3.png",
+          src: "/assets/projects/pear-programming/pear-program-pic3.webp",
           alt: "Pear Programming collaborative code editor"
         },
         {
@@ -366,19 +367,19 @@ export const projects: Project[] = [
     title: "Jukebox",
     description:
       "Drop a coin in the jukebox of your feelings. Five AI personalities ready to spin whatever mood you're in.",
-    image: "/assets/projects/hear-me-out/vent.ai_pic1.png",
+    image: "/assets/projects/hear-me-out/vent.ai_pic1.webp",
     icon: "/assets/projects/hear-me-out/vent.ai_icon.png",
     gallery: {
       images: [
         {
-          src: "/assets/projects/hear-me-out/vent.ai_pic1.png",
+          src: "/assets/projects/hear-me-out/vent.ai_pic1.webp",
           alt: "Hear Me Out AI personality selection screen"
         },
         {
           src: "/assets/projects/hear-me-out/hear-me-out-demo.mp4",
           alt: "Hear Me Out AI conversation demo",
           mediaType: "video",
-          fallbackSrc: "/assets/projects/hear-me-out/vent.ai_pic2.png"
+          fallbackSrc: "/assets/projects/hear-me-out/vent.ai_pic2.webp"
         }
       ]
     },
@@ -394,17 +395,17 @@ export const projects: Project[] = [
   {
     title: "Dead Code Explorer",
     description: "A VS Code extension that helps you identify dead code from your project with confidence-ranked evidence.",
-    image: "/assets/projects/dead-code-explorer/dead-code-explorer-pic-1.png",
+    image: "/assets/projects/dead-code-explorer/dead-code-explorer-pic-1.webp",
     icon: "/assets/projects/dead-code-explorer/dead-code-explorer-icon.png",
     gallery: {
       images: [
         {
-          src: "/assets/projects/dead-code-explorer/dead-code-explorer-pic-2.png",
+          src: "/assets/projects/dead-code-explorer/dead-code-explorer-pic-2.webp",
           alt: "Dead Code Explorer screenshot 2",
           fit: "fill"
         },
         {
-          src: "/assets/projects/dead-code-explorer/dead-code-explorer-pic-1.png",
+          src: "/assets/projects/dead-code-explorer/dead-code-explorer-pic-1.webp",
           alt: "Dead Code Explorer screenshot 3",
           fit: "natural"
         }
@@ -458,7 +459,7 @@ export const sideQuests = {
   ],
   shows: [
     {
-      src: "/assets/sidequests/anson_violin.JPG",
+      src: "/assets/sidequests/anson_violin.webp",
       alt: "Young Anson holding a violin before a performance",
       caption: "peak camera quality"
     },

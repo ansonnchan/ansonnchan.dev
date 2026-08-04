@@ -4,6 +4,7 @@ import type { KeyboardEvent, MouseEvent } from "react";
 import { useState } from "react";
 import type { Project } from "@/data/portfolio";
 import CardGallery from "@/components/CardGallery";
+import { preloadGalleryImages } from "@/lib/preloadGalleryImages";
 
 type ProjectCardProps = {
   project: Project;
@@ -12,6 +13,7 @@ type ProjectCardProps = {
 export default function ProjectCard({ project }: ProjectCardProps) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen((current) => !current);
+  const preloadGallery = () => preloadGalleryImages(project.gallery);
 
   const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
     if (event.target !== event.currentTarget) {
@@ -31,8 +33,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article
       className="comic-card doodle-corner surface-card cursor-pointer p-4 transition hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/35 sm:p-5"
+      onFocus={preloadGallery}
       onClick={toggleOpen}
       onKeyDown={handleKeyDown}
+      onPointerEnter={preloadGallery}
+      onPointerDown={preloadGallery}
       role="button"
       tabIndex={0}
     >
