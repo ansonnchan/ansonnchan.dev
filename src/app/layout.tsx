@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Patrick_Hand } from "next/font/google";
 import "./globals.css";
 
@@ -53,7 +54,10 @@ export default function RootLayout({
           <link as="image" href={href} key={href} rel="prefetch" type="image/webp" />
         ))}
       </head>
-      <body className={patrickHand.variable}>{children}</body>
+      <body className={patrickHand.variable}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
