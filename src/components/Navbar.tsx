@@ -51,7 +51,7 @@ function getLinkTarget(href: string) {
 
 export default function Navbar() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-zinc-950/10 bg-[#fffefb] dark:border-white/10 dark:bg-[#10140f]">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-zinc-950/10 bg-white dark:border-white/10 dark:bg-[#10140f]">
       <div className="flex h-[4.5rem] w-full items-center justify-between gap-3 px-3 sm:h-[4.75rem] sm:px-11">
         <nav aria-label="Contact links" className="flex min-w-0 items-center gap-0">
           {contactLinks.map((link) => (

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #fffefb;
+  --background: #ffffff;
   --foreground: #171a16;
   --muted: #5c645d;
   --surface: rgba(255, 255, 255, 0.82);
@@ -43,10 +43,7 @@ body {
 }
 
 .portfolio-shell {
-  background:
-    radial-gradient(circle at 14% 18%, rgba(22, 128, 63, 0.035), transparent 24rem),
-    radial-gradient(circle at 88% 64%, rgba(245, 158, 11, 0.025), transparent 22rem),
-    var(--background);
+  background: var(--background);
 }
 
 img,
