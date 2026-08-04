@@ -23,6 +23,25 @@ export default function Hero() {
             </p>
           </div>
           <Flags />
+          <div className="hero-credit-banner">
+            <span>Credit to </span>
+            <strong>@niwazekisho</strong>
+            <span> for the cute penguin art.</span>
+            <a
+              aria-label="Visit niwazekisho on X"
+              className="hero-credit-link"
+              href="https://x.com/niwazekisho"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                className="hero-credit-icon"
+                src="/assets/x_twitter.svg"
+              />
+            </a>
+          </div>
         </div>
       </div>
       <img
