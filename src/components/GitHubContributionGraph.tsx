@@ -342,7 +342,7 @@ export default function GitHubContributionGraph() {
         aria-hidden="true"
         className="pointer-events-none absolute -right-32 -top-28 z-0 w-48 select-none opacity-90 sm:-right-32 sm:-top-36 sm:w-60 md:-right-44 md:-top-48 md:w-72 lg:-right-52 lg:-top-52 lg:w-[19rem]"
         draggable={false}
-        src="/assets/about/git-revert-transparent.png"
+        src="/assets/penguin/penguin_pic-3-removebg-preview.png"
       />
       <section
         aria-label="GitHub contribution graph"
@@ -500,7 +500,7 @@ export default function GitHubContributionGraph() {
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-16 left-1/2 z-0 w-64 -translate-x-1/2 select-none opacity-90 sm:-bottom-20 sm:w-80 md:-bottom-24 md:w-[22rem] lg:-bottom-28 lg:w-[24rem]"
         draggable={false}
-        src="/assets/about/git-force-transparent.png"
+        src="/assets/penguin/penguin_pic-4-removebg-preview.png"
       />
     </div>
   );

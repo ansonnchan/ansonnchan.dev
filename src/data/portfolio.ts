@@ -303,7 +303,7 @@ export const projects: Project[] = [
     description:
       "You're on it now silly 🤦. I've done a lot of revamping since the first version. I hope you enjoy the design and features.",
     image: "/assets/projects/personal-portfolio/portfolio_pic1.png",
-    icon: "/assets/stickers/kaori-surprised.png",
+    icon: "/assets/test_favicon.jpg",
     gallery: {
       images: [
         {

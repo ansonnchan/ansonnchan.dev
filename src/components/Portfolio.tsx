@@ -41,9 +41,9 @@ export default function Portfolio() {
           <img
             alt=""
             aria-hidden="true"
-            className="section-git-sticker projects-git-sticker"
+            className="section-penguin-sticker projects-penguin-sticker"
             draggable={false}
-            src="/assets/about/git-reset-transparent.png"
+            src="/assets/penguin/penguin_pic-1-removebg-preview.png"
           />
           <div className="mx-auto max-w-7xl">
             <SectionHeading
@@ -71,38 +71,17 @@ export default function Portfolio() {
           <img
             alt=""
             aria-hidden="true"
-            className="section-git-sticker side-quests-git-sticker"
+            className="section-penguin-sticker side-quests-penguin-sticker"
             draggable={false}
-            src="/assets/about/git-pull-transparent.png"
+            src="/assets/penguin/penguin_pic-2-removebg-preview.png"
           />
-          <aside className="side-quest-peak-panel" aria-label="Manga reaction">
+          <aside className="side-quest-penguin-panel" aria-label="Penguin sticker">
             <img
               alt=""
               aria-hidden="true"
-              className="side-quest-peak-sticker"
-              src="/assets/stickers/peak.png"
+              className="side-quest-penguin-sticker"
+              src="/assets/penguin/penguin_pic-5-removebg-preview.png"
             />
-            <p className="side-quest-peak-comment">
-              <svg
-                aria-hidden="true"
-                className="side-quest-peak-comment-outline"
-                focusable="false"
-                preserveAspectRatio="none"
-                viewBox="0 0 190 100"
-              >
-                <path
-                  className="side-quest-peak-comment-surface"
-                  d="M38 71C16 64 4 52 4 40C4 17 41 4 94 4C149 4 186 19 186 42C186 65 147 78 98 78C79 78 63 76 52 73L29 95Z"
-                />
-                <path
-                  className="side-quest-peak-comment-border-accent"
-                  d="M186 42C190 66 150 82 98 82C82 82 68 79 58 75C70 77 82 78 98 78C147 78 186 65 186 42Z"
-                />
-              </svg>
-              <span className="side-quest-peak-comment-copy">
-                It&apos;s so <strong>peak!</strong>
-              </span>
-            </p>
           </aside>
           <div className="mx-auto max-w-6xl">
             <SectionHeading 

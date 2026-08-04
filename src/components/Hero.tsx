@@ -29,7 +29,13 @@ export default function Hero() {
         alt=""
         aria-hidden="true"
         className="hero-corner-sticker"
-        src="/assets/stickers/kaori-surprised.png"
+        src="/assets/stickers/corner_sticker.png"
+      />
+      <img
+        alt=""
+        aria-hidden="true"
+        className="hero-penguin-sticker"
+        src="/assets/penguin/penguin_pic-6-removebg-preview.png"
       />
       <a
         aria-label="Scroll to About section"
