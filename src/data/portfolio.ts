@@ -160,15 +160,33 @@ export const githubActivity = {
 
 export const experiences: Experience[] = [
   {
-    title: "Software Engineer Intern",
+  title: "Software Engineer Intern",
     organization: "ScalePad",
     dates: "Jun. 2026 - Dec. 2026",
     location: "Vancouver, BC",
     image: "/assets/experiences/scalepad_logo_black.png",
     bullets: [
-      [{ text: "Currently on the Lifecycle Manager Team 🌱" },
+      [
+        { text: "Working on " },
+        { text: "Lifecycle Manager (LM)", highlight: true },
+        { text: ", a platform " },
+        { text: "MSPs", highlight: true },
+        { text: " use to plan, manage, and run their clients' technology." }
       ],
-      [  {text: "Haven't broken production yet!"}]
+      [
+        { text: "Modernized LM's authorization system by replacing binary admin-viewer roles with a " },
+        { text: "RBAC", highlight: true },
+        { text: " system, enabling granular permissions for each team member." }
+      ],
+      [
+        { text: "Designed a "},
+        {text: "shared comments API ", highlight: true},
+        {text: "that unified domain-specific implementations into one reusable service, upholding the " },
+        { text: "clean code cult.", highlight: true}
+      ],
+      [
+        { text: "Still learning that around here, an account, a client, and a user are three completely different things." }
+      ],
     ],
     gallery: {
       images: [
@@ -188,22 +206,26 @@ export const experiences: Experience[] = [
     image: "/assets/experiences/borrowd_org_logo.jpeg",
     bullets: [
       [
-        {
-          text: "Delivered product features and performance improvements, improving internal tooling and resolving user-facing issues for beta release."
-        }
+        { text: "Joined an early-stage team building a " },
+        { text: "marketplace", highlight: true },
+        { text: " for borrowing and sharing items before "},
+        {text : "beta launch", highlight: true},
+        {text:  " helping turn ideas into a product users could actually use." }
       ],
       [
-        { text: "Integrated automated backend tests in the " },
+        { text: "Built the platform's authorization system " },
+        { text: " from the ground up with moderator approval workflows and synchronized permission checks" },
+      ],
+      [
+        { text: "Built a " },
+        { text: "search analytics pipeline", highlight:true},
+        { text: " to surface top user search trends and guide homepage merchandising decisions." }
+      ],
+      [
+        { text: "Expanded the " },
         { text: "CI/CD", highlight: true },
-        {
-          text: " pipeline to support more reliable deployments. "
-        },
-      ],
-      [
-        {
-          text: "Collaborated with product and design teams to ship practical features from bug reports and user feedback."
-        }
-      ], 
+        { text: " pipeline with automated integration and Playwright end-to-end tests, maintaining 90%+ coverage across features I developed." }
+      ]
     ]
   },
   {
