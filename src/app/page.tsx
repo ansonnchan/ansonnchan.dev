@@ -14,13 +14,14 @@ export default function Home() {
           />
           <p className="home-kicker">+ building software that makes people’s days a little easier +</p>
           <h1>
-            hi there! I’m <span className="home-name">Anson</span>{" "}
+            <span className="home-heading-type">hi there! I’m <span className="home-name">Anson</span></span>{" "}
             <img
               alt=""
               aria-hidden="true"
               className="home-penguin-icon"
               src="/assets/penguin/penguin-icon.png"
             />
+            <span aria-hidden="true" className="home-heading-cursor" />
           </h1>
           <ul className="quick-facts">
             <li>
@@ -34,7 +35,7 @@ export default function Home() {
           </ul>
           <div className="home-actions">
             <Link className="text-button" href="/about">more about me</Link>
-            <Link className="text-button primary" href="/contacts">let&apos;s connect</Link>
+            <Link className="text-button primary" href="/contacts">let&apos;s connect!</Link>
           </div>
         </div>
       </section>

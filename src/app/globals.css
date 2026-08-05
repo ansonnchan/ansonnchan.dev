@@ -110,7 +110,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   margin: 0 auto clamp(0.85rem, 2.2vh, 1.4rem);
   object-fit: contain;
   filter: drop-shadow(0 7px 7px rgba(23, 32, 51, 0.08));
-  animation: home-sticker-bob 3.4s ease-in-out infinite;
+  opacity: 0;
+  animation: home-sticker-in 0.7s ease-out 0.08s both, home-sticker-bob 3.4s ease-in-out 0.9s infinite;
 }
 .home-kicker {
   width: fit-content;
@@ -121,6 +122,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-family: var(--font-hand), cursive;
   font-size: clamp(1.05rem, 2.6vw, 1.28rem);
   line-height: 1.15;
+  opacity: 0;
+  animation: home-content-in 0.55s ease-out 2s both;
 }
 
 .eyebrow {
@@ -141,6 +144,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
   line-height: 1.05;
   letter-spacing: -0.045em;
 }
+.home-heading-type {
+  display: inline-block;
+  width: max-content;
+  white-space: nowrap;
+  clip-path: inset(0 100% 0 0);
+  vertical-align: bottom;
+  animation: home-typewriter 1.55s steps(23, end) 0.12s both;
+}
 .home-name { color: var(--ink); font-family: var(--font-hand), cursive; font-weight: 400; letter-spacing: -0.02em; }
 .home-penguin-icon {
   display: inline-block;
@@ -150,14 +161,17 @@ button, a { -webkit-tap-highlight-color: transparent; }
   vertical-align: -0.19em;
   object-fit: contain;
   filter: drop-shadow(0 2px 2px rgba(23, 32, 51, 0.1));
+  opacity: 0;
+  animation: home-penguin-in 0.22s ease-out 1.68s both;
 }
-.quick-facts { width: fit-content; list-style: none; margin: 1.4rem auto 0; padding: 0; color: var(--muted); font-size: 0.93rem; text-align: left; }
+.home-heading-cursor { display: inline-block; width: 0; height: 0.86em; margin-left: 0.08em; border-right: 0.06em solid var(--blue); vertical-align: -0.05em; opacity: 0; animation: home-cursor-show 0.01s linear 1.92s forwards, home-caret-blink 0.65s steps(2, start) 1.92s 2, home-caret-off 0.01s linear 3.22s forwards; }
+.quick-facts { width: fit-content; list-style: none; margin: 1.4rem auto 0; padding: 0; color: var(--muted); font-size: 0.93rem; text-align: left; opacity: 0; animation: home-content-in 0.55s ease-out 2s both; }
 .quick-facts li { margin: 0.35rem 0; }
 .quick-facts > li > span:first-child { display: inline-block; width: 1.35rem; color: var(--blue); }
 .hand-link { color: var(--ink); font-family: var(--font-hand), cursive; font-size: 1.06em; text-decoration: underline; text-decoration-color: rgba(37, 99, 168, 0.38); text-underline-offset: 0.16em; }
 .hand-link:hover { color: var(--blue); }
 
-.home-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.65rem; margin-top: 1.8rem; }
+.home-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.65rem; margin-top: 1.8rem; opacity: 0; animation: home-content-in 0.55s ease-out 2.85s both; }
 .text-button {
   min-height: 2.85rem;
   display: inline-flex;
@@ -183,6 +197,32 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @keyframes home-sticker-bob {
   0%, 100% { transform: translateY(0) rotate(-1deg); }
   50% { transform: translateY(-0.45rem) rotate(1deg); }
+}
+@keyframes home-sticker-in {
+  from { opacity: 0; transform: translateY(0.6rem) scale(0.96) rotate(-1deg); }
+  to { opacity: 1; transform: translateY(0) scale(1) rotate(-1deg); }
+}
+@keyframes home-typewriter {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes home-caret-blink {
+  0%, 45% { border-color: var(--blue); }
+  46%, 100% { border-color: transparent; }
+}
+@keyframes home-caret-off {
+  to { border-color: transparent; }
+}
+@keyframes home-cursor-show {
+  to { opacity: 1; }
+}
+@keyframes home-penguin-in {
+  from { opacity: 0; transform: translateY(0.35rem) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes home-content-in {
+  from { opacity: 0; transform: translateY(0.35rem); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .page-wrap, .case-study { width: min(100% - 2.5rem, 820px); margin: 0 auto; padding: 7rem 0 8rem; }
@@ -384,4 +424,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation: none !important; }
+  .home-sticker, .home-heading-type, .home-penguin-icon, .home-heading-cursor, .home-kicker, .quick-facts, .home-actions { max-width: none; opacity: 1; transform: none; }
+  .home-heading-type { clip-path: none; }
+  .home-heading-cursor { border-right-color: transparent; }
 }
