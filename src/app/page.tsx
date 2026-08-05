@@ -28,13 +28,13 @@ export default function Home() {
               <a className="hand-link" href="https://www.ubc.ca" rel="noreferrer" target="_blank">UBC</a>
             </li>
             <li>
-              <span aria-hidden="true">✦</span> software engineering @{" "}
+              <span aria-hidden="true">✦</span> software development @{" "}
               <a className="hand-link" href="https://www.scalepad.com" rel="noreferrer" target="_blank">ScalePad</a>
             </li>
           </ul>
           <div className="home-actions">
-            <Link className="text-button primary" href="/work">view my work <span>→</span></Link>
-            <Link className="text-button" href="/projects">explore projects <span>→</span></Link>
+            <Link className="text-button" href="/about">more about me</Link>
+            <Link className="text-button primary" href="/contacts">let&apos;s connect</Link>
           </div>
         </div>
       </section>

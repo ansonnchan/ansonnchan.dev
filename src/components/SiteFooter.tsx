@@ -1,35 +1,19 @@
-import Link from "next/link";
-
-const links = [
-  { label: "email", href: "mailto:ananryry180@gmail.com" },
-  { label: "linkedin", href: "https://www.linkedin.com/in/ansonnchan" },
-  { label: "github", href: "https://github.com/ansonnchan" },
-  { label: "résumé", href: "/resume" }
-];
-
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div>
-        <p>© 2026 Anson Chan</p>
-        <p className="footer-note">built with care & a suspicious number of penguins</p>
-      </div>
-      <nav aria-label="Footer navigation">
-        {links.map((link) => (
-          <a
-            href={link.href}
-            key={link.label}
-            rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-            target={link.href.startsWith("http") || link.href === "/resume" ? "_blank" : undefined}
-          >
-            {link.label}
-          </a>
-        ))}
-        <Link aria-label="Back to the beginning" className="footer-penguin" href="/">
-          🐧
-        </Link>
+      <p className="footer-quote">“Penguins may stumble, but they always get back up and waddle on.”</p>
+      <nav aria-label="Social links" className="footer-socials">
+        <a href="mailto:ac1800@student.ubc.ca" aria-label="Email Anson">
+          <img alt="" aria-hidden="true" src="/assets/icons/mail-icon.png" />
+        </a>
+        <a href="https://www.linkedin.com/in/ansonnchan" aria-label="Anson on LinkedIn" rel="noreferrer" target="_blank">
+          <img alt="" aria-hidden="true" src="/assets/icons/linkedin-icon.png" />
+        </a>
+        <a href="https://github.com/ansonnchan" aria-label="Anson on GitHub" rel="noreferrer" target="_blank">
+          <img alt="" aria-hidden="true" src="/assets/icons/github_icon.png" />
+        </a>
       </nav>
+      <p className="footer-copy">© 2026 Anson Chan</p>
     </footer>
   );
 }
-

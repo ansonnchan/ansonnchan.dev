@@ -5,8 +5,7 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { label: "work", href: "/work" },
-  { label: "projects", href: "/projects" },
-  { label: "goodbyes", href: "/goodbyes" }
+  { label: "projects", href: "/projects" }
 ];
 
 export default function SiteNav() {
@@ -15,33 +14,31 @@ export default function SiteNav() {
   return (
     <header className="site-header">
       <nav aria-label="Primary navigation" className="site-nav">
-        <Link aria-label="Anson Chan — home" className="home-mark" href="/">
-          <img alt="" aria-hidden="true" src="/assets/test_favicon.jpg" />
-        </Link>
-        <div className="nav-links">
-          {links.map((link) => {
-            const active =
-              link.href === "/projects"
-                ? pathname.startsWith("/projects")
-                : pathname === link.href;
+        <div className="nav-left-group">
+          <Link aria-label="Anson Chan — home" className="home-mark" href="/">
+            <img alt="" aria-hidden="true" src="/assets/icons/home.svg" />
+          </Link>
+          <div className="nav-links">
+            {links.map((link) => {
+              const active =
+                link.href === "/projects"
+                  ? pathname.startsWith("/projects")
+                  : pathname === link.href;
 
-            return (
-              <Link
-                aria-current={active ? "page" : undefined}
-                className={active ? "active" : undefined}
-                href={link.href}
-                key={link.href}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
+              return (
+                <Link
+                  aria-current={active ? "page" : undefined}
+                  className={active ? "active" : undefined}
+                  href={link.href}
+                  key={link.href}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
         </div>
-        <a className="nav-resume" href="/resume" rel="noreferrer" target="_blank">
-          résumé ↗
-        </a>
       </nav>
     </header>
   );
 }
-
