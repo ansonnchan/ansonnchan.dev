@@ -1,4 +1,3 @@
-import Link from "next/link";
 import AboutText from "@/components/AboutText";
 import PageIntro from "@/components/PageIntro";
 import SiteShell from "@/components/SiteShell";
@@ -15,6 +14,7 @@ export default function AboutPage() {
           </div>
           <div className="about-copy">
             <p className="about-introduction"><AboutText segments={about.introduction} /></p>
+            <p className="about-facts-heading">{about.factsHeading}</p>
             <ul className="about-facts">
               {about.facts.map((fact, index) => (
                 <li key={index}><AboutText segments={fact} /></li>
@@ -22,7 +22,10 @@ export default function AboutPage() {
             </ul>
             <p className="about-build-line">{about.buildLine}</p>
             <p className="about-closing">
-              {about.closing} If you&apos;d like to say hello, <Link href="/contacts">let&apos;s connect</Link>.
+              {about.closing}
+              <span className="about-connection-line">
+                {about.connectionLead} <span>{about.connectionNote}</span>
+              </span>
             </p>
           </div>
         </div>

@@ -28,7 +28,7 @@ export default function Home() {
             {home.facts.map((fact) => (
               <li key={fact.linkLabel}>
                 <span aria-hidden="true">✦</span> {fact.text}{" "}
-                <a className="hand-link" href={fact.href} rel="noreferrer" target="_blank">{fact.linkLabel}</a>
+                <span className="hand-link">{fact.linkLabel}</span>
               </li>
             ))}
           </ul>

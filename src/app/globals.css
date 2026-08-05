@@ -280,8 +280,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .page-note span { color: var(--ink); font-family: var(--font-hand), cursive; font-size: 1.05rem; }
 .page-note a { color: var(--blue); border-bottom: 1px solid #aac5df; }
 
-.about-page .page-intro { margin-bottom: 3.5rem; }
-.about-layout { display: grid; grid-template-columns: 17rem minmax(0, 1fr); gap: 3.25rem; align-items: start; }
+.about-page { width: min(100% - 2.5rem, 62rem); padding-top: 3rem; }
+.about-page .page-intro { margin-bottom: 1.25rem; }
+.about-layout { display: grid; grid-template-columns: 18rem minmax(0, 1fr); gap: 3.25rem; align-items: start; }
 .about-illustration { display: flex; min-height: 16rem; align-items: flex-start; justify-content: flex-start; padding-top: 0.1rem; }
 .about-illustration img { width: 21.75rem; max-width: none; height: auto; object-fit: contain; transform: translateX(-2.25rem); filter: drop-shadow(0 8px 10px rgba(23, 32, 51, 0.055)); }
 .about-copy { color: var(--muted); font-size: 0.9rem; line-height: 1.85; }
@@ -289,13 +290,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .about-introduction { color: var(--muted); }
 .about-emphasis.handwritten { color: var(--blue); font-family: var(--font-hand), cursive; font-size: 1.08em; }
 .about-emphasis.highlight { color: var(--blue); }
-.about-facts { margin: 1.8rem 0; padding: 0; list-style: none; }
+.about-emphasis.italic { color: inherit; font-style: italic; }
+.about-text-break { display: block; margin-top: 0.75rem; }
+.about-facts-heading { margin-top: 1.45rem !important; color: var(--ink); font-family: var(--font-hand), cursive; font-size: 1.08rem; }
+.about-facts { margin: 0.55rem 0 1.7rem; padding: 0; list-style: none; }
 .about-facts li { position: relative; margin-top: 0.7rem; padding-left: 1.35rem; }
 .about-facts li::before { content: "✦"; position: absolute; top: 0.02rem; left: 0; color: var(--blue); font-size: 0.72rem; }
 .about-build-line { color: var(--muted); }
 .about-closing { margin-top: 1.35rem !important; }
-.about-closing a { color: var(--blue); font-family: var(--font-hand), cursive; font-size: 1.08em; border-bottom: 1px solid #aac5df; }
-.about-closing a:hover { color: #1d4f86; }
+.about-connection-line { display: block; margin-top: 0.45rem; color: var(--blue); font-family: var(--font-hand), cursive; font-size: 1.08rem; }
 
 .contacts-page { width: min(100% - 2.5rem, 60rem); margin: 0 auto; padding: clamp(7rem, 14vh, 10rem) 0 8rem; }
 .contacts-page > .eyebrow { opacity: 0; animation: contact-fade-in 0.5s ease-out 0.08s both; }
@@ -438,6 +441,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .goodbye-photo { width: min(14rem, 80%); margin: 0 auto; }
   .goodbye-details { gap: 2rem; }
   .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-page { padding-top: 2.5rem; }
   .about-illustration { min-height: 0; }
   .about-illustration img { width: min(19rem, 86%); max-width: 100%; margin-inline: auto; transform: none; }
 }

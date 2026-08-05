@@ -1,7 +1,6 @@
 export type HomeFact = {
   text: string;
   linkLabel: string;
-  href: string;
 };
 
 export const home = {
@@ -13,13 +12,11 @@ export const home = {
   facts: [
     {
       text: "computer engineering @",
-      linkLabel: "UBC",
-      href: "https://www.ubc.ca"
+      linkLabel: "UBC"
     },
     {
       text: "software development @",
-      linkLabel: "ScalePad",
-      href: "https://www.scalepad.com"
+      linkLabel: "ScalePad"
     }
   ] satisfies HomeFact[],
   actions: [
