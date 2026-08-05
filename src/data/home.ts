@@ -1,0 +1,29 @@
+export type HomeFact = {
+  text: string;
+  linkLabel: string;
+  href: string;
+};
+
+export const home = {
+  sticker: "/assets/stickers/corner_sticker.png",
+  kicker: "+ building software that makes people’s days a little easier +",
+  greeting: "hi there! I’m",
+  name: "Anson",
+  penguinIcon: "/assets/penguin/penguin-icon.png",
+  facts: [
+    {
+      text: "computer engineering @",
+      linkLabel: "UBC",
+      href: "https://www.ubc.ca"
+    },
+    {
+      text: "software development @",
+      linkLabel: "ScalePad",
+      href: "https://www.scalepad.com"
+    }
+  ] satisfies HomeFact[],
+  actions: [
+    { label: "more about me", href: "/about", primary: false },
+    { label: "let's connect!", href: "/contacts", primary: true }
+  ]
+};

@@ -1,7 +1,7 @@
 import PageIntro from "@/components/PageIntro";
 import ProjectPreview from "@/components/ProjectPreview";
 import SiteShell from "@/components/SiteShell";
-import { projectCases } from "@/data/site";
+import { projectCases } from "@/data/project-cases";
 
 export default function ProjectsPage() {
   return (
@@ -20,4 +20,3 @@ export default function ProjectsPage() {
     </SiteShell>
   );
 }
-

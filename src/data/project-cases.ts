@@ -1,4 +1,4 @@
-import { projects as legacyProjects } from "@/data/portfolio";
+import { projects } from "@/data/projects";
 
 export type ProjectCase = {
   slug: string;
@@ -8,7 +8,7 @@ export type ProjectCase = {
   status: string;
   image: string;
   icon: string;
-  gallery: (typeof legacyProjects)[number]["gallery"];
+  gallery: (typeof projects)[number]["gallery"];
   techStack: string[];
   github: string;
   live?: string;
@@ -18,7 +18,7 @@ export type ProjectCase = {
   tone?: "soft";
 };
 
-const projectByTitle = new Map(legacyProjects.map((project) => [project.title, project]));
+const projectByTitle = new Map(projects.map((project) => [project.title, project]));
 
 function sourceProject(title: string) {
   const project = projectByTitle.get(title);
@@ -131,4 +131,3 @@ export const projectCases: ProjectCase[] = [
 ];
 
 export const projectBySlug = new Map(projectCases.map((project) => [project.slug, project]));
-

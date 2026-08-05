@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { ProjectCase } from "@/data/site";
+import type { ProjectCase } from "@/data/project-cases";
 
 export default function ProjectPreview({ project, flagship = false }: { project: ProjectCase; flagship?: boolean }) {
   return (
@@ -22,4 +22,3 @@ export default function ProjectPreview({ project, flagship = false }: { project:
     </Link>
   );
 }
-

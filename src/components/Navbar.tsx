@@ -1,6 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { Mail } from "lucide-react";
-import { socials } from "@/data/portfolio";
+import { socials } from "@/data/profile";
 
 type ContactLink =
   | {

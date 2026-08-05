@@ -1,4 +1,4 @@
-import { about } from "@/data/portfolio";
+import { about } from "@/data/about";
 import GitHubContributionGraph from "@/components/GitHubContributionGraph";
 import RichText from "@/components/RichText";
 import SectionHeading from "@/components/SectionHeading";

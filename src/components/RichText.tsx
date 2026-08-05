@@ -1,4 +1,4 @@
-import type { RichSegment } from "@/data/portfolio";
+import type { RichSegment } from "@/data/types";
 
 type RichTextProps = {
   segments: RichSegment[];

@@ -1,4 +1,4 @@
-import type { ImageGallery } from "@/data/portfolio";
+import type { ImageGallery } from "@/data/types";
 
 const preloadedImages = new Set<string>();
 

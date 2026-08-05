@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SiteShell from "@/components/SiteShell";
+import { home } from "@/data/home";
 
 export default function Home() {
   return (
@@ -10,32 +11,37 @@ export default function Home() {
             alt=""
             aria-hidden="true"
             className="home-sticker"
-            src="/assets/stickers/corner_sticker.png"
+            src={home.sticker}
           />
-          <p className="home-kicker">+ building software that makes people’s days a little easier +</p>
+          <p className="home-kicker">{home.kicker}</p>
           <h1>
-            <span className="home-heading-type">hi there! I’m <span className="home-name">Anson</span></span>{" "}
+            <span className="home-heading-type">{home.greeting} <span className="home-name">{home.name}</span></span>{" "}
             <img
               alt=""
               aria-hidden="true"
               className="home-penguin-icon"
-              src="/assets/penguin/penguin-icon.png"
+              src={home.penguinIcon}
             />
             <span aria-hidden="true" className="home-heading-cursor" />
           </h1>
           <ul className="quick-facts">
-            <li>
-              <span aria-hidden="true">✦</span> computer engineering @{" "}
-              <a className="hand-link" href="https://www.ubc.ca" rel="noreferrer" target="_blank">UBC</a>
-            </li>
-            <li>
-              <span aria-hidden="true">✦</span> software development @{" "}
-              <a className="hand-link" href="https://www.scalepad.com" rel="noreferrer" target="_blank">ScalePad</a>
-            </li>
+            {home.facts.map((fact) => (
+              <li key={fact.linkLabel}>
+                <span aria-hidden="true">✦</span> {fact.text}{" "}
+                <a className="hand-link" href={fact.href} rel="noreferrer" target="_blank">{fact.linkLabel}</a>
+              </li>
+            ))}
           </ul>
           <div className="home-actions">
-            <Link className="text-button" href="/about">more about me</Link>
-            <Link className="text-button primary" href="/contacts">let&apos;s connect!</Link>
+            {home.actions.map((action) => (
+              <Link
+                className={`text-button${action.primary ? " primary" : ""}`}
+                href={action.href}
+                key={action.href}
+              >
+                {action.label}
+              </Link>
+            ))}
           </div>
         </div>
       </section>

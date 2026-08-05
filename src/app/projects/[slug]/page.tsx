@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteShell from "@/components/SiteShell";
-import { projectBySlug, projectCases } from "@/data/site";
+import { projectBySlug, projectCases } from "@/data/project-cases";
 
 type ProjectPageProps = { params: Promise<{ slug: string }> };
 
@@ -91,4 +91,3 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
     </SiteShell>
   );
 }
-

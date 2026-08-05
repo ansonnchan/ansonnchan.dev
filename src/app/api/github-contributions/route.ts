@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { githubActivity } from "@/data/portfolio";
+import { githubActivity } from "@/data/profile";
 
 type ContributionLevel =
   | "NONE"

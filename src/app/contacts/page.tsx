@@ -1,11 +1,5 @@
 import SiteShell from "@/components/SiteShell";
-
-const contacts = [
-  { label: "email", value: "ac1800@student.ubc.ca", href: "mailto:ac1800@student.ubc.ca", icon: "/assets/icons/mail-icon.png", className: "contact-card-mail" },
-  { label: "github", value: "github.com/ansonnchan", href: "https://github.com/ansonnchan", icon: "/assets/icons/github_icon.png", className: "contact-card-github" },
-  { label: "linkedin", value: "linkedin.com/in/ansonnchan", href: "https://www.linkedin.com/in/ansonnchan", icon: "/assets/icons/linkedin-icon.png", className: "contact-card-linkedin" },
-  { label: "résumé", value: "view my résumé", href: "/resume", icon: "/assets/icons/resume-download.png", className: "contact-card-resume" }
-];
+import { contactCards } from "@/data/contacts";
 
 export default function ContactsPage() {
   return (
@@ -14,15 +8,15 @@ export default function ContactsPage() {
         <p className="eyebrow">seeking summer '27 internships ᝰ</p>
         <h1>let&apos;s connect</h1>
         <div className="contact-grid">
-          {contacts.map((contact) => (
+          {contactCards.map((contact) => (
             <a
               className="contact-card"
               href={contact.href}
               key={contact.label}
-              rel={contact.href.startsWith("http") ? "noreferrer" : undefined}
-              target={contact.href.startsWith("http") || contact.href === "/resume" ? "_blank" : undefined}
+              rel={contact.openInNewTab ? "noreferrer" : undefined}
+              target={contact.openInNewTab ? "_blank" : undefined}
             >
-              <span className={`contact-card-icon ${contact.className}`}>
+              <span className={`contact-card-icon ${contact.iconClassName}`}>
                 <img alt="" aria-hidden="true" src={contact.icon} />
               </span>
               <span className="contact-card-label">{contact.label}</span>

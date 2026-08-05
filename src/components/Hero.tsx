@@ -1,4 +1,4 @@
-import { hero } from "@/data/portfolio";
+import { hero } from "@/data/profile";
 import Flags from "@/components/Flags";
 import TypewriterText from "@/components/TypewriterText";
 

@@ -1,7 +1,7 @@
 import PageIntro from "@/components/PageIntro";
 import RichText from "@/components/RichText";
 import SiteShell from "@/components/SiteShell";
-import { about } from "@/data/portfolio";
+import { about } from "@/data/about";
 
 export default function AboutPage() {
   return (
@@ -26,4 +26,3 @@ export default function AboutPage() {
     </SiteShell>
   );
 }
-
