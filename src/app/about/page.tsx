@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <SiteShell>
       <div className="page-wrap about-page">
-        <PageIntro eyebrow="a little more about me" title="nice to meet you" />
+        <PageIntro eyebrow="one for me, one for you ᝰ" title="noot noot!" />
         <div className="about-layout">
           <div className="about-illustration" aria-hidden="true">
             <img alt="" src={about.illustration} />

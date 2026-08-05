@@ -3,14 +3,16 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
-const NAVIGATION_DELAY_MS = 520;
-const REVEAL_DELAY_MS = 180;
+const COVER_DELAY_MS = 110;
+const MINIMUM_DISPLAY_MS = 650;
+const MINIMUM_REVEAL_DELAY_MS = 120;
 
 export default function RouteTransition() {
   const pathname = usePathname();
   const router = useRouter();
   const [visible, setVisible] = useState(false);
   const transitioning = useRef(false);
+  const transitionStartedAt = useRef(0);
   const navigationTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const revealTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -18,10 +20,16 @@ export default function RouteTransition() {
     window.scrollTo(0, 0);
 
     if (transitioning.current) {
+      const elapsed = performance.now() - transitionStartedAt.current;
+      const revealDelay = Math.max(
+        MINIMUM_REVEAL_DELAY_MS,
+        MINIMUM_DISPLAY_MS - elapsed
+      );
+
       revealTimer.current = setTimeout(() => {
         setVisible(false);
         transitioning.current = false;
-      }, REVEAL_DELAY_MS);
+      }, revealDelay);
     }
 
     return () => {
@@ -75,11 +83,12 @@ export default function RouteTransition() {
       }
 
       transitioning.current = true;
+      transitionStartedAt.current = performance.now();
       setVisible(true);
 
       navigationTimer.current = setTimeout(() => {
         router.push(`${nextLocation}${destination.hash}`, { scroll: false });
-      }, NAVIGATION_DELAY_MS);
+      }, COVER_DELAY_MS);
     }
 
     document.addEventListener("click", handleInternalNavigation, true);
