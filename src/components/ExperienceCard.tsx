@@ -2,7 +2,7 @@
 
 import type { KeyboardEvent } from "react";
 import { useState } from "react";
-import type { Experience } from "@/data/portfolio";
+import type { Experience } from "@/data/types";
 import CardGallery from "@/components/CardGallery";
 import RichText from "@/components/RichText";
 import { preloadGalleryImages } from "@/lib/preloadGalleryImages";

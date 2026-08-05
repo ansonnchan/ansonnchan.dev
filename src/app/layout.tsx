@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Patrick_Hand } from "next/font/google";
+import RouteTransition from "@/components/RouteTransition";
 import "./globals.css";
 
 const patrickHand = Patrick_Hand({
@@ -22,8 +23,7 @@ const prefetchedGalleryImages = [
 
 export const metadata: Metadata = {
   title: "Anson Chan's Portfolio",
-  description:
-    "A playful, recruiter-friendly software engineering internship portfolio for Anson Chan.",
+  description: "Anson Chan is a UBC Computer Engineering student and software engineer building thoughtful products and dependable systems.",
   icons: {
     icon: "/assets/test_favicon.jpg",
     apple: "/assets/test_favicon.jpg"
@@ -55,6 +55,7 @@ export default function RootLayout({
         ))}
       </head>
       <body className={patrickHand.variable}>
+        <RouteTransition />
         {children}
         <Analytics />
       </body>

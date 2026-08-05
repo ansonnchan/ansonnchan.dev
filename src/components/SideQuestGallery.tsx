@@ -1,4 +1,4 @@
-import { sideQuests } from "@/data/portfolio";
+import { sideQuests } from "@/data/side-quests";
 
 export default function SideQuestGallery() {
   return (

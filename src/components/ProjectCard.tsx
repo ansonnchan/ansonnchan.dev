@@ -2,7 +2,7 @@
 
 import type { KeyboardEvent, MouseEvent } from "react";
 import { useState } from "react";
-import type { Project } from "@/data/portfolio";
+import type { Project } from "@/data/types";
 import CardGallery from "@/components/CardGallery";
 import { preloadGalleryImages } from "@/lib/preloadGalleryImages";
 

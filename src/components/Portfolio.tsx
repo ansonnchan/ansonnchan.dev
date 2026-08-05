@@ -8,7 +8,9 @@ import ProjectCard from "@/components/ProjectCard";
 import SectionHeading from "@/components/SectionHeading";
 import SideQuestGallery from "@/components/SideQuestGallery";
 import SideQuestList from "@/components/SideQuestList";
-import { experiences, projects, sideQuests } from "@/data/portfolio";
+import { experiences } from "@/data/experiences";
+import { projects } from "@/data/projects";
+import { sideQuests } from "@/data/side-quests";
 
 export default function Portfolio() {
   return (
