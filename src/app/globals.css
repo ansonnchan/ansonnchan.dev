@@ -139,7 +139,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .home-copy { width: 100%; max-width: 38rem; text-align: center; }
 .home-sticker {
-  width: clamp(10rem, 16vw, 13.5rem);
+  width: clamp(12rem, 19.2vw, 16.2rem);
   height: auto;
   margin: 0 auto clamp(0.85rem, 2.2vh, 1.4rem);
   object-fit: contain;
@@ -189,8 +189,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .home-name { color: var(--ink); font-family: var(--font-hand), cursive; font-weight: 400; letter-spacing: -0.02em; }
 .home-penguin-icon {
   display: inline-block;
-  width: 0.95em;
-  height: 0.95em;
+  width: 1.2em;
+  height: 1.2em;
   margin-left: 0.12em;
   vertical-align: -0.19em;
   object-fit: contain;
