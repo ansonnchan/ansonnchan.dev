@@ -1,52 +1,50 @@
-import type { RichSegment } from "@/data/types";
+export type AboutSegment = {
+  text: string;
+  style?: "handwritten" | "highlight";
+};
 
 export type AboutContent = {
-  profileImage: string;
-  greeting: string;
-  paragraphs: RichSegment[][];
+  illustration: string;
+  introduction: AboutSegment[];
+  facts: AboutSegment[][];
+  buildLine: string;
   closing: string;
 };
 
 export const about: AboutContent = {
-  profileImage: "/assets/pfp-square.jpeg",
-  greeting: "Hey there!",
-  paragraphs: [
+  illustration: "/assets/penguin/penguin_pic-4-removebg-preview.png",
+  introduction: [
+    { text: "Hey, I’m Anson—a third-year " },
+    { text: "Computer Engineering", style: "highlight" },
+    { text: " student at " },
+    { text: "UBC", style: "handwritten" },
+    { text: " and a software engineer intern at " },
+    { text: "ScalePad", style: "handwritten" },
+    { text: ". I was born in " },
+    { text: "Hong Kong", style: "handwritten" },
+    { text: " and spent 15 years growing up in " },
+    { text: "Australia", style: "handwritten" },
+    { text: ", so both places still feel like home. I’m always curious about " },
+    { text: "new technologies", style: "highlight" },
+    { text: " and the thoughtful ways they can be used to solve everyday problems." }
+  ],
+  facts: [
     [
-      { text: "I’m " },
-      { text: "Anson", highlight: true },
-      { text: ", and welcome to my personal website." }
-    ],
-    [
-      { text: "I’m a third-year " },
-      { text: "Computer Engineering", highlight: true },
-      { text: " student @ " },
-      { text: "UBC", highlight: true },
-      { text: ", expecting to graduate in " },
-      { text: "2029", highlight: true },
-      { text: ". I’m currently a software engineer intern @ " },
-      { text: "ScalePad", highlight: true },
+      { text: "You’ll usually find me playing " },
+      { text: "tennis, badminton, or table tennis", style: "highlight" },
       { text: "." }
     ],
     [
-      { text: "I was born in " },
-      { text: "Hong Kong", highlight: true },
-      { text: " but spent 15 years growing up in " },
-      { text: "Australia", highlight: true },
-      { text: ". While my Aussie accent has faded slightly, I’ll forever be an Aussie at heart after surviving the heat, spiders, snakes, and suspiciously muscular kangaroos. 🦘" }
+      { text: "I’m working on my " },
+      { text: "Cantonese and Mandarin", style: "handwritten" },
+      { text: " pronunciation." }
     ],
     [
-      { text: "Outside of coding, you’ll probably find me playing " },
-      { text: "tennis, badminton, or table tennis", highlight: true },
-      { text: ", or working on my " },
-      { text: "Cantonese and Mandarin pronunciation", highlight: true },
-      { text: "." }
-    ],
-    [
-      { text: "I love building " },
-      { text: "software people actually use", highlight: true },
-      { text: " and hope to create products that make everyday life a little easier, better, and more fun. ✨" }
+      { text: "I’m still an " },
+      { text: "Aussie at heart", style: "highlight" },
+      { text: " after surviving the heat, spiders, snakes, and suspiciously muscular kangaroos." }
     ]
   ],
-  closing: "If you like what you see and want to chat, I would love to connect :)"
+  buildLine: "I love building software people actually use.",
+  closing: "Nice to meet you—I hope you enjoy looking around."
 };
-

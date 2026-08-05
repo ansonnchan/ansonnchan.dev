@@ -1,7 +1,7 @@
 type PageIntroProps = {
   eyebrow: string;
   title: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 export default function PageIntro({ eyebrow, title, children }: PageIntroProps) {
@@ -9,8 +9,7 @@ export default function PageIntro({ eyebrow, title, children }: PageIntroProps) 
     <header className="page-intro">
       <p className="eyebrow">{eyebrow}</p>
       <h1>{title}</h1>
-      <div className="page-deck">{children}</div>
+      {children ? <div className="page-deck">{children}</div> : null}
     </header>
   );
 }
-

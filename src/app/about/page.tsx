@@ -1,5 +1,6 @@
+import Link from "next/link";
+import AboutText from "@/components/AboutText";
 import PageIntro from "@/components/PageIntro";
-import RichText from "@/components/RichText";
 import SiteShell from "@/components/SiteShell";
 import { about } from "@/data/about";
 
@@ -7,19 +8,22 @@ export default function AboutPage() {
   return (
     <SiteShell>
       <div className="page-wrap about-page">
-        <PageIntro eyebrow="a little more about me" title="nice to meet you">
-          <p>The person behind the projects, pull requests, and penguin stickers.</p>
-        </PageIntro>
+        <PageIntro eyebrow="a little more about me" title="nice to meet you" />
         <div className="about-layout">
-          <figure className="about-photo">
-            <img alt="Anson Chan" src={about.profileImage} />
-            <figcaption>hi from my corner of the internet</figcaption>
-          </figure>
+          <div className="about-illustration" aria-hidden="true">
+            <img alt="" src={about.illustration} />
+          </div>
           <div className="about-copy">
-            <p className="about-greeting">{about.greeting}</p>
-            {about.paragraphs.map((paragraph, index) => (
-              <p key={index}><RichText segments={paragraph} /></p>
-            ))}
+            <p className="about-introduction"><AboutText segments={about.introduction} /></p>
+            <ul className="about-facts">
+              {about.facts.map((fact, index) => (
+                <li key={index}><AboutText segments={fact} /></li>
+              ))}
+            </ul>
+            <p className="about-build-line">{about.buildLine}</p>
+            <p className="about-closing">
+              {about.closing} If you&apos;d like to say hello, <Link href="/contacts">let&apos;s connect</Link>.
+            </p>
           </div>
         </div>
       </div>
