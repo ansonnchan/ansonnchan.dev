@@ -30,17 +30,17 @@ export const about: AboutContent = {
     { text: "Australia", style: "handwritten" },
     { text: "." },
     {
-      text: "My Aussie accent may have faded a little, but the years of surviving brutal heat, giant spiders, angry koalas, and super swole kangaroos have left a permanent mark. 🦘",
+      text: "My Aussie accent may have faded a little, but the years of surviving brutal heat, giant spiders, angry koalas, and super swole kangaroos have caused generational trauma. 🦘",
       breakBefore: true
     }
   ],
   factsHeading: "A few things about me:",
   facts: [
     [
-      { text: "I love racquet sports, especially tennis, badminton, and table tennis." }
+      { text: "I love racquet sports, especially tennis, badminton, and table tennis" }
     ],
     [
-      { text: "I’m practicing my Cantonese and Mandarin so I can stop being a target at family dinners." }
+      { text: "I’m practicing my Cantonese and Mandarin so I can stop being a target at family dinners" }
     ],
     [
       { text: "I’ve played the violin and trumpet for 10+ years" }
@@ -48,10 +48,10 @@ export const about: AboutContent = {
     [
       { text: "I’m currently reading " },
       { text: "“The Tunnel to Summer, the Exit of Goodbyes”", style: "italic" },
-      { text: " by Mei Hachimoku." }
+      { text: " by Mei Hachimoku" }
     ]
   ],
-  buildLine: "Most of all, I enjoy building software that people actually use and hope to create products that make everyday life easier, better, or simply a little more fun. ✨",
+  buildLine: " I enjoy building software that people actually use and hope to create products that make everyday life easier, better, or simply a little more fun. ✨",
   closing: "Thanks for stopping by and exploring my little corner of the internet.",
   connectionLead: "If you see something interesting,",
   connectionNote: "I would love to connect :)"
