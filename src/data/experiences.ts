@@ -1,78 +1,198 @@
-import type { Experience } from "@/data/types";
+import type { Experience, RichSegment } from "@/data/types";
+
+export type WorkExperienceStatus = "current" | "upcoming" | "completed";
+
+export type WorkExperiencePhoto = {
+  src: string;
+  alt: string;
+  caption?: string;
+  width: number;
+  height: number;
+};
 
 export type WorkExperience = {
   company: string;
   role: string;
-  dates: string;
+  startDate: string;
+  endDate: string;
+  dateLabel: string;
+  year: string;
   location: string;
-  logo: string | null;
-  accent: boolean;
-  bullets: string[];
-  tech: string[];
+  status: WorkExperienceStatus;
+  summary: RichSegment[];
+  highlights: RichSegment[][];
+  technologies: string[];
+  logo: string;
+  logoAlt: string;
+  penguin: string;
+  penguinAlt: string;
+  photos?: WorkExperiencePhoto[];
+  defaultExpanded?: boolean;
 };
 
 export const workExperiences: WorkExperience[] = [
   {
     company: "Atria",
     role: "Incoming Software Engineering Intern",
-    dates: "Jan. — Apr. 2027",
+    startDate: "2027-01",
+    endDate: "2027-04",
+    dateLabel: "Jan. 2027 — Apr. 2027",
+    year: "2027",
     location: "Vancouver, BC",
-    logo: null,
-    accent: false,
-    bullets: [
-      "Joining the engineering team to develop full-stack features for a Django and React platform."
+    status: "upcoming",
+    summary: [
+      { text: "Building software that helps organizations " },
+      { text: "collaborate", highlight: true},
+      { text: " and"},
+      {text: " achieve shared goals", highlight:true },
     ],
-    tech: ["Django", "React"]
+    highlights: [],
+    technologies: ["Django", "React"],
+    logo: "/assets/experiences/atria.jpg",
+    logoAlt: "Atria logo",
+    penguin: "/assets/penguin_work_stickers/penguin-atria.png",
+    penguinAlt: "A group of penguins gathered around a community board"
   },
   {
     company: "ScalePad",
     role: "Software Engineering Intern",
-    dates: "Jun. — Dec. 2026",
+    startDate: "2026-06",
+    endDate: "2026-12",
+    dateLabel: "Jun. 2026 — Dec. 2026",
+    year: "2026",
     location: "Vancouver, BC",
-    logo: "/assets/experiences/scalepad_logo_black.png",
-    accent: true,
-    bullets: [
-      "Modernized Lifecycle Manager’s authorization system for 12,000+ MSPs, replacing binary admin-viewer permissions with role-based access control across C#/.NET services and a React/TypeScript frontend.",
-      "Designed and implemented a unified Entity Comments API, consolidating domain-specific implementations into one shared platform capability."
+    status: "current",
+    summary: [
+      { text: "Working on "},
+      { text: "Lifecycle Manager", highlight: true},
+      { text: " and "},
+      {text: "making MSPs’ lives a little easier 🌱", highlight:true },
     ],
-    tech: ["C#", ".NET", "React", "TypeScript"]
+    highlights: [
+      [
+        { text: "Modernized "},
+        {text :"Lifecycle Manager’s authorization system", highlight:true},
+        {text: " for " },
+        { text: "12,000+ MSPs", highlight: true },
+        { text: ", replacing the legacy admin-or-viewer setup with "},
+        { text: "role-based access control (RBAC)", highlight:true }
+      ],
+      /** [
+        { text: "Redesigned Entity Comments into " },
+        { text: "one shared API", highlight: true },
+        { text: " instead of keeping a collection of one-off implementations around." }
+      ],**/
+      [
+        { text: "Averaged " },
+        { text: "three coffees a day, fifty-six Slack messages,",highlight:true},
+        { text: " and "},
+        {text: "one existential Jira crisis ", highlight: true },
+        { text: "for the season (but my offseason trade value is high)" }
+      ]
+    ],
+    technologies: ["C#", ".NET", "React", "TypeScript"],
+    logo: "/assets/experiences/scalepad_logo.jpeg",
+    logoAlt: "ScalePad logo",
+    penguin: "/assets/penguin_work_stickers/penguin-scalepad.png",
+    penguinAlt: "A penguin working on a laptop while holding a four-leaf clover",
+    photos: [
+      {
+        src: "/assets/experiences/scalepad_volunteer.webp",
+        alt: "Anson with his ScalePad teammates wearing matching Serve Day shirts",
+        caption: "Volunteering @ David Lam Park, Vancouver, BC",
+        width: 1440,
+        height: 1080
+      }
+    ],
+    defaultExpanded: true
   },
   {
     company: "Borrow’d",
     role: "Software Engineering Intern",
-    dates: "Jan. — Apr. 2026",
+    startDate: "2026-01",
+    endDate: "2026-04",
+    dateLabel: "Jan. 2026 — Apr. 2026",
+    year: "2026",
     location: "Vancouver, BC",
-    logo: "/assets/experiences/borrowd_org_logo.jpeg",
-    accent: false,
-    bullets: [
-      "Secured private marketplace groups for 150+ users by implementing moderator approval workflows with synchronized Django permission checks.",
-      "Reduced manual merchandising analysis from 15 to 5 hours per week with a search analytics pipeline and optimized PostgreSQL queries.",
-      "Expanded GitHub Actions with integration and Playwright end-to-end tests, maintaining 90%+ coverage across the features I developed."
+    status: "completed",
+    summary: [
+      { text: "Making " },
+      { text: "community sharing", highlight: true },
+      { text: " a little easier (and a lot less awkward) 🐝" }
     ],
-    tech: ["Python", "Django", "PostgreSQL", "Playwright"]
+    highlights: [
+      [
+        { text: "Joined as a "},
+        {text: "founding intern", highlight: true},
+        {text:  " and helped bring the platform to its " },
+        { text: "beta launch", highlight: true },
+        ],
+      [
+        { text: "Solely built its " },
+        { text: "authorization system from the ground up", highlight: true },
+        { text: ", including moderator approval flows and synchronized permission checks for "},
+        { text: "150+ users", highlight:true }
+      ],
+      [
+        { text: "Built a " },
+        { text: "search analytics pipeline", highlight: true },
+        { text: " to understand user search trends and guide " },
+        { text: "homepage promotions", highlight: true },
+        { text: ", with some PostgreSQL cleanup along the way" }
+      ]
+    ],
+    technologies: ["Python", "Django", "PostgreSQL", "Playwright", "GitHub Actions"],
+    logo: "/assets/experiences/borrowd_org_logo.jpeg",
+    logoAlt: "Borrow’d logo",
+    penguin: "/assets/penguin_work_stickers/penguin-borrowd.png",
+    penguinAlt: "Two penguins carrying a box of shared items"
   },
   {
     company: "University of South Australia",
     role: "Undergraduate Research Assistant",
-    dates: "Jun. — Aug. 2025",
+    startDate: "2025-06",
+    endDate: "2025-08",
+    dateLabel: "Jun. 2025 — Aug. 2025",
+    year: "2025",
     location: "Adelaide, Australia",
-    logo: "/assets/experiences/unisa-logo.svg",
-    accent: false,
-    bullets: [
-      "Worked on computational modeling under the guidance of Dr. Terence Chan.",
-      "Implemented Conway’s Game of Life while working with Python and MATLAB."
+    status: "completed",
+    summary: [
+      { text: "Worked on " },
+      { text: "computational modeling", highlight: true },
+      { text: " but never felt more lost "}
     ],
-    tech: ["Python", "MATLAB"]
+    highlights: [
+      [
+        { text: "Implemented " },
+        { text: "Conway’s Game of Life", highlight: true },
+        { text: " (it’s genuinely pretty cool—worth checking out!)" }
+      ],
+      [
+        { text: "Did some modelling work in " },
+        { text: "Python and MATLAB", highlight: true },
+        { text: ". Python and I are besties; MATLAB on the other hand though ... I'll hit it with the one-two, left-right combo" }
+      ],
+      [
+        { text: "Provided " },
+        { text: "moral support for the big leagues", highlight: true },
+      ]
+    ],
+    technologies: ["Python", "MATLAB"],
+    logo: "/assets/experiences/unisa-logo.svg",
+    logoAlt: "University of South Australia logo",
+    penguin: "/assets/penguin_work_stickers/penguin-university.png",
+    penguinAlt: "A penguin reviewing research papers at a desk"
   }
 ];
 
+// Retained for the archived all-in-one portfolio component.
 export const experiences: Experience[] = workExperiences.map((experience) => ({
   title: experience.role,
   organization: experience.company,
-  dates: experience.dates,
+  dates: experience.dateLabel,
   location: experience.location,
-  image: experience.logo ?? "/assets/test_favicon.jpg",
-  eyebrow: experience.accent ? "main chapter" : undefined,
-  bullets: experience.bullets.map((bullet) => [{ text: bullet }])
+  image: experience.logo,
+  eyebrow: experience.defaultExpanded ? "main chapter" : undefined,
+  bullets: experience.highlights,
+  defaultOpen: experience.defaultExpanded
 }));
-

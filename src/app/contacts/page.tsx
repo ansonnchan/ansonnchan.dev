@@ -5,7 +5,7 @@ export default function ContactsPage() {
   return (
     <SiteShell showFooter={false}>
       <div className="contacts-page">
-        <p className="eyebrow">seeking summer '27 internships ᝰ</p>
+        <p className="eyebrow">seeking summer 2027 internships ᝰ</p>
         <h1>let&apos;s connect</h1>
         <div className="contact-grid">
           {contactCards.map((contact) => (
