@@ -71,7 +71,7 @@ export default function ExperienceEntry({ experience }: ExperienceEntryProps) {
             </ul>
           </section>
         ) : (
-          <p className="work-upcoming-note">more to come once this chapter begins 〰</p>
+          <p className="work-upcoming-note">more to come once this iceberg floats 〰</p>
         )}
       </div>
     </article>

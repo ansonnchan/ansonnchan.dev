@@ -32,9 +32,10 @@ export const workExperiences: WorkExperience[] = [
     location: "Vancouver, BC",
     status: "upcoming",
     summary: [
-      { text: "Joining the engineering team to develop " },
-      { text: "full-stack features", highlight: true },
-      { text: " for a Django and React platform." }
+      { text: "Building software that helps organizations " },
+      { text: "collaborate", highlight: true},
+      { text: " and"},
+      {text: " achieve shared goals", highlight:true },
     ],
     highlights: [],
     technologies: ["Django", "React"],
@@ -53,20 +54,31 @@ export const workExperiences: WorkExperience[] = [
     location: "Vancouver, BC",
     status: "current",
     summary: [
-      { text: "Building " },
-      { text: "full-stack platform capabilities", highlight: true },
-      { text: " across Lifecycle Manager’s C#/.NET services and React/TypeScript frontend." }
+      { text: "Working on "},
+      { text: "Lifecycle Manager", highlight: true},
+      { text: " and "},
+      {text: "making MSPs’ lives a little easier 🌱", highlight:true },
     ],
     highlights: [
       [
-        { text: "Modernized Lifecycle Manager’s " },
-        { text: "authorization system for 12,000+ MSPs", highlight: true },
-        { text: ", replacing binary admin-viewer permissions with role-based access control across C#/.NET services and a React/TypeScript frontend." }
+        { text: "Modernized "},
+        {text :"Lifecycle Manager’s authorization system", highlight:true},
+        {text: " for " },
+        { text: "12,000+ MSPs", highlight: true },
+        { text: ", replacing the legacy admin-or-viewer setup with "},
+        { text: "role-based access control (RBAC).", highlight:true }
       ],
+      /** [
+        { text: "Redesigned Entity Comments into " },
+        { text: "one shared API", highlight: true },
+        { text: " instead of keeping a collection of one-off implementations around." }
+      ],**/
       [
-        { text: "Designed and implemented a " },
-        { text: "unified Entity Comments API", highlight: true },
-        { text: ", consolidating domain-specific implementations into one shared platform capability." }
+        { text: "Averaged " },
+        { text: "three coffees a day, fifty-six Slack messages,",highlight:true},
+        { text: " and "},
+        {text: "one existential Jira crisis ", highlight: true },
+        { text: "for the season" }
       ]
     ],
     technologies: ["C#", ".NET", "React", "TypeScript"],
@@ -86,25 +98,29 @@ export const workExperiences: WorkExperience[] = [
     location: "Vancouver, BC",
     status: "completed",
     summary: [
-      { text: "Built " },
-      { text: "marketplace, analytics, and testing features", highlight: true },
-      { text: " across a Django and PostgreSQL application." }
+      { text: "Making " },
+      { text: "community sharing", highlight: true },
+      { text: " a little easier (and a lot less awkward) 🐝" }
     ],
     highlights: [
       [
-        { text: "Secured private marketplace groups for " },
-        { text: "150+ users", highlight: true },
-        { text: " by implementing moderator approval workflows with synchronized Django permission checks." }
+        { text: "Joined as a "},
+        {text: "founding intern", highlight: true},
+        {text:  " and helped bring the platform to its " },
+        { text: "beta launch", highlight: true },
+        ],
+      [
+        { text: "Solely built its " },
+        { text: "authorization system from the ground up", highlight: true },
+        { text: ", including moderator approval flows and synchronized permission checks for "},
+        { text: "150+ users", highlight:true }
       ],
       [
-        { text: "Reduced manual merchandising analysis from " },
-        { text: "15 to 5 hours per week", highlight: true },
-        { text: " with a search analytics pipeline and optimized PostgreSQL queries." }
-      ],
-      [
-        { text: "Expanded GitHub Actions with integration and Playwright end-to-end tests, maintaining " },
-        { text: "90%+ coverage", highlight: true },
-        { text: " across the features I developed." }
+        { text: "Built a " },
+        { text: "search analytics pipeline", highlight: true },
+        { text: " to understand user search trends and guide " },
+        { text: "homepage promotions", highlight: true },
+        { text: ", with some PostgreSQL cleanup along the way" }
       ]
     ],
     technologies: ["Python", "Django", "PostgreSQL", "Playwright", "GitHub Actions"],
@@ -125,13 +141,22 @@ export const workExperiences: WorkExperience[] = [
     summary: [
       { text: "Worked on " },
       { text: "computational modeling", highlight: true },
-      { text: " under the guidance of Dr. Terence Chan." }
+      { text: " but never felt more lost "}
     ],
     highlights: [
       [
-        { text: "Implemented Conway’s Game of Life while working with " },
+        { text: "Implemented " },
+        { text: "Conway’s Game of Life", highlight: true },
+        { text: " (it’s genuinely pretty cool—worth checking out!)" }
+      ],
+      [
+        { text: "Did some modelling work in " },
         { text: "Python and MATLAB", highlight: true },
-        { text: "." }
+        { text: ". Python and I got along; I am lifelong enemies with MATLAB" }
+      ],
+      [
+        { text: "Provided " },
+        { text: "moral support for the big leagues", highlight: true },
       ]
     ],
     technologies: ["Python", "MATLAB"],
