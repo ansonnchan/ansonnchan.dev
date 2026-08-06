@@ -2,6 +2,14 @@ import type { Experience, RichSegment } from "@/data/types";
 
 export type WorkExperienceStatus = "current" | "upcoming" | "completed";
 
+export type WorkExperiencePhoto = {
+  src: string;
+  alt: string;
+  caption?: string;
+  width: number;
+  height: number;
+};
+
 export type WorkExperience = {
   company: string;
   role: string;
@@ -18,6 +26,7 @@ export type WorkExperience = {
   logoAlt: string;
   penguin: string;
   penguinAlt: string;
+  photos?: WorkExperiencePhoto[];
   defaultExpanded?: boolean;
 };
 
@@ -78,7 +87,7 @@ export const workExperiences: WorkExperience[] = [
         { text: "three coffees a day, fifty-six Slack messages,",highlight:true},
         { text: " and "},
         {text: "one existential Jira crisis ", highlight: true },
-        { text: "for the season (but my trade value is high)" }
+        { text: "for the season (but my offseason trade value is high)" }
       ]
     ],
     technologies: ["C#", ".NET", "React", "TypeScript"],
@@ -86,6 +95,15 @@ export const workExperiences: WorkExperience[] = [
     logoAlt: "ScalePad logo",
     penguin: "/assets/penguin_work_stickers/penguin-scalepad.png",
     penguinAlt: "A penguin working on a laptop while holding a four-leaf clover",
+    photos: [
+      {
+        src: "/assets/experiences/scalepad_volunteer.webp",
+        alt: "Anson with his ScalePad teammates wearing matching Serve Day shirts",
+        caption: "Volunteering @ David Lam Park, Vancouver, BC",
+        width: 1440,
+        height: 1080
+      }
+    ],
     defaultExpanded: true
   },
   {

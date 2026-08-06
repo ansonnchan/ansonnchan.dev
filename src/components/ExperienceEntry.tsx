@@ -1,4 +1,5 @@
 import type { WorkExperience, WorkExperienceStatus } from "@/data/experiences";
+import ExperiencePhotoDisclosure from "@/components/ExperiencePhotoDisclosure";
 import WorkText from "@/components/WorkText";
 
 const statusLabels: Record<WorkExperienceStatus, string> = {
@@ -73,6 +74,10 @@ export default function ExperienceEntry({ experience }: ExperienceEntryProps) {
             <p className="work-upcoming-note">more to come once this iceberg floats 〰</p>
           )}
         </div>
+
+        {experience.photos?.length ? (
+          <ExperiencePhotoDisclosure company={experience.company} photos={experience.photos} />
+        ) : null}
       </div>
     </article>
   );
