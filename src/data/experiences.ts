@@ -1,4 +1,4 @@
-import type { Experience } from "@/data/types";
+import type { Experience, RichSegment } from "@/data/types";
 
 export type WorkExperienceStatus = "current" | "upcoming" | "completed";
 
@@ -11,8 +11,8 @@ export type WorkExperience = {
   year: string;
   location: string;
   status: WorkExperienceStatus;
-  summary: string;
-  highlights: string[];
+  summary: RichSegment[];
+  highlights: RichSegment[][];
   technologies: string[];
   logo: string;
   logoAlt: string;
@@ -31,7 +31,11 @@ export const workExperiences: WorkExperience[] = [
     year: "2027",
     location: "Vancouver, BC",
     status: "upcoming",
-    summary: "Joining the engineering team to develop full-stack features for a Django and React platform.",
+    summary: [
+      { text: "Joining the engineering team to develop " },
+      { text: "full-stack features", highlight: true },
+      { text: " for a Django and React platform." }
+    ],
     highlights: [],
     technologies: ["Django", "React"],
     logo: "/assets/experiences/atria.jpg",
@@ -48,10 +52,22 @@ export const workExperiences: WorkExperience[] = [
     year: "2026",
     location: "Vancouver, BC",
     status: "current",
-    summary: "Building full-stack platform capabilities across Lifecycle Manager’s C#/.NET services and React/TypeScript frontend.",
+    summary: [
+      { text: "Building " },
+      { text: "full-stack platform capabilities", highlight: true },
+      { text: " across Lifecycle Manager’s C#/.NET services and React/TypeScript frontend." }
+    ],
     highlights: [
-      "Modernized Lifecycle Manager’s authorization system for 12,000+ MSPs, replacing binary admin-viewer permissions with role-based access control across C#/.NET services and a React/TypeScript frontend.",
-      "Designed and implemented a unified Entity Comments API, consolidating domain-specific implementations into one shared platform capability."
+      [
+        { text: "Modernized Lifecycle Manager’s " },
+        { text: "authorization system for 12,000+ MSPs", highlight: true },
+        { text: ", replacing binary admin-viewer permissions with role-based access control across C#/.NET services and a React/TypeScript frontend." }
+      ],
+      [
+        { text: "Designed and implemented a " },
+        { text: "unified Entity Comments API", highlight: true },
+        { text: ", consolidating domain-specific implementations into one shared platform capability." }
+      ]
     ],
     technologies: ["C#", ".NET", "React", "TypeScript"],
     logo: "/assets/experiences/scalepad_logo.jpeg",
@@ -69,11 +85,27 @@ export const workExperiences: WorkExperience[] = [
     year: "2026",
     location: "Vancouver, BC",
     status: "completed",
-    summary: "Built marketplace, analytics, and testing features across a Django and PostgreSQL application.",
+    summary: [
+      { text: "Built " },
+      { text: "marketplace, analytics, and testing features", highlight: true },
+      { text: " across a Django and PostgreSQL application." }
+    ],
     highlights: [
-      "Secured private marketplace groups for 150+ users by implementing moderator approval workflows with synchronized Django permission checks.",
-      "Reduced manual merchandising analysis from 15 to 5 hours per week with a search analytics pipeline and optimized PostgreSQL queries.",
-      "Expanded GitHub Actions with integration and Playwright end-to-end tests, maintaining 90%+ coverage across the features I developed."
+      [
+        { text: "Secured private marketplace groups for " },
+        { text: "150+ users", highlight: true },
+        { text: " by implementing moderator approval workflows with synchronized Django permission checks." }
+      ],
+      [
+        { text: "Reduced manual merchandising analysis from " },
+        { text: "15 to 5 hours per week", highlight: true },
+        { text: " with a search analytics pipeline and optimized PostgreSQL queries." }
+      ],
+      [
+        { text: "Expanded GitHub Actions with integration and Playwright end-to-end tests, maintaining " },
+        { text: "90%+ coverage", highlight: true },
+        { text: " across the features I developed." }
+      ]
     ],
     technologies: ["Python", "Django", "PostgreSQL", "Playwright", "GitHub Actions"],
     logo: "/assets/experiences/borrowd_org_logo.jpeg",
@@ -90,9 +122,17 @@ export const workExperiences: WorkExperience[] = [
     year: "2025",
     location: "Adelaide, Australia",
     status: "completed",
-    summary: "Worked on computational modeling under the guidance of Dr. Terence Chan.",
+    summary: [
+      { text: "Worked on " },
+      { text: "computational modeling", highlight: true },
+      { text: " under the guidance of Dr. Terence Chan." }
+    ],
     highlights: [
-      "Implemented Conway’s Game of Life while working with Python and MATLAB."
+      [
+        { text: "Implemented Conway’s Game of Life while working with " },
+        { text: "Python and MATLAB", highlight: true },
+        { text: "." }
+      ]
     ],
     technologies: ["Python", "MATLAB"],
     logo: "/assets/experiences/unisa-logo.svg",
@@ -110,6 +150,6 @@ export const experiences: Experience[] = workExperiences.map((experience) => ({
   location: experience.location,
   image: experience.logo,
   eyebrow: experience.defaultExpanded ? "main chapter" : undefined,
-  bullets: experience.highlights.map((highlight) => [{ text: highlight }]),
+  bullets: experience.highlights,
   defaultOpen: experience.defaultExpanded
 }));

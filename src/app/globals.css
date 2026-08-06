@@ -259,7 +259,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.page-wrap, .case-study { width: min(100% - 2.5rem, 820px); margin: 0 auto; padding: 7rem 0 8rem; }
+.page-wrap { width: min(100% - 2.5rem, 62rem); margin: 0 auto; padding: 3rem 0 8rem; }
+.case-study { width: min(100% - 2.5rem, 820px); margin: 0 auto; padding: 7rem 0 8rem; }
 .page-intro { max-width: 39rem; margin-bottom: 4.5rem; }
 .page-intro h1, .case-header h1 {
   margin: 0;
@@ -272,9 +273,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .page-deck { max-width: 35rem; margin-top: 1.15rem; color: var(--muted); font-size: 0.95rem; }
 .page-deck p { margin: 0; }
 
-.work-page { padding-top: 4.5rem; }
+.work-page { padding-top: 3rem; }
 .work-page .page-intro { margin-bottom: 3.2rem; }
-.work-page .page-deck { max-width: 32rem; }
+.work-page .page-deck { max-width: 39rem; }
 .work-entry-overview {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 10.25rem;
@@ -386,51 +387,29 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-size: 0.72rem;
 }
 .work-summary { max-width: 35rem; margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.75; }
-.work-details-button {
-  min-height: 2.75rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.05rem;
-  padding: 0.35rem 0;
-  border: 0;
-  border-bottom: 1px solid transparent;
-  background: transparent;
-  color: var(--blue);
-  cursor: pointer;
-  font-family: var(--font-hand), cursive;
-  font-size: 0.92rem;
-  line-height: 1;
-  transition: border-color 160ms ease, color 160ms ease;
-}
-.work-details-button:hover { border-bottom-color: #aac5df; color: #1d4f86; }
-.work-details-button:focus-visible {
-  border-radius: 0.2rem;
-  outline: 2px solid rgba(37, 99, 168, 0.65);
-  outline-offset: 4px;
-}
-.work-details {
-  display: grid;
-  grid-template-rows: 0fr;
-  opacity: 0;
-  transition: grid-template-rows 260ms ease, opacity 180ms ease;
-}
-.work-details.is-expanded { grid-template-rows: 1fr; opacity: 1; }
-.work-details-inner { min-height: 0; overflow: hidden; }
-.work-details-panel {
-  margin-top: 0.8rem;
+.work-emphasis { color: var(--blue); }
+.work-highlights {
+  margin-top: 1.35rem;
   padding: 0.35rem 0 0.35rem 1.15rem;
   border-left: 2px solid rgba(37, 99, 168, 0.2);
 }
-.work-details-label {
+.work-highlights h3 {
   margin: 0 0 0.65rem;
   color: var(--ink);
   font-family: var(--font-hand), cursive;
   font-size: 0.86rem;
+  font-weight: 400;
+  line-height: 1.25;
 }
-.work-details ul { margin: 0; padding: 0; list-style: none; color: var(--muted); font-size: 0.8rem; line-height: 1.75; }
-.work-details li { position: relative; margin-top: 0.65rem; padding-left: 1.1rem; }
-.work-details li::before { content: "✦"; position: absolute; top: 0.08rem; left: 0; color: #7f9cba; font-size: 0.57rem; }
+.work-highlights h3 span {
+  padding: 0.08rem 0.32rem 0.12rem;
+  background: rgba(215, 232, 247, 0.72);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.work-highlights ul { margin: 0; padding: 0; list-style: none; color: var(--muted); font-size: 0.8rem; line-height: 1.75; }
+.work-highlights li { position: relative; margin-top: 0.65rem; padding-left: 1.1rem; }
+.work-highlights li::before { content: "✦"; position: absolute; top: 0.08rem; left: 0; color: #7f9cba; font-size: 0.57rem; }
 .work-upcoming-note { margin: 1.25rem 0 0; color: var(--faint); font-family: var(--font-hand), cursive; font-size: 0.84rem; }
 .experience-list { border-top: 1px solid var(--line); }
 .experience-row {
@@ -631,8 +610,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .home-copy { text-align: center; }
   .quick-facts { text-align: left; width: fit-content; margin-inline: auto; }
   .home-actions { justify-content: center; }
-  .page-wrap, .case-study { padding-top: 5rem; }
-  .work-page { padding-top: 3.75rem; }
+  .page-wrap { padding-top: 2.5rem; }
+  .case-study { padding-top: 5rem; }
+  .work-page { padding-top: 2.5rem; }
   .work-page .page-intro { margin-bottom: 2.5rem; }
   .work-entry { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.4rem 0 2.7rem 1.35rem; }
   .work-timeline-mark { top: 2.65rem; }

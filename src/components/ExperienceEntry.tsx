@@ -1,7 +1,5 @@
-"use client";
-
-import { useEffect, useId, useState } from "react";
 import type { WorkExperience, WorkExperienceStatus } from "@/data/experiences";
+import WorkText from "@/components/WorkText";
 
 const statusLabels: Record<WorkExperienceStatus, string> = {
   upcoming: "next stop",
@@ -14,16 +12,7 @@ type ExperienceEntryProps = {
 };
 
 export default function ExperienceEntry({ experience }: ExperienceEntryProps) {
-  const detailsId = useId();
-  const headingId = useId();
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  useEffect(() => {
-    if (experience.defaultExpanded && window.matchMedia("(min-width: 721px)").matches) {
-      setIsExpanded(true);
-    }
-  }, [experience.defaultExpanded]);
-
+  const headingId = `experience-${experience.startDate}-${experience.company.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
   const hasDetails = experience.highlights.length > 0;
 
   return (
@@ -60,7 +49,7 @@ export default function ExperienceEntry({ experience }: ExperienceEntryProps) {
 
         <div className="work-entry-overview">
           <div className="work-entry-copy">
-            <p className="work-summary">{experience.summary}</p>
+            <p className="work-summary"><WorkText segments={experience.summary} /></p>
           </div>
 
           <img
@@ -73,37 +62,14 @@ export default function ExperienceEntry({ experience }: ExperienceEntryProps) {
         </div>
 
         {hasDetails ? (
-          <>
-            <button
-              aria-controls={detailsId}
-              aria-expanded={isExpanded}
-              className="work-details-button"
-              onClick={() => setIsExpanded((current) => !current)}
-              type="button"
-            >
-              <span>{isExpanded ? "hide details" : "read what I worked on"}</span>
-              <span aria-hidden="true">{isExpanded ? "↑" : "↓"}</span>
-            </button>
-
-            <div
-              aria-hidden={!isExpanded}
-              aria-labelledby={headingId}
-              className={`work-details${isExpanded ? " is-expanded" : ""}`}
-              id={detailsId}
-              role="region"
-            >
-              <div className="work-details-inner">
-                <div className="work-details-panel">
-                  <p className="work-details-label">selected engineering work</p>
-                  <ul>
-                    {experience.highlights.map((highlight) => (
-                      <li key={highlight}>{highlight}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </>
+          <section aria-label={`Selected engineering work at ${experience.company}`} className="work-highlights">
+            <h3><span>selected engineering work</span></h3>
+            <ul>
+              {experience.highlights.map((highlight, index) => (
+                <li key={index}><WorkText segments={highlight} /></li>
+              ))}
+            </ul>
+          </section>
         ) : (
           <p className="work-upcoming-note">more to come once this chapter begins 〰</p>
         )}

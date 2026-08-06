@@ -1,5 +1,6 @@
 import PageIntro from "@/components/PageIntro";
 import SiteShell from "@/components/SiteShell";
+import WorkText from "@/components/WorkText";
 import { workExperiences } from "@/data/experiences";
 
 export default function WorkPageArchive() {
@@ -32,7 +33,9 @@ export default function WorkPageArchive() {
                   <time>{experience.dateLabel}</time>
                 </div>
                 <ul>
-                  {experience.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+                  {experience.highlights.map((highlight, highlightIndex) => (
+                    <li key={highlightIndex}><WorkText segments={highlight} /></li>
+                  ))}
                 </ul>
                 <div className="tag-row">
                   {experience.technologies.map((tech) => <span key={tech}>{tech}</span>)}
