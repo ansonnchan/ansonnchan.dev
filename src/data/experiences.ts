@@ -24,7 +24,7 @@ export type WorkExperience = {
 export const workExperiences: WorkExperience[] = [
   {
     company: "Atria",
-    role: "Software Engineering Intern",
+    role: "Incoming Software Engineering Intern",
     startDate: "2027-01",
     endDate: "2027-04",
     dateLabel: "Jan. 2027 — Apr. 2027",

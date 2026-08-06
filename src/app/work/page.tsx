@@ -13,7 +13,7 @@ export default function WorkPage() {
   return (
     <SiteShell>
       <div className="page-wrap work-page">
-        <PageIntro eyebrow="a little timeline of where I’ve worked 〰" title="work experience">
+        <PageIntro eyebrow="+1000 social credit score ᝰ" title="work experience">
           <p>A few chapters in building dependable systems, thoughtful products, and better ways for people to work.</p>
         </PageIntro>
 

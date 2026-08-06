@@ -61,12 +61,6 @@ export default function ExperienceEntry({ experience }: ExperienceEntryProps) {
         <div className="work-entry-overview">
           <div className="work-entry-copy">
             <p className="work-summary">{experience.summary}</p>
-
-            <div aria-label="Technologies used" className="work-tech-list">
-              {experience.technologies.map((technology) => (
-                <span key={technology}>{technology}</span>
-              ))}
-            </div>
           </div>
 
           <img
@@ -99,12 +93,14 @@ export default function ExperienceEntry({ experience }: ExperienceEntryProps) {
               role="region"
             >
               <div className="work-details-inner">
-                <p className="work-details-label">selected engineering work</p>
-                <ul>
-                  {experience.highlights.map((highlight) => (
-                    <li key={highlight}>{highlight}</li>
-                  ))}
-                </ul>
+                <div className="work-details-panel">
+                  <p className="work-details-label">selected engineering work</p>
+                  <ul>
+                    {experience.highlights.map((highlight) => (
+                      <li key={highlight}>{highlight}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </>
