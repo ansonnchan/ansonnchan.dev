@@ -15,7 +15,7 @@ export const home = {
       linkLabel: "UBC"
     },
     {
-      text: "software development @",
+      text: "software engineer @",
       linkLabel: "ScalePad"
     }
   ] satisfies HomeFact[],

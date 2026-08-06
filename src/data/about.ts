@@ -18,7 +18,8 @@ export type AboutContent = {
 export const about: AboutContent = {
   illustration: "/assets/penguin/penguin_pic-4-removebg-preview.png",
   introduction: [
-    { text: "Hey, I’m Anson, a third-year " },
+    { text: "Hey, I’m Anson,", style: "handwritten"},
+    {text: " a third-year " },
     { text: "Computer Engineering", style: "highlight" },
     { text: " student @ " },
     { text: "UBC", style: "handwritten" },
@@ -26,33 +27,33 @@ export const about: AboutContent = {
     { text: "ScalePad 🌱", style: "handwritten" },
     { text: ". I was born in " },
     { text: "Hong Kong", style: "handwritten" },
-    { text: " and spent 15 years growing up in " },
+    { text: ", but I spent 15 years growing up in " },
     { text: "Australia", style: "handwritten" },
     { text: "." },
     {
-      text: "My Aussie accent may have faded a little, but the years of surviving brutal heat, giant spiders, angry koalas, and super swole kangaroos have caused generational trauma. 🦘",
+      text: "My Aussie accent may have faded a little, but years of surviving giant spiders, angry koalas, and super swole kangaroos have caused generational trauma. 🦘",
       breakBefore: true
     }
   ],
   factsHeading: "A few things about me:",
   facts: [
     [
-      { text: "I love racquet sports, especially tennis, badminton, and table tennis" }
+      { text: "Love racquet sports, especially tennis, badminton, and table tennis" }
     ],
     [
-      { text: "I’m practicing my Cantonese and Mandarin so I can stop being a target at family dinners" }
+      { text: "Practicing my Cantonese and Mandarin so I can stop being a target at family dinners" }
     ],
     [
-      { text: "I’ve played the violin and trumpet for 10+ years" }
+      { text: "Played the violin and trumpet for 10+ years" }
     ],
     [
-      { text: "I’m currently reading " },
+      { text: "Currently reading " },
       { text: "“The Tunnel to Summer, the Exit of Goodbyes”", style: "italic" },
-      { text: " by Mei Hachimoku" }
+      { text: " by Mei Hachimoku (八目迷)" }
     ]
   ],
   buildLine: " I enjoy building software that people actually use and hope to create products that make everyday life easier, better, or simply a little more fun. ✨",
-  closing: "Thanks for stopping by and exploring my little corner of the internet.",
+  closing: "Thank you for stopping by and exploring my little corner of the internet.",
   connectionLead: "If you see something interesting,",
   connectionNote: "I would love to connect :)"
 };

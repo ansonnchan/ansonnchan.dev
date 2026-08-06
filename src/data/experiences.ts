@@ -70,7 +70,7 @@ export const workExperiences: WorkExperience[] = [
     ],
     highlights: [
       [
-        { text: "Modernized "},
+        { text: "Redesigned "},
         {text :"Lifecycle Manager’s authorization system", highlight:true},
         {text: " for " },
         { text: "12,000+ MSPs", highlight: true },
@@ -84,9 +84,9 @@ export const workExperiences: WorkExperience[] = [
       ],**/
       [
         { text: "Averaged " },
-        { text: "three coffees a day, fifty-six Slack messages,",highlight:true},
+        { text: "three coffees, fifty-six Slack messages,",highlight:true},
         { text: " and "},
-        {text: "one existential Jira crisis ", highlight: true },
+        {text: "fourteen merge conflicts ", highlight: true },
         { text: "for the season (but my offseason trade value is high)" }
       ]
     ],
