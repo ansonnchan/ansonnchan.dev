@@ -8,10 +8,11 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project, priority = false }: ProjectCardProps) {
   return (
-    <article className={`project-card${project.slug === "pear-programming" ? " project-card--featured" : ""}`}>
+    <article className={`project-card project-card--${project.slug}`}>
       <div className="project-preview">
         <Image
           alt={project.imageAlt}
+          className="project-preview-image"
           fill
           priority={priority}
           sizes="(max-width: 720px) calc(100vw - 3rem), (max-width: 1040px) calc(50vw - 2.75rem), 475px"
