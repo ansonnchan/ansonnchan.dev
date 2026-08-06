@@ -12,19 +12,15 @@ export default function WorkPageArchive() {
 
         <section aria-label="Professional experience" className="experience-list">
           {workExperiences.map((experience, index) => (
-            <article className={`experience-row${experience.accent ? " featured" : ""}`} key={experience.company}>
+            <article className={`experience-row${experience.defaultExpanded ? " featured" : ""}`} key={experience.company}>
               <div className="experience-index">0{index + 1}</div>
               <div className="company-lockup">
-                {experience.logo ? (
-                  <div className="company-logo">
-                    <img alt={`${experience.company} logo`} src={experience.logo} />
-                  </div>
-                ) : (
-                  <div aria-hidden="true" className="company-logo company-letter">a.</div>
-                )}
+                <div className="company-logo">
+                  <img alt={experience.imageAlt} src={experience.image} />
+                </div>
                 <div>
                   <h2>{experience.company}</h2>
-                  {experience.accent ? <span className="feature-label">main chapter</span> : null}
+                  {experience.defaultExpanded ? <span className="feature-label">main chapter</span> : null}
                 </div>
               </div>
               <div className="experience-body">
@@ -33,13 +29,13 @@ export default function WorkPageArchive() {
                     <h3>{experience.role}</h3>
                     <p>{experience.location}</p>
                   </div>
-                  <time>{experience.dates}</time>
+                  <time>{experience.dateLabel}</time>
                 </div>
                 <ul>
-                  {experience.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                  {experience.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
                 </ul>
                 <div className="tag-row">
-                  {experience.tech.map((tech) => <span key={tech}>{tech}</span>)}
+                  {experience.technologies.map((tech) => <span key={tech}>{tech}</span>)}
                 </div>
               </div>
             </article>
