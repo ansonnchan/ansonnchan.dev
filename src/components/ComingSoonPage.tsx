@@ -9,7 +9,7 @@ export default function ComingSoonPage() {
         <img
           alt="A penguin waddling"
           className="coming-soon-penguin"
-          src="/assets/closing/goodbye.gif"
+          src="/assets/transition/penguin-transition.gif"
         />
         <h1 id="coming-soon-title">coming soon</h1>
         <p>

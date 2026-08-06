@@ -104,7 +104,7 @@ export default function RouteTransition() {
       aria-hidden={!visible}
       className={`route-transition${visible ? " active" : ""}`}
     >
-      <img alt="" aria-hidden="true" src="/assets/closing/goodbye.gif" />
+      <img alt="" aria-hidden="true" src="/assets/transition/penguin-transition.gif" />
       <span className="sr-only">Opening the next page</span>
     </div>
   );

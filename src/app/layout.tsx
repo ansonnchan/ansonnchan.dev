@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   title: "Anson Chan's Portfolio",
   description: "Anson Chan is a UBC Computer Engineering student and software engineer building thoughtful products and dependable systems.",
   icons: {
-    icon: "/assets/test_favicon.jpg",
-    apple: "/assets/test_favicon.jpg"
+    icon: "/assets/favicon.jpg",
+    apple: "/assets/favicon.jpg"
   }
 };
 
@@ -30,7 +30,7 @@ export default function RootLayout({
       <head>
         <link
           as="image"
-          href="/assets/closing/goodbye.gif"
+          href="/assets/transition/penguin-transition.gif"
           rel="preload"
           type="image/gif"
         />
