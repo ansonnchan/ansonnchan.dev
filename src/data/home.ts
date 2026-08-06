@@ -1,4 +1,4 @@
-export type HomeFact = {
+type HomeFact = {
   text: string;
   linkLabel: string;
 };

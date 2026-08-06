@@ -4,7 +4,7 @@ export type AboutSegment = {
   breakBefore?: boolean;
 };
 
-export type AboutContent = {
+type AboutContent = {
   illustration: string;
   introduction: AboutSegment[];
   factsHeading: string;

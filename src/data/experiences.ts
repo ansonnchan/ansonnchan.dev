@@ -1,4 +1,4 @@
-import type { Experience, RichSegment } from "@/data/types";
+import type { RichSegment } from "@/data/types";
 
 export type WorkExperienceStatus = "current" | "upcoming" | "completed";
 
@@ -14,20 +14,17 @@ export type WorkExperience = {
   company: string;
   role: string;
   startDate: string;
-  endDate: string;
   dateLabel: string;
   year: string;
   location: string;
   status: WorkExperienceStatus;
   summary: RichSegment[];
   highlights: RichSegment[][];
-  technologies: string[];
   logo: string;
   logoAlt: string;
   penguin: string;
   penguinAlt: string;
   photos?: WorkExperiencePhoto[];
-  defaultExpanded?: boolean;
 };
 
 export const workExperiences: WorkExperience[] = [
@@ -35,7 +32,6 @@ export const workExperiences: WorkExperience[] = [
     company: "Atria",
     role: "Incoming Software Engineering Intern",
     startDate: "2027-01",
-    endDate: "2027-04",
     dateLabel: "Jan. 2027 — Apr. 2027",
     year: "2027",
     location: "Vancouver, BC",
@@ -47,7 +43,6 @@ export const workExperiences: WorkExperience[] = [
       {text: " achieve shared goals", highlight:true },
     ],
     highlights: [],
-    technologies: ["Django", "React"],
     logo: "/assets/experiences/atria.jpg",
     logoAlt: "Atria logo",
     penguin: "/assets/penguin_work_stickers/penguin-atria.png",
@@ -57,7 +52,6 @@ export const workExperiences: WorkExperience[] = [
     company: "ScalePad",
     role: "Software Engineering Intern",
     startDate: "2026-06",
-    endDate: "2026-12",
     dateLabel: "Jun. 2026 — Dec. 2026",
     year: "2026",
     location: "Vancouver, BC",
@@ -77,11 +71,6 @@ export const workExperiences: WorkExperience[] = [
         { text: ", replacing the legacy admin-or-viewer setup with "},
         { text: "role-based access control (RBAC)", highlight:true }
       ],
-      /** [
-        { text: "Redesigned Entity Comments into " },
-        { text: "one shared API", highlight: true },
-        { text: " instead of keeping a collection of one-off implementations around." }
-      ],**/
       [
         { text: "Averaged " },
         { text: "three coffees, fifty-six Slack messages,",highlight:true},
@@ -90,7 +79,6 @@ export const workExperiences: WorkExperience[] = [
         { text: "for the season (but my offseason trade value is high)" }
       ]
     ],
-    technologies: ["C#", ".NET", "React", "TypeScript"],
     logo: "/assets/experiences/scalepad_logo.jpeg",
     logoAlt: "ScalePad logo",
     penguin: "/assets/penguin_work_stickers/penguin-scalepad.png",
@@ -103,14 +91,12 @@ export const workExperiences: WorkExperience[] = [
         width: 1440,
         height: 1080
       }
-    ],
-    defaultExpanded: true
+    ]
   },
   {
     company: "Borrow’d",
     role: "Software Engineering Intern",
     startDate: "2026-01",
-    endDate: "2026-04",
     dateLabel: "Jan. 2026 — Apr. 2026",
     year: "2026",
     location: "Vancouver, BC",
@@ -141,7 +127,6 @@ export const workExperiences: WorkExperience[] = [
         { text: ", with some PostgreSQL cleanup along the way" }
       ]
     ],
-    technologies: ["Python", "Django", "PostgreSQL", "Playwright", "GitHub Actions"],
     logo: "/assets/experiences/borrowd_org_logo.jpeg",
     logoAlt: "Borrow’d logo",
     penguin: "/assets/penguin_work_stickers/penguin-borrowd.png",
@@ -151,7 +136,6 @@ export const workExperiences: WorkExperience[] = [
     company: "University of South Australia",
     role: "Undergraduate Research Assistant",
     startDate: "2025-06",
-    endDate: "2025-08",
     dateLabel: "Jun. 2025 — Aug. 2025",
     year: "2025",
     location: "Adelaide, Australia",
@@ -177,22 +161,9 @@ export const workExperiences: WorkExperience[] = [
         { text: "moral support for the big leagues", highlight: true },
       ]
     ],
-    technologies: ["Python", "MATLAB"],
     logo: "/assets/experiences/unisa-logo.svg",
     logoAlt: "University of South Australia logo",
     penguin: "/assets/penguin_work_stickers/penguin-university.png",
     penguinAlt: "A penguin reviewing research papers at a desk"
   }
 ];
-
-// Retained for the archived all-in-one portfolio component.
-export const experiences: Experience[] = workExperiences.map((experience) => ({
-  title: experience.role,
-  organization: experience.company,
-  dates: experience.dateLabel,
-  location: experience.location,
-  image: experience.logo,
-  eyebrow: experience.defaultExpanded ? "main chapter" : undefined,
-  bullets: experience.highlights,
-  defaultOpen: experience.defaultExpanded
-}));

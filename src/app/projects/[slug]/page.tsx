@@ -6,5 +6,5 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectDetailPage() {
-  return <ComingSoonPage section="projects" />;
+  return <ComingSoonPage />;
 }

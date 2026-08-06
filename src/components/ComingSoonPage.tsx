@@ -1,15 +1,11 @@
 import Link from "next/link";
 import SiteShell from "@/components/SiteShell";
 
-type ComingSoonPageProps = {
-  section: "work" | "projects";
-};
-
-export default function ComingSoonPage({ section }: ComingSoonPageProps) {
+export default function ComingSoonPage() {
   return (
     <SiteShell>
       <section aria-labelledby="coming-soon-title" className="coming-soon-page">
-        <p className="eyebrow">{section} · under construction ᝰ</p>
+        <p className="eyebrow">projects · under construction ᝰ</p>
         <img
           alt="A penguin waddling"
           className="coming-soon-penguin"

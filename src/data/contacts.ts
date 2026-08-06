@@ -1,4 +1,4 @@
-export type ContactCard = {
+type ContactCard = {
   label: string;
   value: string;
   href: string;

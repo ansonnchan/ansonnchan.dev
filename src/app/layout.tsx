@@ -11,16 +11,6 @@ const patrickHand = Patrick_Hand({
   weight: "400"
 });
 
-const prefetchedGalleryImages = [
-  "/assets/projects/personal-portfolio/portfolio_pic1.webp",
-  "/assets/projects/personal-portfolio/portfolio_pic2.webp",
-  "/assets/projects/pear-programming/pear-program-pic3.webp",
-  "/assets/projects/hear-me-out/vent.ai_pic1.webp",
-  "/assets/projects/hear-me-out/vent.ai_pic2.webp",
-  "/assets/projects/dead-code-explorer/dead-code-explorer-pic-1.webp",
-  "/assets/projects/dead-code-explorer/dead-code-explorer-pic-2.webp"
-];
-
 export const metadata: Metadata = {
   title: "Anson Chan's Portfolio",
   description: "Anson Chan is a UBC Computer Engineering student and software engineer building thoughtful products and dependable systems.",
@@ -50,9 +40,6 @@ export default function RootLayout({
           rel="preload"
           type="image/webp"
         />
-        {prefetchedGalleryImages.map((href) => (
-          <link as="image" href={href} key={href} rel="prefetch" type="image/webp" />
-        ))}
       </head>
       <body className={patrickHand.variable}>
         <RouteTransition />
