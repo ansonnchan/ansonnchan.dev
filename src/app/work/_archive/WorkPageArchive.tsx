@@ -16,7 +16,7 @@ export default function WorkPageArchive() {
               <div className="experience-index">0{index + 1}</div>
               <div className="company-lockup">
                 <div className="company-logo">
-                  <img alt={experience.imageAlt} src={experience.image} />
+                  <img alt={experience.logoAlt} src={experience.logo} />
                 </div>
                 <div>
                   <h2>{experience.company}</h2>

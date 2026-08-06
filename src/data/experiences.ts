@@ -14,8 +14,10 @@ export type WorkExperience = {
   summary: string;
   highlights: string[];
   technologies: string[];
-  image: string;
-  imageAlt: string;
+  logo: string;
+  logoAlt: string;
+  penguin: string;
+  penguinAlt: string;
   defaultExpanded?: boolean;
 };
 
@@ -32,8 +34,10 @@ export const workExperiences: WorkExperience[] = [
     summary: "Joining the engineering team to develop full-stack features for a Django and React platform.",
     highlights: [],
     technologies: ["Django", "React"],
-    image: "/assets/penguin_work_stickers/penguin-atria.png",
-    imageAlt: "A group of penguins gathered around a community board"
+    logo: "/assets/experiences/atria.jpg",
+    logoAlt: "Atria logo",
+    penguin: "/assets/penguin_work_stickers/penguin-atria.png",
+    penguinAlt: "A group of penguins gathered around a community board"
   },
   {
     company: "ScalePad",
@@ -50,8 +54,10 @@ export const workExperiences: WorkExperience[] = [
       "Designed and implemented a unified Entity Comments API, consolidating domain-specific implementations into one shared platform capability."
     ],
     technologies: ["C#", ".NET", "React", "TypeScript"],
-    image: "/assets/penguin_work_stickers/penguin-scalepad.png",
-    imageAlt: "A penguin working on a laptop while holding a four-leaf clover",
+    logo: "/assets/experiences/scalepad_logo.jpeg",
+    logoAlt: "ScalePad logo",
+    penguin: "/assets/penguin_work_stickers/penguin-scalepad.png",
+    penguinAlt: "A penguin working on a laptop while holding a four-leaf clover",
     defaultExpanded: true
   },
   {
@@ -70,8 +76,10 @@ export const workExperiences: WorkExperience[] = [
       "Expanded GitHub Actions with integration and Playwright end-to-end tests, maintaining 90%+ coverage across the features I developed."
     ],
     technologies: ["Python", "Django", "PostgreSQL", "Playwright", "GitHub Actions"],
-    image: "/assets/penguin_work_stickers/penguin-borrowd.png",
-    imageAlt: "Two penguins carrying a box of shared items"
+    logo: "/assets/experiences/borrowd_org_logo.jpeg",
+    logoAlt: "Borrow’d logo",
+    penguin: "/assets/penguin_work_stickers/penguin-borrowd.png",
+    penguinAlt: "Two penguins carrying a box of shared items"
   },
   {
     company: "University of South Australia",
@@ -87,8 +95,10 @@ export const workExperiences: WorkExperience[] = [
       "Implemented Conway’s Game of Life while working with Python and MATLAB."
     ],
     technologies: ["Python", "MATLAB"],
-    image: "/assets/penguin_work_stickers/penguin-university.png",
-    imageAlt: "A penguin reviewing research papers at a desk"
+    logo: "/assets/experiences/unisa-logo.svg",
+    logoAlt: "University of South Australia logo",
+    penguin: "/assets/penguin_work_stickers/penguin-university.png",
+    penguinAlt: "A penguin reviewing research papers at a desk"
   }
 ];
 
@@ -98,7 +108,7 @@ export const experiences: Experience[] = workExperiences.map((experience) => ({
   organization: experience.company,
   dates: experience.dateLabel,
   location: experience.location,
-  image: experience.image,
+  image: experience.logo,
   eyebrow: experience.defaultExpanded ? "main chapter" : undefined,
   bullets: experience.highlights.map((highlight) => [{ text: highlight }]),
   defaultOpen: experience.defaultExpanded

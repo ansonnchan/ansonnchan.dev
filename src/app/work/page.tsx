@@ -18,13 +18,6 @@ export default function WorkPage() {
         </PageIntro>
 
         <ExperienceTimeline experiences={workExperiences} />
-
-        <aside className="work-resume-note">
-          <span aria-hidden="true">✦</span>
-          <p>
-            Prefer the one-page version? My full résumé is <a href="/resume" rel="noreferrer" target="_blank">right over here ↗</a>
-          </p>
-        </aside>
       </div>
     </SiteShell>
   );

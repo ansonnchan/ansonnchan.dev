@@ -37,13 +37,14 @@ export default function ExperienceEntry({ experience }: ExperienceEntryProps) {
           <p className="work-year">{experience.year}</p>
           <p className="work-status">{statusLabels[experience.status]}</p>
         </div>
-        <img
-          alt={experience.imageAlt}
-          className="work-illustration"
-          height="500"
-          src={experience.image}
-          width="500"
-        />
+        <div className="work-company-logo">
+          <img
+            alt={experience.logoAlt}
+            height="200"
+            src={experience.logo}
+            width="200"
+          />
+        </div>
       </aside>
 
       <div className="work-main">
@@ -57,12 +58,24 @@ export default function ExperienceEntry({ experience }: ExperienceEntryProps) {
           </p>
         </header>
 
-        <p className="work-summary">{experience.summary}</p>
+        <div className="work-entry-overview">
+          <div className="work-entry-copy">
+            <p className="work-summary">{experience.summary}</p>
 
-        <div aria-label="Technologies used" className="work-tech-list">
-          {experience.technologies.map((technology) => (
-            <span key={technology}>{technology}</span>
-          ))}
+            <div aria-label="Technologies used" className="work-tech-list">
+              {experience.technologies.map((technology) => (
+                <span key={technology}>{technology}</span>
+              ))}
+            </div>
+          </div>
+
+          <img
+            alt={experience.penguinAlt}
+            className="work-entry-penguin"
+            height="500"
+            src={experience.penguin}
+            width="500"
+          />
         </div>
 
         {hasDetails ? (
