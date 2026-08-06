@@ -66,7 +66,7 @@ export const workExperiences: WorkExperience[] = [
         {text: " for " },
         { text: "12,000+ MSPs", highlight: true },
         { text: ", replacing the legacy admin-or-viewer setup with "},
-        { text: "role-based access control (RBAC).", highlight:true }
+        { text: "role-based access control (RBAC)", highlight:true }
       ],
       /** [
         { text: "Redesigned Entity Comments into " },
@@ -78,7 +78,7 @@ export const workExperiences: WorkExperience[] = [
         { text: "three coffees a day, fifty-six Slack messages,",highlight:true},
         { text: " and "},
         {text: "one existential Jira crisis ", highlight: true },
-        { text: "for the season" }
+        { text: "for the season (but my trade value is high)" }
       ]
     ],
     technologies: ["C#", ".NET", "React", "TypeScript"],
@@ -152,7 +152,7 @@ export const workExperiences: WorkExperience[] = [
       [
         { text: "Did some modelling work in " },
         { text: "Python and MATLAB", highlight: true },
-        { text: ". Python and I got along; I am lifelong enemies with MATLAB" }
+        { text: ". Python and I are besties; MATLAB on the other hand though ... I'll hit it with the one-two, left-right combo" }
       ],
       [
         { text: "Provided " },

@@ -279,15 +279,18 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .work-entry-overview {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 10.25rem;
-  gap: 1.5rem;
+  grid-template-rows: auto auto;
+  gap: 1rem 1.5rem;
   align-items: start;
   margin-top: 1.35rem;
 }
-.work-entry-copy { min-width: 0; }
+.work-entry-copy { min-width: 0; grid-column: 1; grid-row: 1; }
 .work-entry-penguin {
+  grid-column: 2;
+  grid-row: 1 / span 2;
   width: 100%;
   height: auto;
-  margin-top: -0.65rem;
+  margin-top: -4.25rem;
   object-fit: contain;
   filter: drop-shadow(0 5px 5px rgba(23, 32, 51, 0.055));
 }
@@ -389,7 +392,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .work-summary { max-width: 35rem; margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.75; }
 .work-emphasis { color: var(--blue); }
 .work-highlights {
-  margin-top: 1.35rem;
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 0;
   padding: 0.35rem 0 0.35rem 1.15rem;
   border-left: 2px solid rgba(37, 99, 168, 0.2);
 }
@@ -410,7 +415,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .work-highlights ul { margin: 0; padding: 0; list-style: none; color: var(--muted); font-size: 0.8rem; line-height: 1.75; }
 .work-highlights li { position: relative; margin-top: 0.65rem; padding-left: 1.1rem; }
 .work-highlights li::before { content: "✦"; position: absolute; top: 0.08rem; left: 0; color: #7f9cba; font-size: 0.57rem; }
-.work-upcoming-note { margin: 1.25rem 0 0; color: var(--faint); font-family: var(--font-hand), cursive; font-size: 0.84rem; }
+.work-upcoming-note { grid-column: 1; grid-row: 2; margin: 0; color: var(--faint); font-family: var(--font-hand), cursive; font-size: 0.84rem; }
 .experience-list { border-top: 1px solid var(--line); }
 .experience-row {
   display: grid;
@@ -619,8 +624,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .work-support { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
   .work-company-logo { width: 5.75rem; max-width: 38%; margin: -0.35rem 0 -0.5rem; }
   .work-main { min-width: 0; }
-  .work-entry-overview { display: block; }
-  .work-entry-penguin { width: 9rem; margin: 1rem 0 -0.25rem auto; }
+  .work-entry-overview { grid-template-columns: 1fr; grid-template-rows: auto; gap: 0.85rem; }
+  .work-entry-copy, .work-entry-penguin, .work-highlights, .work-upcoming-note { grid-column: 1; grid-row: auto; }
+  .work-entry-penguin { width: 9rem; margin: 0.15rem 0 -0.25rem auto; }
   .work-heading h2 { white-space: normal; }
   .experience-row, .experience-row.featured { grid-template-columns: 2rem 1fr; gap: 0.7rem; }
   .experience-row.featured { margin-inline: -0.75rem; padding-inline: 0.75rem; }

@@ -59,20 +59,20 @@ export default function ExperienceEntry({ experience }: ExperienceEntryProps) {
             src={experience.penguin}
             width="500"
           />
-        </div>
 
-        {hasDetails ? (
-          <section aria-label={`Selected engineering work at ${experience.company}`} className="work-highlights">
-            <h3><span>selected engineering work</span></h3>
-            <ul>
-              {experience.highlights.map((highlight, index) => (
-                <li key={index}><WorkText segments={highlight} /></li>
-              ))}
-            </ul>
-          </section>
-        ) : (
-          <p className="work-upcoming-note">more to come once this iceberg floats 〰</p>
-        )}
+          {hasDetails ? (
+            <section aria-label={`Selected engineering work at ${experience.company}`} className="work-highlights">
+              <h3><span>selected engineering work</span></h3>
+              <ul>
+                {experience.highlights.map((highlight, index) => (
+                  <li key={index}><WorkText segments={highlight} /></li>
+                ))}
+              </ul>
+            </section>
+          ) : (
+            <p className="work-upcoming-note">more to come once this iceberg floats 〰</p>
+          )}
+        </div>
       </div>
     </article>
   );
