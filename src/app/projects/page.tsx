@@ -17,16 +17,20 @@ export default function ProjectsPage() {
       <div className="page-wrap projects-page">
         <div className="projects-heading">
           <PageIntro
-            eyebrow="made with curiosity and questionable sleep schedules ᝰ"
+            eyebrow="a little this, a little that ᝰ"
             title="projects"
-          />
+          >
+            <p>
+            not everything makes it out of the group chat. these somehow did. 🐧
+            </p>
+          </PageIntro>
           <Image
             alt=""
             aria-hidden="true"
             className="projects-penguin"
-            height={240}
-            src="/assets/penguin/penguin_pic-3-removebg-preview.png"
-            width={300}
+            height={500}
+            src="/assets/penguin/penguin_pic-6-removebg-preview.png"
+            width={500}
           />
         </div>
 
