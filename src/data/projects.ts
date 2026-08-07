@@ -13,6 +13,7 @@ export type Project = {
   imageAlt: string;
   demoImage: string;
   demoImageAlt: string;
+  demoVideo?: string;
   overview: ProjectTextSegment[];
   liveUrl?: string;
   githubUrl: string;
@@ -25,9 +26,10 @@ export const projects: Project[] = [
     description: "coding is better with company (or not)",
     image: "/assets/penguin_project_stickers/penguin-pear-programming.png",
     imageAlt: "Two penguins pair programming together on a pear-decorated laptop",
-    demoImage: "/assets/projects/pear-programming/pear-program-pic2.webp",
+    demoImage: "/assets/penguin_project_stickers/penguin-pear-programming.png",
     demoImageAlt:
       "Pear Programming workspace with a shared C++ editor, output console, and room chat",
+    demoVideo: "/assets/projects/pear-programming-demo.m4v",
     overview: [
       { text: "Built a " },
       { text: "collaborative browser IDE", style: "highlight" },
@@ -45,8 +47,9 @@ export const projects: Project[] = [
     description: "my little corner of the internet, penguins included",
     image: "/assets/penguin_project_stickers/penguin-portfolio.png",
     imageAlt: "A penguin in a propeller hat holding a sign that reads this is Anson",
-    demoImage: "/assets/projects/personal-portfolio/portfolio_pic1.webp",
+    demoImage: "/assets/penguin_project_stickers/penguin-portfolio.png",
     demoImageAlt: "An illustrated earlier version of Anson's portfolio landing page",
+    demoVideo: "/assets/projects/portfolio-demo.m4v",
     overview: [
       { text: "Built this portfolio with " },
       { text: "Next.js, React, and TypeScript", style: "strong" },
@@ -64,8 +67,9 @@ export const projects: Project[] = [
     description: "for when your imaginary friend needs coworkers",
     image: "/assets/penguin_project_stickers/penguin-jukebox.png",
     imageAlt: "Two penguins having a thoughtful conversation from armchairs",
-    demoImage: "/assets/projects/hear-me-out/vent.ai_pic1.webp",
+    demoImage: "/assets/penguin_project_stickers/penguin-jukebox.png",
     demoImageAlt: "Juke Box personality picker showing five AI conversation styles",
+    demoVideo: "/assets/projects/jukebox-demo.m4v",
     overview: [
       { text: "Built an " },
       { text: "AI reflection app", style: "highlight" },
