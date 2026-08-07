@@ -12,7 +12,7 @@ const patrickHand = Patrick_Hand({
 });
 
 export const metadata: Metadata = {
-  title: "Anson Chan's Portfolio",
+  title: "Anson Chan",
   description: "Anson Chan is a UBC Computer Engineering student and software engineer building thoughtful products and dependable systems.",
   icons: {
     icon: "/assets/favicon.jpg",
