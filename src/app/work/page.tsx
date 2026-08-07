@@ -5,7 +5,7 @@ import SiteShell from "@/components/SiteShell";
 import { workExperiences } from "@/data/experiences";
 
 export const metadata: Metadata = {
-  title: "Anson Chan's Portfolio",
+  title: "Anson Chan",
   description: "Software engineering experience across full-stack development, backend systems, APIs, authorization, testing, and developer tooling."
 };
 

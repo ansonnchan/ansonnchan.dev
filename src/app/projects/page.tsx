@@ -6,7 +6,7 @@ import SiteShell from "@/components/SiteShell";
 import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Projects | Anson Chan",
+  title: "Anson Chan",
   description:
     "Selected software engineering projects spanning real-time collaboration, AI platforms, developer tooling, and interactive web experiences."
 };
