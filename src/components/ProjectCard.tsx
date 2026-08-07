@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useId, useRef, useState } from "react";
+import { type ChangeEvent, type CSSProperties, useEffect, useId, useRef, useState } from "react";
 import type { Project, ProjectTextSegment } from "@/data/projects";
 
 type ProjectCardProps = {
@@ -25,9 +25,23 @@ function ProjectText({ segments }: { segments: ProjectTextSegment[] }) {
   });
 }
 
+function formatVideoTime(seconds: number) {
+  if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
+
+  const wholeSeconds = Math.floor(seconds);
+  const minutes = Math.floor(wholeSeconds / 60);
+  const remainder = wholeSeconds % 60;
+
+  return `${minutes}:${remainder.toString().padStart(2, "0")}`;
+}
+
 export default function ProjectCard({ project, priority = false }: ProjectCardProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [videoCurrentTime, setVideoCurrentTime] = useState(0);
+  const [videoDuration, setVideoDuration] = useState(0);
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const descriptionId = useId();
 
   useEffect(() => {
@@ -38,6 +52,14 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
     if (isOpen && !dialog.open) {
       dialog.showModal();
       dialog.focus({ preventScroll: true });
+      const video = videoRef.current;
+      if (video) {
+        video.preload = "auto";
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (!prefersReducedMotion) {
+          void video.play().catch(() => setIsVideoPlaying(false));
+        }
+      }
     } else if (!isOpen && dialog.open) {
       dialog.close();
     }
@@ -55,7 +77,42 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
   }, [isOpen]);
 
   function closeDialog() {
+    videoRef.current?.pause();
+    setIsVideoPlaying(false);
     setIsOpen(false);
+  }
+
+  function warmDemo() {
+    const video = videoRef.current;
+    if (!video || video.preload === "auto") return;
+
+    video.preload = "auto";
+    video.load();
+  }
+
+  function openDialog() {
+    warmDemo();
+    setIsOpen(true);
+  }
+
+  function toggleDemo() {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      void video.play().catch(() => setIsVideoPlaying(false));
+    } else {
+      video.pause();
+    }
+  }
+
+  function seekDemo(event: ChangeEvent<HTMLInputElement>) {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const nextTime = Number(event.target.value);
+    video.currentTime = nextTime;
+    setVideoCurrentTime(nextTime);
   }
 
   return (
@@ -65,7 +122,9 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
           aria-haspopup="dialog"
           aria-label={`Open details for ${project.name}`}
           className="project-card-trigger"
-          onClick={() => setIsOpen(true)}
+          onClick={openDialog}
+          onFocus={warmDemo}
+          onPointerEnter={warmDemo}
           type="button"
         />
 
@@ -102,13 +161,76 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
       >
         <div className="project-dialog-inner">
           <div className="project-dialog-preview">
-            <Image
-              alt={project.demoImageAlt}
-              className="project-dialog-preview-image"
-              fill
-              sizes="(max-width: 720px) calc(100vw - 2rem), 650px"
-              src={project.demoImage}
-            />
+            {project.demoVideo ? (
+              <video
+                aria-label={`${project.name} demo video`}
+                loop
+                muted
+                onClick={toggleDemo}
+                onDurationChange={(event) => setVideoDuration(event.currentTarget.duration)}
+                onLoadedMetadata={(event) => {
+                  setVideoDuration(event.currentTarget.duration);
+                  setVideoCurrentTime(event.currentTarget.currentTime);
+                }}
+                onPause={() => setIsVideoPlaying(false)}
+                onPlay={() => setIsVideoPlaying(true)}
+                onTimeUpdate={(event) => setVideoCurrentTime(event.currentTarget.currentTime)}
+                playsInline
+                poster={project.demoImage}
+                preload="none"
+                ref={videoRef}
+              >
+                <source src={project.demoVideo} type="video/mp4" />
+                Your browser does not support this project demo video.
+              </video>
+            ) : (
+              <Image
+                alt={project.demoImageAlt}
+                className="project-dialog-preview-image"
+                fill
+                sizes="(max-width: 720px) calc(100vw - 2rem), 650px"
+                src={project.demoImage}
+              />
+            )}
+            {project.demoVideo ? (
+              <div
+                className={`project-video-controls${isVideoPlaying ? " project-video-controls--playing" : ""}`}
+              >
+                <button
+                  aria-label={isVideoPlaying ? `Pause ${project.name} demo` : `Play ${project.name} demo`}
+                  className="project-video-toggle"
+                  onClick={toggleDemo}
+                  type="button"
+                >
+                  <Image
+                    alt=""
+                    aria-hidden="true"
+                    className="project-video-control-icon"
+                    height={48}
+                    key={isVideoPlaying ? "pause" : "play"}
+                    src={isVideoPlaying ? "/assets/projects/play-button.png" : "/assets/projects/pause-button.png"}
+                    width={48}
+                  />
+                </button>
+                <input
+                  aria-label={`Seek through ${project.name} demo`}
+                  aria-valuetext={`${formatVideoTime(videoCurrentTime)} of ${formatVideoTime(videoDuration)}`}
+                  className="project-video-progress"
+                  max={videoDuration || 0.01}
+                  min="0"
+                  onChange={seekDemo}
+                  step="0.01"
+                  style={{
+                    "--video-progress": `${videoDuration ? (videoCurrentTime / videoDuration) * 100 : 0}%`,
+                  } as CSSProperties}
+                  type="range"
+                  value={Math.min(videoCurrentTime, videoDuration || 0)}
+                />
+                <span aria-hidden="true" className="project-video-time">
+                  {formatVideoTime(videoCurrentTime)} / {formatVideoTime(videoDuration)}
+                </span>
+              </div>
+            ) : null}
           </div>
 
           <div className="project-dialog-body">
