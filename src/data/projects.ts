@@ -34,11 +34,18 @@ export const projects: Project[] = [
     overview: [
       { text: "Built a " },
       { text: "collaborative browser IDE", style: "highlight" },
-      { text: " for real-time pair programming with " },
-      { text: "Spring Boot, React, Yjs, Redis, Monaco, and Judge0", style: "strong" },
-      { text: ". This was my first proper dive into multiplayer state—syncing edits, cursor presence, chat, shared rooms, and code execution without everything stepping on everything else. " },
-      { text: "Pair programming, except the pear pun is mandatory.", style: "handwritten" }
-    ],
+      { text: " for real-time pair programming using " },
+      { text: "Spring Boot", style: "strong" },
+      { text: " on the backend and " },
+      { text: "React", style: "strong" },
+      { text: " on the frontend. Code execution runs through " },
+      { text: "Judge0", style: "strong" },
+      { text: ", while " },
+      { text: "Yjs", style: "strong" },
+      { text: " keeps code, files, and chat synchronized across everyone in the room. " },
+      { breakBefore: true, text: ""}, //new line
+      { breakBefore: true, text: "Pair programming, except the pear pun is legally required.", style: "handwritten" }
+      ],
     liveUrl: "https://pear-programming.vercel.app/",
     githubUrl: "https://github.com/ansonnchan/PearProgramming"
   },
@@ -56,6 +63,7 @@ export const projects: Project[] = [
       { text: "Next.js, React, and TypeScript", style: "strong" },
       { text: ". There are far too many penguins for a sane person. " },
       { text: "Luckily, I’m not sane. *micdrop*", style: "handwritten" },
+      { breakBefore: true, text: ""},
       {
         breakBefore: true,
         text: "If you're a recruiter, please kindly discard that last sentence. I am very much sane and employable.",
@@ -80,6 +88,8 @@ export const projects: Project[] = [
       { text: " where five personalities give wildly different takes on whatever’s on your mind. I used " },
       { text: "Next.js, Groq, Redis, and server-sent events", style: "strong" },
       { text: " to keep conversations snappy while sessions quietly disappear when you leave." },
+      { breakBefore: true, text: ""},
+      { breakBefore: true, text: ""},
       { text: "Your imaginary friend has coworkers now.", style: "handwritten" }
 
     ],
@@ -101,7 +111,9 @@ export const projects: Project[] = [
         { text: " that finds files, functions, types, and exports nobody can actually reach. Turns out " },
         { text: "graphs", style: "strong" },
         { text: " do have a use outside of class—mainly proving that some code is contributing absolutely nothing. " },
-        { text: "Linked lists, you're next.", style: "handwritten" }
+        { breakBefore: true, text: ""},
+        { breakBefore: true, text: ""},
+        { text: "I'm coming for you linked lists.", style: "handwritten" }
         ],
 
     githubUrl: "https://github.com/ansonnchan/dead-code-explorer"
