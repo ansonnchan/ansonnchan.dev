@@ -1,6 +1,7 @@
 export type ProjectTextStyle = "handwritten" | "highlight" | "strong" | "blue";
 
 export type ProjectTextSegment = {
+  breakBefore?: boolean;
   text: string;
   style?: ProjectTextStyle;
 };
@@ -51,12 +52,15 @@ export const projects: Project[] = [
     demoImageAlt: "An illustrated earlier version of Anson's portfolio landing page",
     demoVideo: "/assets/projects/portfolio-demo.m4v",
     overview: [
-      { text: "Built this portfolio with " },
+      { text: "Built my corner of the internet with " },
       { text: "Next.js, React, and TypeScript", style: "strong" },
-      { text: "—plus far more penguin illustrations than any reasonable design system needs. I wanted somewhere that could show the engineering work without reading like a résumé, so I focused on " },
-      { text: "reusable components, responsive layouts, accessibility, and small interactions", style: "highlight" },
-      { text: " that make the site feel like mine. " },
-      { text: "It is almost certainly never finished.", style: "handwritten" }
+      { text: ". There are far too many penguins for a sane person. " },
+      { text: "Luckily, I’m not sane. *micdrop*", style: "handwritten" },
+      {
+        breakBefore: true,
+        text: "If you're a recruiter, please kindly discard that last sentence. I am very much sane and employable.",
+        style: "handwritten"
+      }
     ],
     liveUrl: "https://www.ansonnchan.dev/",
     githubUrl: "https://github.com/ansonnchan/portfolio"
@@ -73,10 +77,11 @@ export const projects: Project[] = [
     overview: [
       { text: "Built an " },
       { text: "AI reflection app", style: "highlight" },
-      { text: " where five personalities offer completely different takes on whatever is on your mind. I used " },
+      { text: " where five personalities give wildly different takes on whatever’s on your mind. I used " },
       { text: "Next.js, Groq, Redis, and server-sent events", style: "strong" },
-      { text: " to keep conversations responsive while client-side sessions disappear when you leave. The fun part was making each personality feel genuinely distinct instead of like the same chatbot wearing five hats. " },
+      { text: " to keep conversations snappy while sessions quietly disappear when you leave." },
       { text: "Your imaginary friend has coworkers now.", style: "handwritten" }
+
     ],
     liveUrl: "https://my-jukebox-web.vercel.app/",
     githubUrl: "https://github.com/ansonnchan/jukebox"
@@ -90,14 +95,15 @@ export const projects: Project[] = [
     demoImage: "/assets/projects/dead-code-explorer/dead-code-explorer-pic-2.webp",
     demoImageAlt:
       "Dead Code Explorer marking an unused TypeScript function with a confidence explanation",
-    overview: [
-      { text: "Built a " },
-      { text: "VS Code extension", style: "highlight" },
-      { text: " that finds files, functions, types, and exports nobody can actually reach. It was my first time getting properly acquainted with the " },
-      { text: "TypeScript Compiler API, ts-morph, and dependency graphs", style: "strong" },
-      { text: ", including the fun edge cases: aliases, barrel exports, dynamic imports, and chains made entirely of other dead code. " },
-      { text: "Basically detective work, but the suspects are unused functions.", style: "handwritten" }
-    ],
+      overview: [
+        { text: "Built a " },
+        { text: "VS Code extension", style: "highlight" },
+        { text: " that finds files, functions, types, and exports nobody can actually reach. Turns out " },
+        { text: "graphs", style: "strong" },
+        { text: " do have a use outside of class—mainly proving that some code is contributing absolutely nothing. " },
+        { text: "Linked lists, you're next.", style: "handwritten" }
+        ],
+
     githubUrl: "https://github.com/ansonnchan/dead-code-explorer"
   }
 ];

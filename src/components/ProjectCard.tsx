@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { type ChangeEvent, type CSSProperties, useEffect, useId, useRef, useState } from "react";
+import { type ChangeEvent, type CSSProperties, Fragment, useEffect, useId, useRef, useState } from "react";
 import type { Project, ProjectTextSegment } from "@/data/projects";
 
 type ProjectCardProps = {
@@ -12,15 +12,19 @@ type ProjectCardProps = {
 function ProjectText({ segments }: { segments: ProjectTextSegment[] }) {
   return segments.map((segment, index) => {
     const key = `${segment.text}-${index}`;
-
-    if (segment.style === "strong") {
-      return <strong key={key}>{segment.text}</strong>;
-    }
-
-    return (
-      <span className={segment.style ? `project-detail-${segment.style}` : undefined} key={key}>
+    const content = segment.style === "strong" ? (
+      <strong>{segment.text}</strong>
+    ) : (
+      <span className={segment.style ? `project-detail-${segment.style}` : undefined}>
         {segment.text}
       </span>
+    );
+
+    return (
+      <Fragment key={key}>
+        {segment.breakBefore ? <br /> : null}
+        {content}
+      </Fragment>
     );
   });
 }

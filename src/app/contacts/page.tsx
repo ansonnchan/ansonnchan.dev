@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SiteShell from "@/components/SiteShell";
 import { contactCards } from "@/data/contacts";
 
@@ -7,6 +8,15 @@ export default function ContactsPage() {
       <div className="contacts-page">
         <p className="eyebrow">seeking summer 2027 internships ᝰ</p>
         <h1>let&apos;s connect</h1>
+        <Image
+          alt=""
+          aria-hidden="true"
+          className="contacts-penguin"
+          height={403}
+          priority
+          src="/assets/penguin/penguin_pic-5-removebg-preview.png"
+          width={594}
+        />
         <div className="contact-grid">
           {contactCards.map((contact) => (
             <a
