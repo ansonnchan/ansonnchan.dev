@@ -71,7 +71,7 @@ export const projects: Project[] = [
       }
     ],
     liveUrl: "https://www.ansonnchan.dev/",
-    githubUrl: "https://github.com/ansonnchan/portfolio"
+    githubUrl: "https://github.com/ansonnchan/ansonnchan.dev"
   },
   {
     slug: "juke-box",

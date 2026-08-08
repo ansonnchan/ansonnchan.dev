@@ -6,7 +6,8 @@ import { usePathname } from "next/navigation";
 const links = [
   { label: "about", href: "/about" },
   { label: "work", href: "/work" },
-  { label: "projects", href: "/projects" }
+  { label: "projects", href: "/projects" },
+  { label: "blog", href: "/blog" }
 ];
 
 export default function SiteNav() {
@@ -22,9 +23,7 @@ export default function SiteNav() {
           <div className="nav-links">
             {links.map((link) => {
               const active =
-                link.href === "/projects"
-                  ? pathname.startsWith("/projects")
-                  : pathname === link.href;
+                pathname === link.href || pathname.startsWith(`${link.href}/`);
 
               return (
                 <Link
