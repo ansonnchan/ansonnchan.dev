@@ -81,7 +81,7 @@ export const projects: Project[] = [
     imageAlt: "A sleepy baby penguin tucked beneath a pale blue blanket",
     demoImage: "/assets/penguin_project_stickers/penguin-noot-of-the-day.png",
     demoImageAlt: "Noot of the Day serving a daily penguin trivia fact",
-    demoVideo: "/assets/projects/penguin-demo.mov",
+    demoVideo: "/assets/projects/penguin-demo.m4v",
     overview: [
       { text: "Built a small, cozy web app that serves " },
       { text: "one random penguin fact every day", style: "highlight" },
