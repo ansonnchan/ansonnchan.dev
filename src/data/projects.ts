@@ -74,6 +74,27 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/ansonnchan/ansonnchan.dev"
   },
   {
+    slug: "noot-of-the-day",
+    name: "Noot of the Day",
+    description: "one tiny penguin fact a day. no more, noot less",
+    image: "/assets/penguin_project_stickers/penguin-noot-of-the-day.png",
+    imageAlt: "A sleepy baby penguin tucked beneath a pale blue blanket",
+    demoImage: "/assets/penguin_project_stickers/penguin-noot-of-the-day.png",
+    demoImageAlt: "Noot of the Day serving a daily penguin trivia fact",
+    demoVideo: "/assets/projects/penguin-demo.mov",
+    overview: [
+      { text: "Built a small, cozy web app that serves " },
+      { text: "one random penguin fact every day", style: "highlight" },
+      { text: " using the " },
+      { text: "Boatman Penguin API", style: "strong" },
+      { text: ". A daily cooldown keeps each visit to one fact—because even penguin trivia deserves a little suspense." },
+      { breakBefore: true, text: "" },
+      { breakBefore: true, text: "Come back tomorrow for another noot.", style: "handwritten" }
+    ],
+    liveUrl: "https://noot-of-the-day.vercel.app/",
+    githubUrl: "https://github.com/ansonnchan/noot-of-the-day"
+  },
+  {
     slug: "juke-box",
     name: "Jukebox",
     description: "for when your imaginary friend needs coworkers",

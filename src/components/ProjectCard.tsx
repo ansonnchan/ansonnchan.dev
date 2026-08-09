@@ -184,7 +184,10 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
                 preload="none"
                 ref={videoRef}
               >
-                <source src={project.demoVideo} type="video/mp4" />
+                <source
+                  src={project.demoVideo}
+                  type={project.demoVideo.endsWith(".mov") ? "video/quicktime" : "video/mp4"}
+                />
                 Your browser does not support this project demo video.
               </video>
             ) : (

@@ -545,6 +545,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .project-card:nth-of-type(2) { animation-delay: 350ms; }
 .project-card:nth-of-type(3) { animation-delay: 480ms; }
 .project-card:nth-of-type(4) { animation-delay: 610ms; }
+.project-card:nth-of-type(5) { animation-delay: 740ms; }
 .route-transition.active ~ .site-shell .projects-heading,
 .route-transition.active ~ .site-shell .project-card {
   animation-play-state: paused;
@@ -554,6 +555,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
   border-color: #c9d6c4;
 }
 .project-card--personal-portfolio { --project-art-scale: 1.4; }
+.project-card--noot-of-the-day {
+  --project-art-scale: 1.3;
+  border-color: #c8e0e6;
+}
 .project-card--juke-box { --project-art-scale: 1.85; }
 .project-card--dead-code-explorer { --project-art-scale: 1.45; }
 .project-card-trigger {
@@ -580,6 +585,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .project-card--pear-programming .project-preview { background: #dfe9dc; }
 .project-card--personal-portfolio .project-preview { background: #f2eadc; }
+.project-card--noot-of-the-day .project-preview { background: #def1f4; }
 .project-card--juke-box .project-preview { background: #f4e1e6; }
 .project-card--dead-code-explorer .project-preview { background: #e2e5e7; }
 .project-preview-image {
