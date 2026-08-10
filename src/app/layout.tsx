@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Patrick_Hand } from "next/font/google";
+import MusicPlayer from "@/components/MusicPlayer";
 import RouteTransition from "@/components/RouteTransition";
 import "./globals.css";
 
@@ -43,6 +44,7 @@ export default function RootLayout({
       </head>
       <body className={patrickHand.variable}>
         <RouteTransition />
+        <MusicPlayer />
         {children}
         <Analytics />
       </body>
