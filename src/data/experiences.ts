@@ -117,7 +117,7 @@ export const workExperiences: WorkExperience[] = [
         { text: "Solely built its " },
         { text: "authorization system from the ground up", highlight: true },
         { text: ", including moderator approval flows and synchronized permission checks for "},
-        { text: "150+ users", highlight:true }
+        { text: "250+ users", highlight:true }
       ],
       [
         { text: "Built a " },
@@ -156,10 +156,7 @@ export const workExperiences: WorkExperience[] = [
         { text: "Python and MATLAB", highlight: true },
         { text: ". Python and I are besties; MATLAB on the other hand though ... I'll hit it with the one-two, left-right combo" }
       ],
-      [
-        { text: "Provided " },
-        { text: "moral support for the big leagues", highlight: true },
-      ]
+
     ],
     logo: "/assets/experiences/unisa-logo.svg",
     logoAlt: "University of South Australia logo",
