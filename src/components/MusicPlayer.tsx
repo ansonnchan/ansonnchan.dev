@@ -60,13 +60,11 @@ export default function MusicPlayer() {
 
     const updateDuration = () => setDuration(Number.isFinite(audio.duration) ? audio.duration : 0);
     const updateTime = () => setCurrentTime(audio.currentTime);
-    const handleEnded = () => setPlaying(false);
 
     audio.volume = volume;
     audio.addEventListener("loadedmetadata", updateDuration);
     audio.addEventListener("durationchange", updateDuration);
     audio.addEventListener("timeupdate", updateTime);
-    audio.addEventListener("ended", handleEnded);
 
     if (audio.readyState >= 1) updateDuration();
 
@@ -74,7 +72,6 @@ export default function MusicPlayer() {
       audio.removeEventListener("loadedmetadata", updateDuration);
       audio.removeEventListener("durationchange", updateDuration);
       audio.removeEventListener("timeupdate", updateTime);
-      audio.removeEventListener("ended", handleEnded);
     };
   }, []);
 
@@ -129,7 +126,7 @@ export default function MusicPlayer() {
       className={`music-player ${expanded ? "expanded" : "minimized"}`}
       aria-label="Music player"
     >
-      <audio preload="metadata" ref={audioRef} src={AUDIO_SRC} />
+      <audio loop preload="metadata" ref={audioRef} src={AUDIO_SRC} />
 
       {expanded ? (
         <div className="music-player-card">
