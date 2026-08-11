@@ -3,10 +3,12 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { usePathname } from "next/navigation";
 
-const AUDIO_SRC = "/soundtrack/fish%20in%20the%20pool%20.mp3";
-const COVER_SRC = "/soundtrack/fish_in_the_pool_album_cover%20.jpeg";
+const AUDIO_SRC = "/soundtrack/jazz.mp3";
+const COVER_SRC = "/soundtrack/sticker.jpeg";
 const PLAY_ICON_SRC = "/assets/projects/play-button.png";
 const PAUSE_ICON_SRC = "/assets/projects/pause-button.png";
+const TRACK_TITLE = "blue noots";
+const TRACK_ARTIST = "The Waddle Tones";
 
 function formatTime(value: number) {
   if (!Number.isFinite(value) || value < 0) return "0:00";
@@ -140,14 +142,14 @@ export default function MusicPlayer() {
           </button>
 
           <img
-            alt="Fish in the Pool album cover"
+            alt={`${TRACK_TITLE} cover art`}
             className="music-cover"
             src={COVER_SRC}
           />
 
           <div className="music-details">
-            <p className="music-title">fish in the pool・花屋敷</p>
-            <p className="music-artist">Hekuto Pascal (ヘクとパスカル)</p>
+            <p className="music-title">{TRACK_TITLE}</p>
+            <p className="music-artist">{TRACK_ARTIST}</p>
           </div>
 
           <div className="music-progress-wrap">
@@ -189,7 +191,7 @@ export default function MusicPlayer() {
               value={volume}
             />
             <button
-              aria-label={playing ? "Pause fish in the pool" : "Play fish in the pool"}
+              aria-label={playing ? `Pause ${TRACK_TITLE}` : `Play ${TRACK_TITLE}`}
               className="music-play-button"
               onClick={togglePlayback}
               type="button"
@@ -202,16 +204,16 @@ export default function MusicPlayer() {
         <div className="music-mini-card">
           <button
             aria-expanded="false"
-            aria-label="Expand music player for fish in the pool"
+            aria-label={`Expand music player for ${TRACK_TITLE}`}
             className="music-mini-expand"
             onClick={() => setPlayerExpanded(true)}
             type="button"
           >
             <img alt="" aria-hidden="true" src={COVER_SRC} />
-            <span className="music-mini-title">fish in the pool</span>
+            <span className="music-mini-title">{TRACK_TITLE}</span>
           </button>
           <button
-            aria-label={playing ? "Pause fish in the pool" : "Play fish in the pool"}
+            aria-label={playing ? `Pause ${TRACK_TITLE}` : `Play ${TRACK_TITLE}`}
             className="music-mini-play"
             onClick={(event) => {
               event.stopPropagation();
