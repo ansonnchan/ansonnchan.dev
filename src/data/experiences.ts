@@ -29,26 +29,6 @@ export type WorkExperience = {
 
 export const workExperiences: WorkExperience[] = [
   {
-    company: "Atria",
-    role: "Incoming Software Engineering Intern",
-    startDate: "2027-01",
-    dateLabel: "Jan. 2027 — Apr. 2027",
-    year: "2027",
-    location: "Vancouver, BC",
-    status: "upcoming",
-    summary: [
-      { text: "Building software that helps organizations " },
-      { text: "collaborate", highlight: true},
-      { text: " and"},
-      {text: " achieve shared goals", highlight:true },
-    ],
-    highlights: [],
-    logo: "/assets/experiences/atria.jpg",
-    logoAlt: "Atria logo",
-    penguin: "/assets/penguin_work_stickers/penguin-atria.png",
-    penguinAlt: "A group of penguins gathered around a community board"
-  },
-  {
     company: "ScalePad",
     role: "Software Engineering Intern",
     startDate: "2026-06",
@@ -131,36 +111,5 @@ export const workExperiences: WorkExperience[] = [
     logoAlt: "Borrow’d logo",
     penguin: "/assets/penguin_work_stickers/penguin-borrowd.png",
     penguinAlt: "Two penguins carrying a box of shared items"
-  },
-  {
-    company: "University of South Australia",
-    role: "Undergraduate Research Assistant",
-    startDate: "2025-06",
-    dateLabel: "Jun. 2025 — Aug. 2025",
-    year: "2025",
-    location: "Adelaide, Australia",
-    status: "completed",
-    summary: [
-      { text: "Worked on " },
-      { text: "computational modeling", highlight: true },
-      { text: " but never felt more lost "}
-    ],
-    highlights: [
-      [
-        { text: "Implemented " },
-        { text: "Conway’s Game of Life", highlight: true },
-        { text: " (it’s genuinely pretty cool—worth checking out!)" }
-      ],
-      [
-        { text: "Did some modelling work in " },
-        { text: "Python and MATLAB", highlight: true },
-        { text: ". Python and I are besties; MATLAB on the other hand though ... I'll hit it with the one-two, left-right combo" }
-      ],
-
-    ],
-    logo: "/assets/experiences/unisa-logo.svg",
-    logoAlt: "University of South Australia logo",
-    penguin: "/assets/penguin_work_stickers/penguin-university.png",
-    penguinAlt: "A penguin reviewing research papers at a desk"
   }
 ];
