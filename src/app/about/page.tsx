@@ -7,11 +7,24 @@ export default function AboutPage() {
   return (
     <SiteShell>
       <div className="page-wrap about-page">
-        <PageIntro eyebrow="one for me, one for you ᝰ" title="noot noot!" />
+        <div className="about-heading">
+          <PageIntro eyebrow="one for me, one for you ᝰ" title="noot noot!" />
+          <img
+            alt=""
+            aria-hidden="true"
+            className="about-penguin"
+            src={about.illustration}
+          />
+        </div>
         <div className="about-layout">
-          <div className="about-illustration" aria-hidden="true">
-            <img alt="" src={about.illustration} />
-          </div>
+          <figure className="about-portrait">
+            <img
+              alt="Anson standing in front of Kinkaku-ji in Kyoto"
+              height="1254"
+              src="/assets/pfp.png"
+              width="1254"
+            />
+          </figure>
           <div className="about-copy">
             <p className="about-introduction"><AboutText segments={about.introduction} /></p>
             <p className="about-facts-heading">{about.factsHeading}</p>
