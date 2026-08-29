@@ -47,9 +47,9 @@ export const about: AboutContent = {
       { text: "Played the violin and trumpet for 10+ years" }
     ],
     [
-      { text: "Currently reading " },
-      { text: "“The Tunnel to Summer, the Exit of Goodbyes”", style: "italic" },
-      { text: " by Mei Hachimoku (八目迷)" }
+      { text: "Currently rewatching " },
+      { text: "“Cyberpunk: Edgerunners”", style: "italic" },
+      { text: " // HIGHLY RECOMMEND - it's that good!", style: "handwritten"}
     ]
   ],
   buildLine: " I enjoy building software that people actually use and hope to create products that make everyday life easier, better, or simply a little more fun. ✨",
