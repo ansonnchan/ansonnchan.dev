@@ -1,15 +1,15 @@
-import type { WorkExperience, WorkExperienceStatus } from "@/data/experiences";
+import type { Experience, ExperienceStatus } from "@/data/experiences";
 import ExperiencePhotoDisclosure from "@/components/ExperiencePhotoDisclosure";
 import WorkText from "@/components/WorkText";
 
-const statusLabels: Record<WorkExperienceStatus, string> = {
+const statusLabels: Record<ExperienceStatus, string> = {
   upcoming: "next stop",
   current: "currently here",
   completed: "chapter complete"
 };
 
 type ExperienceEntryProps = {
-  experience: WorkExperience;
+  experience: Experience;
 };
 
 export default function ExperienceEntry({ experience }: ExperienceEntryProps) {
@@ -17,7 +17,7 @@ export default function ExperienceEntry({ experience }: ExperienceEntryProps) {
   const hasDetails = experience.highlights.length > 0;
 
   return (
-    <article className={`work-entry work-entry--${experience.status}`} aria-labelledby={headingId}>
+    <article className={`work-entry work-entry--${experience.status}`} aria-labelledby={headingId} role="listitem">
       <div aria-hidden="true" className="work-timeline-mark">
         <span>✦</span>
       </div>

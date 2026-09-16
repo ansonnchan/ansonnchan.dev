@@ -1,11 +1,11 @@
 "use client";
 
 import { useId, useState } from "react";
-import type { WorkExperiencePhoto } from "@/data/experiences";
+import type { ExperiencePhoto } from "@/data/experiences";
 
 type ExperiencePhotoDisclosureProps = {
   company: string;
-  photos: WorkExperiencePhoto[];
+  photos: ExperiencePhoto[];
 };
 
 export default function ExperiencePhotoDisclosure({ company, photos }: ExperiencePhotoDisclosureProps) {

@@ -1,16 +1,17 @@
 import ExperienceEntry from "@/components/ExperienceEntry";
-import type { WorkExperience } from "@/data/experiences";
+import type { Experience } from "@/data/experiences";
 
 type ExperienceTimelineProps = {
-  experiences: WorkExperience[];
+  experiences: Experience[];
+  label: string;
 };
 
-export default function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
+export default function ExperienceTimeline({ experiences, label }: ExperienceTimelineProps) {
   return (
-    <section aria-label="Professional experience" className="work-timeline">
+    <div aria-label={label} className="work-timeline" role="list">
       {experiences.map((experience) => (
         <ExperienceEntry experience={experience} key={`${experience.company}-${experience.startDate}`} />
       ))}
-    </section>
+    </div>
   );
 }

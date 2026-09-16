@@ -1,8 +1,8 @@
 import type { RichSegment } from "@/data/types";
 
-export type WorkExperienceStatus = "current" | "upcoming" | "completed";
+export type ExperienceStatus = "current" | "upcoming" | "completed";
 
-export type WorkExperiencePhoto = {
+export type ExperiencePhoto = {
   src: string;
   alt: string;
   caption?: string;
@@ -10,24 +10,24 @@ export type WorkExperiencePhoto = {
   height: number;
 };
 
-export type WorkExperience = {
+export type Experience = {
   company: string;
   role: string;
   startDate: string;
   dateLabel: string;
   year: string;
   location: string;
-  status: WorkExperienceStatus;
+  status: ExperienceStatus;
   summary: RichSegment[];
   highlights: RichSegment[][];
   logo: string;
   logoAlt: string;
   penguin: string;
   penguinAlt: string;
-  photos?: WorkExperiencePhoto[];
+  photos?: ExperiencePhoto[];
 };
 
-export const workExperiences: WorkExperience[] = [
+export const professionalExperiences: Experience[] = [
   {
     company: "ScalePad",
     role: "Software Engineering Intern",
@@ -72,10 +72,32 @@ export const workExperiences: WorkExperience[] = [
         height: 1080
       }
     ]
+  }
+];
+
+export const volunteerExperiences: Experience[] = [
+  {
+    company: "Atria",
+    role: "Software Engineer",
+    startDate: "2027-01",
+    dateLabel: "Starting Jan. 2027",
+    year: "2027",
+    location: "Vancouver, BC",
+    status: "upcoming",
+    summary: [
+      {
+        text: "Joining the engineering team to develop full-stack features for a Django/React platform, participating in technical design reviews, ERD modeling, and implementation planning."
+      }
+    ],
+    highlights: [],
+    logo: "/assets/experiences/atria.jpg",
+    logoAlt: "Atria logo",
+    penguin: "/assets/penguin_work_stickers/penguin-atria.png",
+    penguinAlt: "A penguin representing Anson's upcoming software engineering work at Atria"
   },
   {
     company: "Borrow’d",
-    role: "Software Engineering Intern",
+    role: "Software Engineer",
     startDate: "2026-01",
     dateLabel: "Jan. 2026 — Apr. 2026",
     year: "2026",
@@ -89,7 +111,7 @@ export const workExperiences: WorkExperience[] = [
     highlights: [
       [
         { text: "Joined as a "},
-        {text: "founding intern", highlight: true},
+        {text: "founding software engineer", highlight: true},
         {text:  " and helped bring the platform to its " },
         { text: "beta launch", highlight: true },
         ],
