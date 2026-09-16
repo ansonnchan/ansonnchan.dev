@@ -22,6 +22,33 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "nemu",
+    name: "nemu (ねむ)",
+    description: "a cozy little desktop agent powered by AWS that definitely isn't watching you",
+    image: "/assets/penguin_project_stickers/penguin-nemu.png",
+    imageAlt: "A secret agent penguin wearing sunglasses and holding a confidential folder",
+    demoImage: "/assets/penguin_project_stickers/penguin-nemu.png",
+    demoImageAlt: "nemu dashboard showing structured summaries of foreground app activity",
+    demoVideo: "/assets/projects/nemu-demo.mp4",
+    overview: [
+      { text: "Built a " },
+      { text: "lightweight desktop telemetry agent", style: "highlight" },
+      { text: " in " },
+      { text: "Go", style: "strong" },
+      { text: " that runs quietly in the background, tracks time spent in foreground apps, and turns it into structured usage summaries. It syncs hourly through " },
+      { text: "AWS API Gateway, Lambda, S3, DynamoDB, and CloudFront", style: "strong" },
+      { text: " to keep the activity dashboard up to date." },
+      { breakBefore: true, text: "" },
+      {
+        breakBefore: true,
+        text: "Deep state, shadow organization, CIA, FBI—I’m ready for a SWE career.",
+        style: "handwritten"
+      }
+    ],
+    liveUrl: "https://nemu-landing.vercel.app/",
+    githubUrl: "https://github.com/ansonnchan/nemu"
+  },
+  {
     slug: "pear-programming",
     name: "Pear Programming",
     description: "coding is better with company (or not)",

@@ -760,6 +760,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .project-card:nth-of-type(3) { animation-delay: 480ms; }
 .project-card:nth-of-type(4) { animation-delay: 610ms; }
 .project-card:nth-of-type(5) { animation-delay: 740ms; }
+.project-card:nth-of-type(6) { animation-delay: 870ms; }
 .route-transition.active ~ .site-shell .projects-heading,
 .route-transition.active ~ .site-shell .project-card {
   animation-play-state: paused;
@@ -775,6 +776,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .project-card--juke-box { --project-art-scale: 1.85; }
 .project-card--dead-code-explorer { --project-art-scale: 1.45; }
+.project-card--nemu { --project-art-scale: 1.28; }
 .project-card-trigger {
   position: absolute;
   inset: 0;
@@ -802,6 +804,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .project-card--noot-of-the-day .project-preview { background: #def1f4; }
 .project-card--juke-box .project-preview { background: #f4e1e6; }
 .project-card--dead-code-explorer .project-preview { background: #e2e5e7; }
+.project-card--nemu .project-preview { background: #fff; }
 .project-preview-image {
   object-fit: contain;
   transform: scale(var(--project-art-scale));
