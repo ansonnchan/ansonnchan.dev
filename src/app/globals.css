@@ -1271,7 +1271,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 @media (max-width: 480px) {
-  .nav-links { font-size: 0.78rem; }
+  .nav-left-group { gap: 0.9rem; }
+  .nav-links { gap: clamp(0.55rem, 3vw, 0.9rem); font-size: 0.75rem; }
   .page-wrap, .site-footer, .home-hero { width: min(100% - 2rem, 820px); }
   .page-intro { margin-bottom: 3.25rem; }
   .work-page .page-intro { margin-bottom: 2.25rem; }
