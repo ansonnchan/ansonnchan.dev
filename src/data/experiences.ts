@@ -110,23 +110,23 @@ export const volunteerExperiences: Experience[] = [
     ],
     highlights: [
       [
-        { text: "Joined as a "},
-        {text: "founding software engineer", highlight: true},
-        {text:  " and helped bring the platform to its " },
-        { text: "beta launch", highlight: true },
-        ],
+        { text: "Joined as one of the  "},
+        {text: "first software engineers", highlight: true},
+        {text:  "on the engineering team and helped bring the platform to its " },
+        { text: "initial release ", highlight: true },
+        { text: "for " },
+        { text: "250+ users", highlight: true }
+      ],
       [
         { text: "Solely built its " },
         { text: "authorization system from the ground up", highlight: true },
-        { text: ", including moderator approval flows and synchronized permission checks for "},
-        { text: "250+ users", highlight:true }
+        { text: ", including moderator approval flows and synchronized permission checks"},
       ],
       [
         { text: "Built a " },
         { text: "search analytics pipeline", highlight: true },
         { text: " to understand user search trends and guide " },
-        { text: "homepage promotions", highlight: true },
-        { text: ", with some PostgreSQL cleanup along the way" }
+        { text: "homepage promotions.", highlight: true },
       ]
     ],
     logo: "/assets/experiences/borrowd_org_logo.jpeg",
