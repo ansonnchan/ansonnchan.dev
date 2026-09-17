@@ -85,196 +85,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   mix-blend-mode: multiply;
 }
 
-.music-player {
-  position: fixed;
-  z-index: 40;
-  top: 1.5rem;
-  left: 1.5rem;
-  color: var(--ink);
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-}
-
-.music-player button,
-.music-player input { font: inherit; }
-
-.music-player-card {
-  position: relative;
-  width: 13.75rem;
-  padding: 0.62rem 0.62rem 0.68rem;
-  border: 1px solid rgba(23, 32, 51, 0.07);
-  border-radius: 0.82rem;
-  background: #fffefa;
-  box-shadow: 0 4px 14px rgba(23, 32, 51, 0.055);
-  animation: music-player-open 180ms ease-out both;
-}
-
-.music-minimize {
-  position: absolute;
-  z-index: 1;
-  top: 0.75rem;
-  right: 0.75rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  padding: 0;
-  border: 1px solid rgba(23, 32, 51, 0.1);
-  border-radius: 50%;
-  background: rgba(255, 254, 250, 0.86);
-  cursor: pointer;
-  transition: background 150ms ease, transform 150ms ease;
-}
-
-.music-minimize:hover { background: rgba(23, 32, 51, 0.48); transform: translateY(-1px); }
-.music-minimize span { display: block; width: 0.66rem; height: 1px; margin: 0 auto; background: rgba(23, 32, 51, 0.62); }
-.music-minimize:hover span { background: white; }
-
-.music-cover {
-  width: 100%;
-  aspect-ratio: 1;
-  border-radius: 0.5rem;
-  object-fit: cover;
-  box-shadow: 0 2px 8px rgba(23, 32, 51, 0.08);
-}
-
-.music-details { padding: 0.52rem 0.12rem 0; }
-.music-details p { overflow: hidden; margin: 0; text-overflow: ellipsis; white-space: nowrap; }
-.music-title { font-family: var(--font-hand), cursive; font-size: 0.9rem; line-height: 1.2; }
-.music-artist { margin-top: 0.1rem !important; color: var(--muted); font-size: 0.55rem; line-height: 1.25; }
-
-.music-progress-wrap { padding: 0.43rem 0.12rem 0; }
-.music-range {
-  --range-progress: 0%;
-  width: 100%;
-  height: 0.22rem;
-  margin: 0;
-  border-radius: 999px;
-  outline: none;
-  background: linear-gradient(to right, var(--blue) 0 var(--range-progress), #d9d7d2 var(--range-progress) 100%);
-  cursor: pointer;
-  appearance: none;
-}
-
-.music-range:focus-visible {
-  outline: 2px solid rgba(37, 99, 168, 0.35);
-  outline-offset: 4px;
-}
-
-.music-range::-webkit-slider-thumb {
-  width: 0.68rem;
-  height: 0.68rem;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  background: var(--blue);
-  box-shadow: 0 1px 4px rgba(23, 32, 51, 0.24);
-  appearance: none;
-}
-
-.music-range::-moz-range-thumb {
-  width: 0.52rem;
-  height: 0.52rem;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  background: var(--blue);
-  box-shadow: 0 1px 4px rgba(23, 32, 51, 0.24);
-}
-
-.music-time { display: flex; justify-content: space-between; margin-top: 0.22rem; color: var(--faint); font-size: 0.51rem; font-variant-numeric: tabular-nums; }
-.music-controls { display: grid; grid-template-columns: 1.3rem 1fr 1.95rem; align-items: center; gap: 0.34rem; padding: 0.28rem 0.08rem 0; }
-.music-volume { height: 0.18rem; }
-.music-volume-button,
-.music-play-button {
-  display: inline-grid;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  place-items: center;
-}
-
-.music-volume-button { width: 1.3rem; height: 1.3rem; }
-.music-volume-button svg { width: 0.9rem; height: 0.9rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
-.music-play-button { width: 1.95rem; height: 1.95rem; border-radius: 50%; transition: transform 150ms ease; }
-.music-play-button:hover { transform: scale(1.04); }
-.music-play-button img { width: 100%; height: 100%; object-fit: contain; }
-.music-minimize:focus-visible,
-.music-volume-button:focus-visible,
-.music-play-button:focus-visible,
-.music-mini-play:focus-visible {
-  outline: 2px solid rgba(37, 99, 168, 0.48);
-  outline-offset: 2px;
-}
-
-.music-mini-card {
-  display: flex;
-  width: 13.75rem;
-  height: 3.125rem;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.31rem 0.42rem 0.31rem 0.31rem;
-  border: 1px solid rgba(23, 32, 51, 0.07);
-  border-radius: 0.94rem;
-  background: #fffefa;
-  box-shadow: 0 3px 10px rgba(23, 32, 51, 0.05);
-  animation: music-player-minimize 160ms ease-out both;
-  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
-}
-
-.music-mini-card:hover,
-.music-mini-card:focus-within {
-  border-color: rgba(37, 99, 168, 0.095);
-  box-shadow: 0 5px 12px rgba(23, 32, 51, 0.058);
-  transform: translateY(-1px);
-}
-
-.music-mini-expand {
-  display: flex;
-  min-width: 0;
-  height: 100%;
-  flex: 1;
-  align-items: center;
-  gap: 0.62rem;
-  padding: 0;
-  border: 0;
-  border-radius: 0.66rem;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  text-align: left;
-}
-
-.music-mini-expand:focus-visible {
-  outline: 2px solid rgba(37, 99, 168, 0.42);
-  outline-offset: 1px;
-}
-
-.music-mini-expand > img { width: 2.375rem; height: 2.375rem; flex: 0 0 auto; border-radius: 0.54rem; object-fit: cover; }
-.music-mini-title { overflow: hidden; font-family: var(--font-hand), cursive; font-size: 0.9rem; text-overflow: ellipsis; white-space: nowrap; }
-.music-mini-play {
-  display: inline-grid;
-  width: 2.375rem;
-  height: 2.375rem;
-  flex: 0 0 auto;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: transparent;
-  cursor: pointer;
-  place-items: center;
-  transition: transform 150ms ease;
-}
-.music-mini-play:hover { transform: scale(1.035); }
-.music-mini-play img { width: 100%; height: 100%; object-fit: contain; }
-
-@keyframes music-player-open {
-  from { opacity: 0; transform: translateY(-5px) scale(0.98); transform-origin: top left; }
-  to { opacity: 1; transform: translateY(0) scale(1); transform-origin: top left; }
-}
-
-@keyframes music-player-minimize {
-  from { opacity: 0; transform: scale(0.88); transform-origin: top left; }
-  to { opacity: 1; transform: scale(1); transform-origin: top left; }
-}
-
 .site-header {
   position: relative;
   z-index: 20;
@@ -1231,16 +1041,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 @media (prefers-reduced-motion: reduce) {
   .footer-socials a:hover { animation: none; transform: rotate(-8deg); }
-  .music-player-card,
-  .music-mini-card { animation: none; }
-  .music-mini-card:hover,
-  .music-mini-card:focus-within { transform: none; }
 }
 
 @media (max-width: 720px) {
-  .music-player { top: auto; right: 0.8rem; bottom: 0.8rem; left: auto; }
-  .music-player-card,
-  .music-mini-card { width: min(13.75rem, calc(100vw - 1.6rem)); }
   .site-header { padding-top: 1.2rem; }
   .nav-left-group, .nav-links { gap: 1.35rem; }
   .home-hero { min-height: auto; padding: 2.5rem 0 3rem; }
@@ -1275,7 +1078,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 @media (min-width: 721px) and (max-width: 980px) {
-  .music-player { top: auto; bottom: 1.25rem; }
   .contacts-penguin { top: 1.5rem; right: 0.5rem; width: 13rem; }
   .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

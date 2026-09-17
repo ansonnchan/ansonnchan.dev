@@ -23,8 +23,8 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "nemu",
-    name: "nemu (ねむ)",
-    description: "a cozy little desktop agent powered by AWS that definitely isn't watching you",
+    name: "nemu · ねむ",
+    description: "a cozy little desktop agent that definitely isn't watching you",
     image: "/assets/penguin_project_stickers/penguin-nemu.png",
     imageAlt: "A secret agent penguin wearing sunglasses and holding a confidential folder",
     demoImage: "/assets/penguin_project_stickers/penguin-nemu.png",

@@ -111,7 +111,7 @@ export const volunteerExperiences: Experience[] = [
     highlights: [
       [
         { text: "Joined as one of the  "},
-        {text: "first software engineers", highlight: true},
+        {text: "first software engineers ", highlight: true},
         {text:  "on the engineering team and helped bring the platform to its " },
         { text: "initial release ", highlight: true },
         { text: "for " },
