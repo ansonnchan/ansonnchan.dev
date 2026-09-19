@@ -31,12 +31,13 @@ export const contactCards: ContactCard[] = [
     iconClassName: "contact-card-linkedin",
     openInNewTab: true
   },
-  {
-    label: "résumé",
-    value: "view my résumé",
-    href: "/resume",
-    icon: "/assets/icons/resume-download.png",
-    iconClassName: "contact-card-resume",
-    openInNewTab: true
-  }
+  // Temporarily hidden. Uncomment this card when the résumé is ready to return.
+  // {
+  //   label: "résumé",
+  //   value: "view my résumé",
+  //   href: "/resume",
+  //   icon: "/assets/icons/resume-download.png",
+  //   iconClassName: "contact-card-resume",
+  //   openInNewTab: true
+  // }
 ];

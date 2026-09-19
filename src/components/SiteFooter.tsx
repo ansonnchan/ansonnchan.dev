@@ -12,9 +12,10 @@ export default function SiteFooter() {
         <a href="https://github.com/ansonnchan" aria-label="Anson on GitHub" rel="noreferrer" target="_blank">
           <img alt="" aria-hidden="true" src="/assets/icons/github_icon.png" />
         </a>
-        <a href="/resume" aria-label="View Anson's résumé" rel="noreferrer" target="_blank">
+        {/* Temporarily hidden. Uncomment this link when the résumé is ready to return. */}
+        {/* <a href="/resume" aria-label="View Anson's résumé" rel="noreferrer" target="_blank">
           <img alt="" aria-hidden="true" src="/assets/icons/resume-download.png" />
-        </a>
+        </a> */}
       </nav>
       <p className="footer-copy">© 2026 Anson Chan</p>
     </footer>
