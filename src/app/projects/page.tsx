@@ -3,7 +3,7 @@ import Image from "next/image";
 import PageIntro from "@/components/PageIntro";
 import ProjectCard from "@/components/ProjectCard";
 import SiteShell from "@/components/SiteShell";
-import { projects } from "@/data/projects";
+import { visibleProjects } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Anson Chan",
@@ -35,7 +35,7 @@ export default function ProjectsPage() {
         </div>
 
         <section aria-label="Selected projects" className="project-grid">
-          {projects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <ProjectCard key={project.slug} priority={index < 2} project={project} />
           ))}
         </section>

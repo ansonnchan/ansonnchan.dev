@@ -9,6 +9,7 @@ export type ProjectTextSegment = {
 export type Project = {
   slug: string;
   name: string;
+  archived?: boolean;
   description: string;
   image: string;
   imageAlt: string;
@@ -103,6 +104,7 @@ export const projects: Project[] = [
   {
     slug: "noot-of-the-day",
     name: "Noot of the Day",
+    archived: true,
     description: "one tiny penguin fact a day. no more, noot less",
     image: "/assets/penguin_project_stickers/penguin-noot-of-the-day.png",
     imageAlt: "A sleepy baby penguin tucked beneath a pale blue blanket",
@@ -124,6 +126,7 @@ export const projects: Project[] = [
   {
     slug: "juke-box",
     name: "Jukebox",
+    archived: true,
     description: "for when your imaginary friend needs coworkers",
     image: "/assets/penguin_project_stickers/penguin-jukebox.png",
     imageAlt: "Two penguins having a thoughtful conversation from armchairs",
@@ -147,6 +150,7 @@ export const projects: Project[] = [
   {
     slug: "dead-code-explorer",
     name: "Dead Code Explorer",
+    archived: true,
     description: "some code was never meant to make it",
     image: "/assets/penguin_project_stickers/penguin-dead-code-explorer.png",
     imageAlt: "A detective penguin inspecting code on a laptop with a magnifying glass",
@@ -167,3 +171,11 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/ansonnchan/dead-code-explorer"
   }
 ];
+
+export const projectFeatureFlags = {
+  showArchivedProjects: false
+} as const;
+
+export const visibleProjects = projects.filter(
+  (project) => projectFeatureFlags.showArchivedProjects || !project.archived
+);
