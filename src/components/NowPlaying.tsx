@@ -159,7 +159,7 @@ export default function NowPlaying() {
               onClick={() => void togglePlayback()}
               type="button"
             >
-              <img alt="" aria-hidden="true" src={isPlaying ? "/assets/play.svg" : "/assets/pause.svg"} />
+              <img alt="" aria-hidden="true" src={isPlaying ? "/assets/pause.svg" : "/assets/play.svg"} />
             </button>
           </div>
         </div>

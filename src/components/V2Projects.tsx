@@ -76,7 +76,9 @@ export default function V2Projects() {
       >
         {selectedProject?.demoVideo ? (
           <div className="v2-project-dialog-inner">
-            <button aria-label="Close video" className="v2-project-dialog-close" onClick={closePreview} type="button">×</button>
+            <button aria-label="Close video" className="v2-project-dialog-close" onClick={closePreview} type="button">
+              <Image alt="" aria-hidden="true" height={24} src="/assets/cancel.png" width={24} />
+            </button>
             <video autoPlay controls loop muted playsInline src={selectedProject.demoVideo} />
           </div>
         ) : null}

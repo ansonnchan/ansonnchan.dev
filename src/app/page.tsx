@@ -97,6 +97,7 @@ export default function Home() {
         <section className="v2-section" aria-labelledby="education-heading">
           <div className="v2-section-heading">
             <h2 id="education-heading">Education</h2>
+            <img alt="" aria-hidden="true" src="/assets/education.svg" />
           </div>
           <a
             className="v2-education-card v2-card"
@@ -115,6 +116,7 @@ export default function Home() {
         <section className="v2-section" aria-labelledby="experience-heading">
           <div className="v2-section-heading">
             <h2 id="experience-heading">Experience</h2>
+            <img alt="" aria-hidden="true" src="/assets/work.svg" />
           </div>
           <div className="v2-experience-list">
             {allExperiences.map((experience) => (
@@ -135,6 +137,7 @@ export default function Home() {
         <section className="v2-section" aria-labelledby="projects-heading">
           <div className="v2-section-heading">
             <h2 id="projects-heading">Projects</h2>
+            <img alt="" aria-hidden="true" src="/assets/projects.svg" />
           </div>
           <V2Projects />
         </section>
@@ -142,6 +145,7 @@ export default function Home() {
         <section className="v2-section v2-connect-section" aria-labelledby="connect-heading">
           <div className="v2-section-heading">
             <h2 id="connect-heading">Connect</h2>
+            <img alt="" aria-hidden="true" src="/assets/connect.svg" />
           </div>
           <div className="v2-connect-card v2-card">
             <p className="v2-seeking">Seeking Summer 2027 internships.</p>
@@ -165,7 +169,7 @@ export default function Home() {
         </section>
 
         <footer className="v2-footer">
-          <p>© 2026 Anson Chan</p>
+          <p>© 2026 Anson Chan <img alt="" aria-hidden="true" src="/assets/rocket.png" /></p>
         </footer>
       </main>
     </div>
