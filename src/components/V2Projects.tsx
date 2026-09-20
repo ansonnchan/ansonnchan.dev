@@ -6,7 +6,7 @@ import { visibleProjects, type Project } from "@/data/projects";
 
 const projectTechnologies: Record<string, string[]> = {
   nemu: ["Go", "TypeScript", "React", "AWS"],
-  "pear-programming": ["Java", "Spring Boot", "React", "TypeScript", "PostgreSQL", "Redis", "Yjs"],
+  "pear-programming": ["Java", "Spring Boot", "React", "PostgreSQL", "Yjs"],
   "personal-portfolio": ["Next.js", "React", "TypeScript"]
 };
 
