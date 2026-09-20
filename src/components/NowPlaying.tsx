@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 const fallbackDuration = 4 * 60 + 42;
+const defaultVolume = 0.33;
 
 function formatTime(seconds: number) {
   if (!Number.isFinite(seconds)) return "0:00";
@@ -27,13 +28,17 @@ function VolumeIcon({ muted }: { muted: boolean }) {
 
 export default function NowPlaying() {
   const audioRef = useRef<HTMLAudioElement>(null);
-  const previousVolumeRef = useRef(0.33);
+  const previousVolumeRef = useRef(defaultVolume);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(fallbackDuration);
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.33);
+  const [volume, setVolume] = useState(defaultVolume);
+
+  useEffect(() => {
+    if (audioRef.current) audioRef.current.volume = volume;
+  }, [volume]);
 
   useEffect(() => {
     function closePlayer(event: PointerEvent) {
@@ -73,7 +78,6 @@ export default function NowPlaying() {
   }
 
   function changeVolume(nextVolume: number) {
-    if (audioRef.current) audioRef.current.volume = nextVolume;
     setVolume(nextVolume);
     if (nextVolume > 0) previousVolumeRef.current = nextVolume;
   }
