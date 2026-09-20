@@ -33,7 +33,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   position: absolute;
   z-index: 20;
   top: 1.6rem;
-  left: max(1rem, calc((100vw - 43rem) / 2 - 12vw));
+  left: max(1rem, calc((100vw - 43rem) / 2 - 15vw));
 }
 
 .v2-menu-toggle {
