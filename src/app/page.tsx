@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import CursorDots from "@/components/CursorDots";
 import NowPlaying from "@/components/NowPlaying";
+import SpinningPortrait from "@/components/SpinningPortrait";
 import ThemeToggle from "@/components/ThemeToggle";
 import V2Projects from "@/components/V2Projects";
 import { contactCards } from "@/data/contacts";
@@ -84,14 +84,7 @@ export default function Home() {
 
             </p>
           </div>
-          <Image
-            alt="Anson Chan"
-            className="v2-hero-portrait"
-            height={1254}
-            priority
-            src="/assets/images/profile.png"
-            width={1254}
-          />
+          <SpinningPortrait />
         </section>
 
         <section className="v2-section" aria-labelledby="education-heading">

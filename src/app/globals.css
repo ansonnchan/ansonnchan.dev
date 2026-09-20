@@ -104,7 +104,19 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 .v2-intro-highlight { color: #315f8d; font-weight: 550; }
-.v2-hero-portrait { width: 9.75rem; height: 9.75rem; border-radius: 50%; object-fit: cover; }
+.v2-hero-portrait {
+  width: 9.75rem;
+  height: 9.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  perspective: 42rem;
+}
+.v2-hero-portrait img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; backface-visibility: hidden; transform-style: preserve-3d; }
+.v2-hero-portrait img.is-spinning { animation: v2-portrait-spin 620ms cubic-bezier(0.2, 0.75, 0.25, 1) both; }
+.v2-hero-portrait:focus-visible { outline: 2px solid #315f8d; outline-offset: 4px; }
 
 .v2-section { margin-top: 4.5rem; }
 .v2-section-heading { display: flex; align-items: center; gap: 0.55rem; margin-bottom: 1.45rem; }
@@ -261,6 +273,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @keyframes v2-player-in {
   from { opacity: 0; transform: translateY(-0.3rem) scale(0.98); }
   to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes v2-portrait-spin {
+  0% { transform: rotateY(0deg) rotateZ(0deg) scale(1); }
+  50% { transform: rotateY(720deg) rotateZ(180deg) scale(1.04); }
+  100% { transform: rotateY(1440deg) rotateZ(360deg) scale(1); }
 }
 
 html[data-theme="dark"] .v2-page {
