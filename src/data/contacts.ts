@@ -1,4 +1,4 @@
-type ContactCard = {
+export type ContactCard = {
   label: string;
   value: string;
   href: string;
@@ -30,14 +30,5 @@ export const contactCards: ContactCard[] = [
     icon: "/assets/icons/linkedin-icon.png",
     iconClassName: "contact-card-linkedin",
     openInNewTab: true
-  },
-  // Temporarily hidden. Uncomment this card when the résumé is ready to return.
-  // {
-  //   label: "résumé",
-  //   value: "view my résumé",
-  //   href: "/resume",
-  //   icon: "/assets/icons/resume-download.png",
-  //   iconClassName: "contact-card-resume",
-  //   openInNewTab: true
-  // }
+  }
 ];

@@ -2,22 +2,13 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { visibleProjects, type Project } from "@/data/projects";
+import { projects, type Project } from "@/data/projects";
 
 const projectTechnologies: Record<string, string[]> = {
   nemu: ["Go", "TypeScript", "React", "AWS"],
   "pear-programming": ["Java", "Spring Boot", "React", "PostgreSQL"],
   "personal-portfolio": ["Next.js", "React", "TypeScript"]
 };
-
-function projectDescription(project: Project) {
-  return project.overview
-    .filter((segment) => segment.style !== "handwritten")
-    .map((segment) => segment.text)
-    .join("")
-    .replace(/\s+/g, " ")
-    .trim();
-}
 
 export default function V2Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -36,7 +27,7 @@ export default function V2Projects() {
   return (
     <>
       <div className="v2-project-grid">
-        {visibleProjects.map((project) => (
+        {projects.map((project) => (
           <article className="v2-project" key={project.slug}>
             {project.demoVideo ? (
               <button
@@ -50,7 +41,7 @@ export default function V2Projects() {
             ) : null}
             <div className="v2-project-copy">
               <h3>{project.name}</h3>
-              <p>{projectDescription(project)}</p>
+              <p>{project.description}</p>
               <div className="v2-project-footer">
                 <div aria-label={`${project.name} links`} className="v2-project-links">
                   {project.liveUrl ? (

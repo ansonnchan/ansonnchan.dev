@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Patrick_Hand } from "next/font/google";
-import RouteTransition from "@/components/RouteTransition";
 import "./globals.css";
 
 const patrickHand = Patrick_Hand({
@@ -34,21 +33,8 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem("portfolio-theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){}})()`
           }}
         />
-        <link
-          as="image"
-          href="/assets/transition/penguin-transition.gif"
-          rel="preload"
-          type="image/gif"
-        />
-        <link
-          as="image"
-          href="/assets/experiences/scalepad_volunteer.webp"
-          rel="preload"
-          type="image/webp"
-        />
       </head>
       <body className={patrickHand.variable}>
-        <RouteTransition />
         {children}
         <Analytics />
       </body>
