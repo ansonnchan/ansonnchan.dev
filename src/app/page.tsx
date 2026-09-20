@@ -45,11 +45,7 @@ function ExperienceSummary({ experience }: { experience: Experience }) {
       <div className="v2-experience-topline">
         <div>
           <h3>{experience.role}</h3>
-          <p>
-            <a href={companyUrls[experience.company]} rel="noreferrer" target="_blank">
-              {experience.company}
-            </a>
-          </p>
+          <p>{experience.company}</p>
         </div>
         <time dateTime={experience.startDate}>{experience.dateLabel}</time>
       </div>
@@ -113,9 +109,16 @@ export default function Home() {
           </div>
           <div className="v2-experience-list">
             {allExperiences.map((experience) => (
-              <article className="v2-experience-card v2-card" key={experience.company}>
+              <a
+                aria-label={`Visit ${experience.company}`}
+                className="v2-experience-card v2-card"
+                href={companyUrls[experience.company]}
+                key={experience.company}
+                rel="noreferrer"
+                target="_blank"
+              >
                 <ExperienceSummary experience={experience} />
-              </article>
+              </a>
             ))}
           </div>
         </section>

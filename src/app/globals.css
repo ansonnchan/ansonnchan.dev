@@ -1486,13 +1486,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
   box-shadow: 0 8px 24px rgba(22, 25, 31, 0.05);
 }
 .v2-education-card:focus-visible,
-.v2-experience-topline a:focus-visible,
+.v2-experience-card:focus-visible,
 .v2-theme-toggle:focus-visible {
   outline: 2px solid #315f8d;
   outline-offset: 3px;
 }
-.v2-experience-topline p a { transition: color 160ms ease; }
-.v2-experience-topline p a:hover { color: #315f8d; }
 
 html[data-theme="dark"] .v2-page {
   --v2-ink: #e8eaed;
@@ -1516,8 +1514,7 @@ html[data-theme="dark"] .v2-project-dialog-inner { background: #1c1f23; }
 html[data-theme="dark"] .v2-card:hover,
 html[data-theme="dark"] .v2-project:hover { border-color: #7d848d; background: #24282d; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18); }
 html[data-theme="dark"] .v2-intro-highlight,
-html[data-theme="dark"] .v2-connect-card > .v2-seeking,
-html[data-theme="dark"] .v2-experience-topline p a:hover { color: #82acd2; }
+html[data-theme="dark"] .v2-connect-card > .v2-seeking { color: #82acd2; }
 html[data-theme="dark"] .v2-tags li { background: #292d32; color: #c6cad0; }
 html[data-theme="dark"] .v2-project-video-button { border-color: #393e45; background: #101214; }
 
