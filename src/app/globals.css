@@ -114,8 +114,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   cursor: pointer;
   perspective: 42rem;
 }
-.v2-hero-portrait img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; backface-visibility: hidden; transform-style: preserve-3d; }
-.v2-hero-portrait img.is-spinning { animation: v2-portrait-spin 2.35s cubic-bezier(0.05, 0.72, 0.12, 1) both; }
+.v2-hero-portrait img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; backface-visibility: visible; transform-style: preserve-3d; }
+.v2-hero-portrait img.is-spinning { animation: v2-portrait-spin 2.8s cubic-bezier(0.05, 0.72, 0.12, 1) both; }
 .v2-hero-portrait:focus-visible { outline: 2px solid #315f8d; outline-offset: 4px; }
 
 .v2-section { margin-top: 4.5rem; }
@@ -277,7 +277,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 @keyframes v2-portrait-spin {
   from { transform: rotateY(0deg); }
-  to { transform: rotateY(5040deg); }
+  to { transform: rotateY(4320deg); }
 }
 
 html[data-theme="dark"] .v2-page {
