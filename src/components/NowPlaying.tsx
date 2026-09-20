@@ -27,13 +27,13 @@ function VolumeIcon({ muted }: { muted: boolean }) {
 
 export default function NowPlaying() {
   const audioRef = useRef<HTMLAudioElement>(null);
-  const previousVolumeRef = useRef(0.75);
+  const previousVolumeRef = useRef(0.33);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(fallbackDuration);
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.75);
+  const [volume, setVolume] = useState(0.33);
 
   useEffect(() => {
     function closePlayer(event: PointerEvent) {
