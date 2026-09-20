@@ -8,8 +8,7 @@ import { useEffect, useRef, useState } from "react";
 const menuItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Me" },
-  { href: "/blogs", label: "Blogs" },
-  { href: "/resume", label: "Resume", newTab: true }
+  { href: "/blogs", label: "Blogs" }
 ];
 
 export default function MenuBar() {
@@ -18,6 +17,13 @@ export default function MenuBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => setIsOpen(false), [pathname]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previousOverflow; };
+  }, [isOpen]);
 
   useEffect(() => {
     function closeMenu(event: PointerEvent) {
@@ -46,23 +52,51 @@ export default function MenuBar() {
         onClick={() => setIsOpen((open) => !open)}
         type="button"
       >
-        <Image alt="" aria-hidden="true" height={24} src="/assets/icons/menu.png" width={24} />
+        <Image
+          alt=""
+          aria-hidden="true"
+          height={24}
+          src={isOpen ? "/assets/icons/cancel.png" : "/assets/icons/menu.png"}
+          width={24}
+        />
       </button>
 
       {isOpen ? (
-        <nav aria-label="Primary" className="v2-menu-panel" id="portfolio-menu">
-          {menuItems.map((item) => (
+        <div
+          aria-label="Site menu"
+          aria-modal="true"
+          className="v2-menu-overlay"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) setIsOpen(false);
+          }}
+          role="dialog"
+        >
+          <nav aria-label="Primary" className="v2-menu-panel" id="portfolio-menu">
+            <div className="v2-menu-links">
+              {menuItems.map((item, index) => (
+                <Link
+                  aria-current={pathname === item.href ? "page" : undefined}
+                  href={item.href}
+                  key={item.href}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{item.label}</strong>
+                </Link>
+              ))}
+            </div>
             <Link
-              aria-current={pathname === item.href ? "page" : undefined}
-              href={item.href}
-              key={item.href}
-              rel={item.newTab ? "noreferrer" : undefined}
-              target={item.newTab ? "_blank" : undefined}
+              className="v2-menu-resume"
+              href="/resume"
+              onClick={() => setIsOpen(false)}
+              rel="noreferrer"
+              target="_blank"
             >
-              {item.label}
+              <span aria-hidden="true">⇩</span>
+              View Résumé
             </Link>
-          ))}
-        </nav>
+          </nav>
+        </div>
       ) : null}
     </div>
   );
