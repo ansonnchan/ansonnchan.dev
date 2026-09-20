@@ -24,12 +24,21 @@ export default function SpinningPortrait() {
     >
       <Image
         alt="Anson Chan"
+        className="v2-hero-portrait-photo"
         height={1254}
         onAnimationEnd={(event) => event.currentTarget.classList.remove("is-spinning")}
         priority
         ref={imageRef}
         src="/assets/images/profile.png"
         width={1254}
+      />
+      <Image
+        alt=""
+        aria-hidden="true"
+        className="v2-portrait-hint"
+        height={971}
+        src="/assets/miscellaneous/click-me.png"
+        width={1619}
       />
     </button>
   );

@@ -105,6 +105,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .v2-intro-highlight { color: #315f8d; font-weight: 550; }
 .v2-hero-portrait {
+  position: relative;
   width: 9.75rem;
   height: 9.75rem;
   padding: 0;
@@ -114,8 +115,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   cursor: pointer;
   perspective: 42rem;
 }
-.v2-hero-portrait img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; backface-visibility: visible; transform-style: preserve-3d; }
-.v2-hero-portrait img.is-spinning { animation: v2-portrait-spin 2.8s cubic-bezier(0.05, 0.72, 0.12, 1) both; }
+.v2-hero-portrait-photo { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; backface-visibility: visible; transform-style: preserve-3d; }
+.v2-hero-portrait-photo.is-spinning { animation: v2-portrait-spin 2.8s cubic-bezier(0.05, 0.72, 0.12, 1) both; }
+.v2-portrait-hint { position: absolute; z-index: 2; top: 99%; left: 34%; width: 7.25rem; height: auto; max-width: none; pointer-events: none; transform: rotate(-5deg); transform-origin: 20% 15%; }
 .v2-hero-portrait:focus-visible { outline: 2px solid #315f8d; outline-offset: 4px; }
 
 .v2-section { margin-top: 4.5rem; }
@@ -300,7 +302,8 @@ html[data-theme="dark"] .v2-project-video-button { border-color: #393e45; backgr
 html[data-theme="dark"] .v2-audio-minimize { background: rgba(17, 19, 22, 0.88); }
 html[data-theme="dark"] .v2-audio-play-button img { filter: invert(1); }
 html[data-theme="dark"] .v2-section-heading > img,
-html[data-theme="dark"] .v2-footer img { filter: invert(1); }
+html[data-theme="dark"] .v2-footer img,
+html[data-theme="dark"] .v2-portrait-hint { filter: invert(1); }
 
 @media (max-width: 620px) {
   .v2-main { width: calc(100% - 2rem); padding-top: 4rem; }
@@ -308,6 +311,7 @@ html[data-theme="dark"] .v2-footer img { filter: invert(1); }
   .v2-hero h1 { font-size: 1.55rem; }
   .v2-tagline { font-size: 0.94rem; }
   .v2-hero-portrait { width: 7.2rem; height: 7.2rem; }
+  .v2-portrait-hint { width: 5.8rem; }
   .v2-section { margin-top: 4rem; }
   .v2-education-card { flex-direction: column; align-items: flex-start; gap: 0.65rem; }
   .v2-experience-topline { grid-template-columns: 2.75rem minmax(0, 1fr); }
