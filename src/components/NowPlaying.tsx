@@ -90,7 +90,7 @@ export default function NowPlaying() {
         onClick={() => setIsOpen((open) => !open)}
         type="button"
       >
-        <Image alt="" aria-hidden="true" height={500} src="/assets/spotify-transparent.png" width={500} />
+        <Image alt="" aria-hidden="true" height={500} src="/assets/icons/spotify.png" width={500} />
       </button>
 
       {isOpen && (
@@ -108,7 +108,7 @@ export default function NowPlaying() {
             alt="我對緣分小心翼翼 cover"
             className="v2-audio-cover"
             height={300}
-            src="/assets/song_cover.jpeg"
+            src="/assets/audio/song-cover.jpeg"
             width={300}
           />
 
@@ -159,7 +159,7 @@ export default function NowPlaying() {
               onClick={() => void togglePlayback()}
               type="button"
             >
-              <img alt="" aria-hidden="true" src={isPlaying ? "/assets/pause.svg" : "/assets/play.svg"} />
+              <img alt="" aria-hidden="true" src={isPlaying ? "/assets/icons/pause.svg" : "/assets/icons/play.svg"} />
             </button>
           </div>
         </div>
@@ -174,7 +174,7 @@ export default function NowPlaying() {
         onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime)}
         preload="metadata"
         ref={audioRef}
-        src="/assets/song.mp3"
+        src="/assets/audio/song.mp3"
       />
     </div>
   );

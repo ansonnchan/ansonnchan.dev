@@ -46,12 +46,12 @@ export default function V2Projects() {
                 <div aria-label={`${project.name} links`} className="v2-project-links">
                   {project.liveUrl ? (
                     <a aria-label={`Open live ${project.name}`} href={project.liveUrl} rel="noreferrer" target="_blank">
-                      <Image alt="" aria-hidden="true" height={48} src="/assets/projects/live_button.png" width={48} />
+                      <Image alt="" aria-hidden="true" height={48} src="/assets/icons/live.png" width={48} />
                       <span>live</span>
                     </a>
                   ) : null}
                   <a aria-label={`Open ${project.name} source code`} href={project.githubUrl} rel="noreferrer" target="_blank">
-                    <Image alt="" aria-hidden="true" height={48} src="/assets/icons/github_icon.png" width={48} />
+                    <Image alt="" aria-hidden="true" height={48} src="/assets/icons/github.png" width={48} />
                     <span>code</span>
                   </a>
                 </div>
@@ -77,7 +77,7 @@ export default function V2Projects() {
         {selectedProject?.demoVideo ? (
           <div className="v2-project-dialog-inner">
             <button aria-label="Close video" className="v2-project-dialog-close" onClick={closePreview} type="button">
-              <Image alt="" aria-hidden="true" height={24} src="/assets/cancel.png" width={24} />
+              <Image alt="" aria-hidden="true" height={24} src="/assets/icons/cancel.png" width={24} />
             </button>
             <video autoPlay controls loop muted playsInline src={selectedProject.demoVideo} />
           </div>

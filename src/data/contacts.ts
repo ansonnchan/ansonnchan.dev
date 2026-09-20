@@ -12,14 +12,14 @@ export const contactCards: ContactCard[] = [
     label: "email",
     value: "ac1800@student.ubc.ca",
     href: "mailto:ac1800@student.ubc.ca",
-    icon: "/assets/icons/mail-icon.png",
+    icon: "/assets/icons/mail.png",
     iconClassName: "contact-card-mail"
   },
   {
     label: "github",
     value: "github.com/ansonnchan",
     href: "https://github.com/ansonnchan",
-    icon: "/assets/icons/github_icon.png",
+    icon: "/assets/icons/github.png",
     iconClassName: "contact-card-github",
     openInNewTab: true
   },
@@ -27,7 +27,7 @@ export const contactCards: ContactCard[] = [
     label: "linkedin",
     value: "linkedin.com/in/ansonnchan",
     href: "https://www.linkedin.com/in/ansonnchan",
-    icon: "/assets/icons/linkedin-icon.png",
+    icon: "/assets/icons/linkedin.png",
     iconClassName: "contact-card-linkedin",
     openInNewTab: true
   }
