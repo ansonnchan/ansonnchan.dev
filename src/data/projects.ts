@@ -82,7 +82,7 @@ export const projects: Project[] = [
     demoVideo: "/assets/projects/portfolio-demo.m4v",
     overview: [
       { text: "Built my corner of the internet with " },
-      { text: "Next.js, React, and TypeScript", style: "strong" },
+      { text: "Next.js, React, and TypeScript. ", style: "strong" },
       { text: "I think this is the fourth iteration of my portfolio." }
     ],
     liveUrl: "https://www.ansonnchan.dev/",

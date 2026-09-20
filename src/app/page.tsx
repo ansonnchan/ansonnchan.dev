@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import CursorDots from "@/components/CursorDots";
 import ThemeToggle from "@/components/ThemeToggle";
 import V2Projects from "@/components/V2Projects";
 import { contactCards } from "@/data/contacts";
@@ -59,6 +60,7 @@ function ExperienceSummary({ experience }: { experience: Experience }) {
 export default function Home() {
   return (
     <div className="v2-page">
+      <CursorDots />
       <ThemeToggle />
       <main className="v2-main">
         <section className="v2-hero" aria-labelledby="intro-heading">
