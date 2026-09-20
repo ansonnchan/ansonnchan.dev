@@ -44,7 +44,10 @@ function ExperienceSummary({ experience }: { experience: Experience }) {
   return (
     <>
       <div className="v2-experience-topline">
-        <div>
+        <span className="v2-experience-logo">
+          <img alt={experience.logoAlt} src={experience.logo} />
+        </span>
+        <div className="v2-experience-info">
           <h3>{experience.role}</h3>
           <p>{experience.company}</p>
         </div>

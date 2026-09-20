@@ -3,11 +3,13 @@
 import { useEffect, useRef } from "react";
 
 const dots = [
-  [7, 13, 0.35, 2], [19, 28, 0.7, 3], [34, 9, 0.45, 2], [48, 21, 0.85, 2],
-  [63, 12, 0.55, 3], [82, 25, 0.4, 2], [93, 8, 0.75, 3], [11, 48, 0.6, 2],
-  [27, 61, 0.9, 3], [42, 43, 0.38, 2], [58, 69, 0.7, 2], [73, 51, 0.5, 3],
-  [89, 63, 0.82, 2], [16, 86, 0.42, 3], [39, 78, 0.65, 2], [67, 89, 0.88, 3],
-  [85, 82, 0.48, 2], [96, 45, 0.72, 2]
+  [5, 12, 0.35, 3], [14, 30, 0.72, 4], [25, 17, 0.5, 2], [35, 7, 0.45, 3],
+  [48, 21, 0.85, 3], [61, 10, 0.58, 4], [72, 29, 0.42, 2], [84, 18, 0.65, 3],
+  [94, 7, 0.78, 4], [8, 48, 0.62, 3], [20, 42, 0.4, 2], [29, 63, 0.92, 4],
+  [42, 45, 0.38, 3], [52, 57, 0.68, 2], [62, 70, 0.72, 3], [74, 50, 0.52, 4],
+  [86, 61, 0.84, 3], [96, 43, 0.7, 2], [6, 74, 0.48, 2], [16, 88, 0.44, 4],
+  [31, 81, 0.76, 3], [44, 92, 0.55, 2], [58, 83, 0.64, 4], [69, 91, 0.9, 3],
+  [83, 80, 0.5, 2], [95, 91, 0.74, 4]
 ] as const;
 
 export default function CursorDots() {
@@ -23,13 +25,13 @@ export default function CursorDots() {
     let targetY = 0;
 
     const move = (event: PointerEvent) => {
-      targetX = (event.clientX / window.innerWidth - 0.5) * 18;
-      targetY = (event.clientY / window.innerHeight - 0.5) * 18;
+      targetX = (event.clientX / window.innerWidth - 0.5) * 28;
+      targetY = (event.clientY / window.innerHeight - 0.5) * 28;
     };
 
     const animate = () => {
-      currentX += (targetX - currentX) * 0.065;
-      currentY += (targetY - currentY) * 0.065;
+      currentX += (targetX - currentX) * 0.055;
+      currentY += (targetY - currentY) * 0.055;
 
       dotRefs.current.forEach((dot, index) => {
         if (!dot) return;

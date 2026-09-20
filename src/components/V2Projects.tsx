@@ -4,6 +4,12 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { visibleProjects, type Project } from "@/data/projects";
 
+const projectTechnologies: Record<string, string[]> = {
+  nemu: ["Go", "TypeScript", "React", "AWS"],
+  "pear-programming": ["Java", "Spring Boot", "React", "TypeScript", "PostgreSQL", "Redis", "Yjs"],
+  "personal-portfolio": ["Next.js", "React", "TypeScript"]
+};
+
 function projectDescription(project: Project) {
   return project.overview
     .filter((segment) => segment.style !== "handwritten")
@@ -45,17 +51,22 @@ export default function V2Projects() {
             <div className="v2-project-copy">
               <h3>{project.name}</h3>
               <p>{projectDescription(project)}</p>
-              <div aria-label={`${project.name} links`} className="v2-project-links">
-                {project.liveUrl ? (
-                  <a aria-label={`Open live ${project.name}`} href={project.liveUrl} rel="noreferrer" target="_blank">
-                    <Image alt="" aria-hidden="true" height={48} src="/assets/projects/live_button.png" width={48} />
-                    <span>live</span>
+              <div className="v2-project-footer">
+                <div aria-label={`${project.name} links`} className="v2-project-links">
+                  {project.liveUrl ? (
+                    <a aria-label={`Open live ${project.name}`} href={project.liveUrl} rel="noreferrer" target="_blank">
+                      <Image alt="" aria-hidden="true" height={48} src="/assets/projects/live_button.png" width={48} />
+                      <span>live</span>
+                    </a>
+                  ) : null}
+                  <a aria-label={`Open ${project.name} source code`} href={project.githubUrl} rel="noreferrer" target="_blank">
+                    <Image alt="" aria-hidden="true" height={48} src="/assets/icons/github_icon.png" width={48} />
+                    <span>code</span>
                   </a>
-                ) : null}
-                <a aria-label={`Open ${project.name} source code`} href={project.githubUrl} rel="noreferrer" target="_blank">
-                  <Image alt="" aria-hidden="true" height={48} src="/assets/icons/github_icon.png" width={48} />
-                  <span>code</span>
-                </a>
+                </div>
+                <ul aria-label={`${project.name} technologies`} className="v2-project-tech">
+                  {projectTechnologies[project.slug]?.map((technology) => <li key={technology}>{technology}</li>)}
+                </ul>
               </div>
             </div>
           </article>
