@@ -9,7 +9,7 @@ const menuItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Me" },
   { href: "/blogs", label: "Blogs" },
-  { href: "/resume", label: "Résumé", newTab: true }
+  { href: "/resume", label: "Resume", newTab: true }
 ];
 
 export default function MenuBar() {

@@ -32,7 +32,7 @@ const allExperiences = [...professionalExperiences, ...volunteerExperiences].sor
 const contactLinks = [
   ...contactCards,
   {
-    label: "résumé",
+    label: "resume",
     value: "view résumé",
     href: "/resume",
     icon: "/assets/icons/resume.png",
