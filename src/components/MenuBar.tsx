@@ -92,8 +92,14 @@ export default function MenuBar() {
               rel="noreferrer"
               target="_blank"
             >
-              <span aria-hidden="true">⇩</span>
-              View Résumé
+              <Image
+                alt=""
+                aria-hidden="true"
+                height={18}
+                src="/assets/icons/download.svg"
+                width={18}
+              />
+              <span>View Résumé</span>
             </Link>
           </nav>
         </div>
