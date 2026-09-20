@@ -72,7 +72,7 @@ export default function Home() {
       <main className="v2-main">
         <section className="v2-hero" aria-labelledby="intro-heading">
           <div className="v2-hero-copy">
-            <h1 id="intro-heading">Anson Chan</h1>
+            <h1 id="intro-heading">Anson Chan (陳雋希)</h1>
             <p className="v2-tagline">Software Engineer</p>
             <p className="v2-flags" aria-label="Hong Kong and Australia">🇭🇰 🇦🇺</p>
             <p className="v2-intro-about">
