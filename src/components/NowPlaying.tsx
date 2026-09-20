@@ -118,7 +118,7 @@ export default function NowPlaying() {
 
           <div className="v2-audio-details">
             <span>currently listening to</span>
-            <strong>Blue and White Porcelain</strong>
+            <strong>青花瓷</strong>
             <small>Jay Chou</small>
           </div>
 
