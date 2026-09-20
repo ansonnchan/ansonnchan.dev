@@ -33,13 +33,11 @@ export const projects: Project[] = [
     demoVideo: "/assets/projects/nemu-demo.mp4",
     overview: [
       { text: "Built a " },
-      { text: "lightweight desktop telemetry agent", style: "highlight" },
+      { text: "desktop telemetry agent", style: "highlight" },
       { text: " in " },
       { text: "Go", style: "strong" },
-      { text: " that runs quietly in the background, tracks time spent in foreground apps, and turns it into structured usage summaries. It syncs hourly through " },
-      { text: "AWS API Gateway, Lambda, S3, DynamoDB, and CloudFront", style: "strong" },
-      { text: " to keep the activity dashboard up to date." },
-      { breakBefore: true, text: "" },
+      { text: " that tracks time spent in foreground apps, and turns it into structured usage summaries." },
+     
       {
         breakBefore: true,
         text: "Deep state, shadow organization, CIA, FBI—I’m ready for a SWE career.",
@@ -63,14 +61,10 @@ export const projects: Project[] = [
       { text: "Built a " },
       { text: "collaborative browser IDE", style: "highlight" },
       { text: " for real-time pair programming using " },
-      { text: "Spring Boot", style: "strong" },
-      { text: " on the backend and " },
-      { text: "React", style: "strong" },
-      { text: " on the frontend. Code execution runs through " },
-      { text: "Judge0", style: "strong" },
-      { text: ", while " },
-      { text: "Yjs", style: "strong" },
-      { text: " keeps code, files, and chat synchronized across everyone in the room. " },
+      { text: "Spring Boot and React. ", style: "strong" },
+      { text: "Supports code execution through " },
+      { text: "Judge0 and shared workspace features", style: "strong" },
+
       { breakBefore: true, text: ""}, //new line
       { breakBefore: true, text: "Pair programming, except the pear pun is legally required.", style: "handwritten" }
       ],
@@ -89,14 +83,7 @@ export const projects: Project[] = [
     overview: [
       { text: "Built my corner of the internet with " },
       { text: "Next.js, React, and TypeScript", style: "strong" },
-      { text: ". There are far too many penguins for a sane person. " },
-      { text: "Luckily, I’m not sane. *micdrop*", style: "handwritten" },
-      { breakBefore: true, text: ""},
-      {
-        breakBefore: true,
-        text: "If you're a recruiter, please kindly discard that last sentence. I am very much sane and employable.",
-        style: "handwritten"
-      }
+      { text: "I think this is the fourth iteration of my portfolio." }
     ],
     liveUrl: "https://www.ansonnchan.dev/",
     githubUrl: "https://github.com/ansonnchan/ansonnchan.dev"
