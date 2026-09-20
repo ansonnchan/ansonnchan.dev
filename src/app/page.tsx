@@ -6,7 +6,7 @@ import { contactCards } from "@/data/contacts";
 import { professionalExperiences, volunteerExperiences, type Experience } from "@/data/experiences";
 
 export const metadata: Metadata = {
-  title: "Anson Chan — Software Engineer",
+  title: "Anson Chan",
   description:
     "Anson Chan is a UBC Computer Engineering student and software engineer building thoughtful products and dependable systems."
 };

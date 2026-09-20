@@ -15,8 +15,9 @@ export const metadata: Metadata = {
   title: "Anson Chan",
   description: "Anson Chan is a UBC Computer Engineering student and software engineer building thoughtful products and dependable systems.",
   icons: {
-    icon: "/assets/favicon.jpg",
-    apple: "/assets/favicon.jpg"
+    icon: [{ url: "/assets/favicon.jpg", sizes: "340x340", type: "image/png" }],
+    shortcut: [{ url: "/assets/favicon.jpg", sizes: "340x340", type: "image/png" }],
+    apple: [{ url: "/assets/favicon.jpg", sizes: "340x340", type: "image/png" }]
   }
 };
 
