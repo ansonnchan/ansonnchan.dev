@@ -25,13 +25,13 @@ export default function CursorDots() {
     let targetY = 0;
 
     const move = (event: PointerEvent) => {
-      targetX = (event.clientX / window.innerWidth - 0.5) * 28;
-      targetY = (event.clientY / window.innerHeight - 0.5) * 28;
+      targetX = (event.clientX / window.innerWidth - 0.5) * 72;
+      targetY = (event.clientY / window.innerHeight - 0.5) * 72;
     };
 
     const animate = () => {
-      currentX += (targetX - currentX) * 0.055;
-      currentY += (targetY - currentY) * 0.055;
+      currentX += (targetX - currentX) * 0.075;
+      currentY += (targetY - currentY) * 0.075;
 
       dotRefs.current.forEach((dot, index) => {
         if (!dot) return;
