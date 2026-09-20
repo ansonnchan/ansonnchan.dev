@@ -24,14 +24,14 @@ export default function CursorDots() {
     let targetX = 0;
     let targetY = 0;
 
-    const move = (event: PointerEvent) => {
-      targetX = (event.clientX / window.innerWidth - 0.5) * 72;
-      targetY = (event.clientY / window.innerHeight - 0.5) * 72;
+    const move = (event: PointerEvent | MouseEvent) => {
+      targetX = (event.clientX / window.innerWidth - 0.5) * 180;
+      targetY = (event.clientY / window.innerHeight - 0.5) * 180;
     };
 
     const animate = () => {
-      currentX += (targetX - currentX) * 0.075;
-      currentY += (targetY - currentY) * 0.075;
+      currentX += (targetX - currentX) * 0.12;
+      currentY += (targetY - currentY) * 0.12;
 
       dotRefs.current.forEach((dot, index) => {
         if (!dot) return;
@@ -43,10 +43,12 @@ export default function CursorDots() {
     };
 
     window.addEventListener("pointermove", move, { passive: true });
+    window.addEventListener("mousemove", move, { passive: true });
     frame = window.requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("pointermove", move);
+      window.removeEventListener("mousemove", move);
       window.cancelAnimationFrame(frame);
     };
   }, []);
