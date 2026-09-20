@@ -209,10 +209,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .v2-audio-details strong { overflow: hidden; margin-top: 0.08rem; font-size: 0.75rem; text-overflow: ellipsis; white-space: nowrap; }
 .v2-audio-details small { margin-top: 0.08rem; color: var(--v2-muted); font-size: 0.55rem; }
 .v2-audio-progress-wrap { padding: 0.5rem 0.12rem 0; }
-.v2-audio-range { --range-progress: 0%; width: 100%; height: 0.22rem; margin: 0; border-radius: 999px; outline: none; background: linear-gradient(to right, #1db954 0 var(--range-progress), #d9d7d2 var(--range-progress) 100%); cursor: pointer; appearance: none; }
-.v2-audio-range::-webkit-slider-thumb { width: 0.68rem; height: 0.68rem; border: 2px solid #fff; border-radius: 50%; background: #1db954; box-shadow: 0 1px 4px rgba(23, 32, 51, 0.24); appearance: none; }
-.v2-audio-range::-moz-range-thumb { width: 0.52rem; height: 0.52rem; border: 2px solid #fff; border-radius: 50%; background: #1db954; box-shadow: 0 1px 4px rgba(23, 32, 51, 0.24); }
-.v2-audio-time { display: flex; justify-content: space-between; margin-top: 0.22rem; color: var(--v2-muted); font-size: 0.51rem; font-variant-numeric: tabular-nums; }
+.v2-audio-range { --range-progress: 0%; width: 100%; height: 0.22rem; margin: 0; border-radius: 999px; outline: none; background: linear-gradient(to right, #303238 0 var(--range-progress), #d9d7d2 var(--range-progress) 100%); cursor: pointer; appearance: none; }
+.v2-audio-range::-webkit-slider-thumb { width: 0.68rem; height: 0.68rem; border: 2px solid #fff; border-radius: 50%; background: #303238; box-shadow: 0 1px 4px rgba(23, 32, 51, 0.24); appearance: none; }
+.v2-audio-range::-moz-range-thumb { width: 0.52rem; height: 0.52rem; border: 2px solid #fff; border-radius: 50%; background: #303238; box-shadow: 0 1px 4px rgba(23, 32, 51, 0.24); }
+.v2-audio-progress { display: block; }
+.v2-audio-time { display: flex; justify-content: space-between; margin-top: 0.62rem; color: var(--v2-muted); font-size: 0.51rem; font-variant-numeric: tabular-nums; }
 .v2-audio-controls { display: grid; grid-template-columns: 1.3rem 1fr 1.95rem; align-items: center; gap: 0.34rem; padding: 0.28rem 0.08rem 0; }
 .v2-audio-volume { height: 0.18rem; }
 .v2-audio-volume-button,
@@ -277,6 +278,7 @@ html[data-theme="dark"] .v2-tags li,
 html[data-theme="dark"] .v2-project-tech li { background: #292d32; color: #c6cad0; }
 html[data-theme="dark"] .v2-project-video-button { border-color: #393e45; background: #101214; }
 html[data-theme="dark"] .v2-audio-minimize { background: rgba(17, 19, 22, 0.88); }
+html[data-theme="dark"] .v2-audio-play-button img { filter: invert(1); }
 
 @media (max-width: 620px) {
   .v2-main { width: calc(100% - 2rem); padding-top: 4rem; }

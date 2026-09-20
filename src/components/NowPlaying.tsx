@@ -121,7 +121,7 @@ export default function NowPlaying() {
           <div className="v2-audio-progress-wrap">
             <input
               aria-label="Song progress"
-              className="v2-audio-range"
+              className="v2-audio-range v2-audio-progress"
               max={duration}
               min="0"
               onChange={(event) => seek(Number(event.target.value))}
@@ -159,13 +159,14 @@ export default function NowPlaying() {
               onClick={() => void togglePlayback()}
               type="button"
             >
-              <img alt="" aria-hidden="true" src={isPlaying ? "/assets/projects/play-button.png" : "/assets/projects/pause-button.png"} />
+              <img alt="" aria-hidden="true" src={isPlaying ? "/assets/play.svg" : "/assets/pause.svg"} />
             </button>
           </div>
         </div>
       )}
 
       <audio
+        loop
         onDurationChange={(event) => setDuration(event.currentTarget.duration || fallbackDuration)}
         onEnded={() => setIsPlaying(false)}
         onPause={() => setIsPlaying(false)}
