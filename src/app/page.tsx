@@ -32,7 +32,7 @@ const allExperiences = [...professionalExperiences, ...volunteerExperiences].sor
 const contactLinks = [
   ...contactCards,
   {
-    label: "résumé",
+    label: "resume",
     value: "view résumé",
     href: "/resume",
     icon: "/assets/icons/resume.png",
@@ -40,6 +40,26 @@ const contactLinks = [
     openInNewTab: true
   }
 ];
+
+function ContactLinks({ className = "", label }: { className?: string; label: string }) {
+  return (
+    <nav className={`v2-connect-links ${className}`.trim()} aria-label={label}>
+      {contactLinks.map((contact) => (
+        <a
+          aria-label={`${contact.label}: ${contact.value}`}
+          className={contact.iconClassName}
+          href={contact.href}
+          key={contact.label}
+          rel={contact.openInNewTab ? "noreferrer" : undefined}
+          target={contact.openInNewTab ? "_blank" : undefined}
+        >
+          <span className="v2-connect-icon"><img alt="" aria-hidden="true" src={contact.icon} /></span>
+          <span>{contact.label}</span>
+        </a>
+      ))}
+    </nav>
+  );
+}
 
 function ExperienceSummary({ experience }: { experience: Experience }) {
   return (
@@ -86,6 +106,8 @@ export default function Home() {
           </div>
           <SpinningPortrait />
         </section>
+
+        <ContactLinks className="v2-intro-contact-links" label="Contact links" />
 
         <section className="v2-section" aria-labelledby="education-heading">
           <div className="v2-section-heading">
@@ -143,21 +165,7 @@ export default function Home() {
           <div className="v2-connect-card v2-card">
             <p className="v2-seeking">Seeking Summer 2027 internships.</p>
             <p>Have something in mind? I&apos;d love to hear about it.</p>
-            <div className="v2-connect-links">
-              {contactLinks.map((contact) => (
-                <a
-                  aria-label={`${contact.label}: ${contact.value}`}
-                  className={contact.iconClassName}
-                  href={contact.href}
-                  key={contact.label}
-                  rel={contact.openInNewTab ? "noreferrer" : undefined}
-                  target={contact.openInNewTab ? "_blank" : undefined}
-                >
-                  <span className="v2-connect-icon"><img alt="" aria-hidden="true" src={contact.icon} /></span>
-                  <span>{contact.label}</span>
-                </a>
-              ))}
-            </div>
+            <ContactLinks label="Connect with Anson" />
           </div>
         </section>
 
