@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import CursorDots from "@/components/CursorDots";
+import NowPlaying from "@/components/NowPlaying";
 import ThemeToggle from "@/components/ThemeToggle";
 import V2Projects from "@/components/V2Projects";
 import { contactCards } from "@/data/contacts";
@@ -64,7 +65,10 @@ export default function Home() {
   return (
     <div className="v2-page">
       <CursorDots />
-      <ThemeToggle />
+      <div className="v2-top-controls">
+        <ThemeToggle />
+        <NowPlaying />
+      </div>
       <main className="v2-main">
         <section className="v2-hero" aria-labelledby="intro-heading">
           <div className="v2-hero-copy">
@@ -73,7 +77,7 @@ export default function Home() {
             <p className="v2-flags" aria-label="Hong Kong and Australia">🇭🇰 🇦🇺</p>
             <p className="v2-intro-about">
               Hi! I&apos;m Anson. I was born in <span className="v2-intro-highlight">Hong Kong</span> and
-              raised in <span className="v2-intro-highlight">Australia</span> for 15 years. I enjoy building software people use and hope to help
+              raised in <span className="v2-intro-highlight">Australia</span> for 15 years before moving to <span className="v2-intro-highlight">Vancouver, Canada</span> in 2021. I enjoy building software people use and hope to help
               everyday life become a little easier and a little better. I&apos;m currently studying
               <span className="v2-intro-highlight"> Computer Engineering</span> at the <span className="v2-intro-highlight">University of British Columbia</span> and interning
                at <span className="v2-intro-highlight">ScalePad</span>.

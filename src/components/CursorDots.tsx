@@ -19,36 +19,26 @@ export default function CursorDots() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let frame = 0;
-    let currentX = 0;
-    let currentY = 0;
-    let targetX = 0;
-    let targetY = 0;
-
-    const move = (event: PointerEvent | MouseEvent) => {
-      targetX = (event.clientX / window.innerWidth - 0.5) * 180;
-      targetY = (event.clientY / window.innerHeight - 0.5) * 180;
-    };
-
-    const animate = () => {
-      currentX += (targetX - currentX) * 0.12;
-      currentY += (targetY - currentY) * 0.12;
+    const animate = (timestamp: number) => {
+      const time = timestamp / 1000;
+      const flowX = Math.sin(time * 0.48) * 38;
+      const flowY = Math.cos(time * 0.39) * 28;
 
       dotRefs.current.forEach((dot, index) => {
         if (!dot) return;
         const depth = dots[index][2];
-        dot.style.transform = `translate3d(${currentX * depth}px, ${currentY * depth}px, 0)`;
+        const phase = index * 0.58;
+        const offsetX = Math.sin(time * 0.68 + phase) * 8;
+        const offsetY = Math.cos(time * 0.57 + phase) * 6;
+        dot.style.transform = `translate3d(${flowX * depth + offsetX}px, ${flowY * depth + offsetY}px, 0)`;
       });
 
       frame = window.requestAnimationFrame(animate);
     };
 
-    window.addEventListener("pointermove", move, { passive: true });
-    window.addEventListener("mousemove", move, { passive: true });
     frame = window.requestAnimationFrame(animate);
 
     return () => {
-      window.removeEventListener("pointermove", move);
-      window.removeEventListener("mousemove", move);
       window.cancelAnimationFrame(frame);
     };
   }, []);
