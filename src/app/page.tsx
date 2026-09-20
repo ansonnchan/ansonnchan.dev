@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import ThemeToggle from "@/components/ThemeToggle";
+import V2Projects from "@/components/V2Projects";
 import { contactCards } from "@/data/contacts";
-import { professionalExperiences, volunteerExperiences } from "@/data/experiences";
-import { visibleProjects } from "@/data/projects";
+import { professionalExperiences, volunteerExperiences, type Experience } from "@/data/experiences";
 
 export const metadata: Metadata = {
   title: "Anson Chan — Software Engineer",
@@ -12,152 +12,150 @@ export const metadata: Metadata = {
 };
 
 const experienceTags: Record<string, string[]> = {
-  ScalePad: ["TypeScript", "React", "C#", "RBAC"],
-  Atria: ["Django", "React", "System design"],
-  "Borrow’d": ["Full stack", "Authorization", "Analytics"]
+  Atria: ["TypeScript", "React", "Django"],
+  ScalePad: ["C#", ".NET", "React", "TypeScript", "AWS", "Go", "Python", "MariaDB"],
+  "Borrow’d": ["Python", "Django", "CI/CD (GitHub Actions)", "PostgreSQL"]
 };
 
-const allExperiences = [...professionalExperiences, ...volunteerExperiences];
+const experienceOrder = ["Atria", "ScalePad", "Borrow’d"];
+const companyUrls: Record<string, string> = {
+  Atria: "https://www.atriacommunity.com/",
+  ScalePad: "https://www.scalepad.com/",
+  "Borrow’d": "https://borrowd.org/"
+};
+const allExperiences = [...professionalExperiences, ...volunteerExperiences].sort(
+  (a, b) => experienceOrder.indexOf(a.company) - experienceOrder.indexOf(b.company)
+);
 
-function PlainText({ segments }: { segments: { text: string }[] }) {
-  return <>{segments.map((segment) => segment.text).join("")}</>;
+const contactLinks = [
+  ...contactCards,
+  {
+    label: "résumé",
+    value: "view résumé",
+    href: "/resume",
+    icon: "/assets/icons/resume-download.png",
+    iconClassName: "contact-card-resume",
+    openInNewTab: true
+  }
+];
+
+function ExperienceSummary({ experience }: { experience: Experience }) {
+  return (
+    <>
+      <div className="v2-experience-topline">
+        <div>
+          <h3>{experience.role}</h3>
+          <p>
+            <a href={companyUrls[experience.company]} rel="noreferrer" target="_blank">
+              {experience.company}
+            </a>
+          </p>
+        </div>
+        <time dateTime={experience.startDate}>{experience.dateLabel}</time>
+      </div>
+      <ul className="v2-tags" aria-label={`${experience.company} technologies`}>
+        {experienceTags[experience.company]?.map((tag) => <li key={tag}>{tag}</li>)}
+      </ul>
+    </>
+  );
 }
 
 export default function Home() {
   return (
-    <div className="v2-page" id="top">
-      <header className="v2-header">
-        <Link className="v2-wordmark" href="#top">
-          anson<span>.</span>
-        </Link>
-        <nav aria-label="Page sections" className="v2-nav">
-          <a href="#experience">experience</a>
-          <a href="#projects">projects</a>
-          <a href="#about">about</a>
-        </nav>
-      </header>
-
+    <div className="v2-page">
+      <ThemeToggle />
       <main className="v2-main">
         <section className="v2-hero" aria-labelledby="intro-heading">
           <div className="v2-hero-copy">
-            <p className="v2-eyebrow">hello, I&apos;m</p>
             <h1 id="intro-heading">Anson Chan</h1>
-            <p className="v2-tagline">building thoughtful software, one noot at a time.</p>
-            <div className="v2-availability">
-              <span aria-hidden="true" />
-              software engineer @ ScalePad
-            </div>
+            <p className="v2-tagline">Software Engineer</p>
+            <p className="v2-flags" aria-label="Hong Kong and Australia">🇭🇰 🇦🇺</p>
+            <p className="v2-intro-about">
+              Hi! I&apos;m Anson. I was born in <span className="v2-intro-highlight">Hong Kong</span> and
+              raised in <span className="v2-intro-highlight">Australia</span> for 15 years. I enjoy building software people use and hope to help
+              everyday life become a little easier and a little better. I&apos;m currently studying
+              <span className="v2-intro-highlight"> Computer Engineering</span> at the <span className="v2-intro-highlight">University of British Columbia</span> and interning
+               at <span className="v2-intro-highlight">ScalePad</span>.
+
+            </p>
           </div>
-          <div className="v2-hero-art" aria-hidden="true">
-            <Image alt="" height={500} priority src="/assets/penguin/penguin_pic-6-removebg-preview.png" width={500} />
-          </div>
+          <Image
+            alt="Anson Chan"
+            className="v2-hero-portrait"
+            height={1254}
+            priority
+            src="/assets/pfp.png"
+            width={1254}
+          />
         </section>
 
         <section className="v2-section" aria-labelledby="education-heading">
           <div className="v2-section-heading">
-            <p>01</p>
             <h2 id="education-heading">Education</h2>
           </div>
-          <article className="v2-education-card v2-card">
+          <a
+            className="v2-education-card v2-card"
+            href="https://ece.ubc.ca/about/"
+            rel="noreferrer"
+            target="_blank"
+          >
             <div>
               <h3>University of British Columbia</h3>
-              <p>BASc, Computer Engineering · third year</p>
+              <p>BASc Computer Engineering · Co-op Program · Dean&apos;s List</p>
             </div>
-            <span className="v2-card-note">Vancouver, BC</span>
-          </article>
+            <span className="v2-card-note">2024 – 2029</span>
+          </a>
         </section>
 
-        <section className="v2-section" id="experience" aria-labelledby="experience-heading">
+        <section className="v2-section" aria-labelledby="experience-heading">
           <div className="v2-section-heading">
-            <p>02</p>
             <h2 id="experience-heading">Experience</h2>
-            <Link href="/work">the longer version ↗</Link>
           </div>
           <div className="v2-experience-list">
             {allExperiences.map((experience) => (
               <article className="v2-experience-card v2-card" key={experience.company}>
-                <div className="v2-experience-topline">
-                  <div>
-                    <h3>{experience.role}</h3>
-                    <p>{experience.company}</p>
-                  </div>
-                  <time dateTime={experience.startDate}>{experience.dateLabel}</time>
-                </div>
-                <p className="v2-experience-summary"><PlainText segments={experience.summary} /></p>
-                <ul className="v2-tags" aria-label={`${experience.company} technologies`}>
-                  {experienceTags[experience.company]?.map((tag) => <li key={tag}>{tag}</li>)}
-                </ul>
+                <ExperienceSummary experience={experience} />
               </article>
             ))}
           </div>
         </section>
 
-        <section className="v2-section" id="projects" aria-labelledby="projects-heading">
+        <section className="v2-section" aria-labelledby="projects-heading">
           <div className="v2-section-heading">
-            <p>03</p>
-            <h2 id="projects-heading">Selected projects</h2>
-            <Link href="/projects">project details ↗</Link>
+            <h2 id="projects-heading">Projects</h2>
           </div>
-          <div className="v2-project-grid">
-            {visibleProjects.map((project) => (
-              <article className={`v2-project v2-project--${project.slug}`} key={project.slug}>
-                <div className="v2-project-art">
-                  <Image alt={project.imageAlt} fill sizes="(max-width: 720px) calc(100vw - 3rem), 330px" src={project.image} />
-                </div>
-                <div className="v2-project-copy">
-                  <div className="v2-project-title">
-                    <h3>{project.name}</h3>
-                    <div className="v2-project-links">
-                      {project.liveUrl ? <a href={project.liveUrl} rel="noreferrer" target="_blank">live ↗</a> : null}
-                      <a href={project.githubUrl} rel="noreferrer" target="_blank">code ↗</a>
-                    </div>
-                  </div>
-                  <p>{project.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+          <V2Projects />
         </section>
 
-        <section className="v2-section v2-about" id="about" aria-labelledby="about-heading">
+        <section className="v2-section v2-connect-section" aria-labelledby="connect-heading">
           <div className="v2-section-heading">
-            <p>04</p>
-            <h2 id="about-heading">A little about me</h2>
+            <h2 id="connect-heading">Connect</h2>
           </div>
-          <div className="v2-about-layout">
-            <div className="v2-about-copy">
-              <p>I&apos;m a third-year Computer Engineering student at UBC, currently building software at ScalePad. I grew up in Australia, was born in Hong Kong, and now call Vancouver home.</p>
-              <p>I like products that make everyday life easier, better, or simply a little more fun. Away from the keyboard, you&apos;ll usually find me playing racquet sports, practicing Cantonese, or recommending Cyberpunk: Edgerunners.</p>
-              <Link className="v2-text-link" href="/about">more about me ↗</Link>
+          <div className="v2-connect-card v2-card">
+            <p className="v2-seeking">Seeking Summer 2027 internships.</p>
+            <p>Have something in mind? I&apos;d love to hear about it.</p>
+            <div className="v2-connect-links">
+              {contactLinks.map((contact) => (
+                <a
+                  aria-label={`${contact.label}: ${contact.value}`}
+                  className={contact.iconClassName}
+                  href={contact.href}
+                  key={contact.label}
+                  rel={contact.openInNewTab ? "noreferrer" : undefined}
+                  target={contact.openInNewTab ? "_blank" : undefined}
+                >
+                  <span className="v2-connect-icon"><img alt="" aria-hidden="true" src={contact.icon} /></span>
+                  <span>{contact.label}</span>
+                </a>
+              ))}
             </div>
-            <Image alt="Anson standing in front of Kinkaku-ji in Kyoto" className="v2-portrait" height={1254} src="/assets/pfp.png" width={1254} />
-          </div>
-        </section>
-
-        <section className="v2-connect" aria-labelledby="connect-heading">
-          <Image alt="" aria-hidden="true" height={403} src="/assets/penguin/penguin_pic-5-removebg-preview.png" width={594} />
-          <div>
-            <p className="v2-eyebrow">have something in mind?</p>
-            <h2 id="connect-heading">Let&apos;s build something good.</h2>
-            <a className="v2-email-link" href="mailto:ac1800@student.ubc.ca">ac1800@student.ubc.ca ↗</a>
           </div>
         </section>
 
         <footer className="v2-footer">
           <p>© 2026 Anson Chan</p>
-          <p>built with curiosity + an unreasonable number of penguins</p>
         </footer>
       </main>
-
-      <aside aria-label="Contact Anson" className="v2-contact-dock">
-        <span className="v2-contact-label">say hello</span>
-        {contactCards.map((contact) => (
-          <a aria-label={`${contact.label}: ${contact.value}`} className={`v2-contact-icon ${contact.iconClassName}`} href={contact.href} key={contact.label} rel={contact.openInNewTab ? "noreferrer" : undefined} target={contact.openInNewTab ? "_blank" : undefined}>
-            <img alt="" aria-hidden="true" src={contact.icon} />
-            <span>{contact.label}</span>
-          </a>
-        ))}
-      </aside>
     </div>
   );
 }
