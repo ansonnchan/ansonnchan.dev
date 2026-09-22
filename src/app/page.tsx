@@ -90,6 +90,10 @@ export default function Home() {
         <NowPlaying />
       </div>
       <main className="v2-main">
+        <div className="v2-hero-cartoons" aria-hidden="true">
+          <img className="v2-cartoon v2-cartoon-moon" src="/assets/cartoons/moon.png" alt="" />
+          <img className="v2-cartoon v2-cartoon-planet" src="/assets/cartoons/planet.png" alt="" />
+        </div>
         <section className="v2-hero" aria-labelledby="intro-heading">
           <div className="v2-hero-copy">
             <h1 id="intro-heading">Anson Chan (陳雋希)</h1>
@@ -97,8 +101,12 @@ export default function Home() {
             <p className="v2-flags" aria-label="Hong Kong and Australia">🇭🇰 🇦🇺</p>
             <p className="v2-intro-about">
               Hi! I&apos;m Anson. I was born in <span className="v2-intro-highlight">Hong Kong</span> and
-              raised in <span className="v2-intro-highlight">Australia</span> for 15 years before moving to <span className="v2-intro-highlight">Vancouver, Canada</span> in 2021. I enjoy building software people use and hope to help
-              everyday life become a little easier and a little better. I&apos;m currently studying
+              raised in <span className="v2-intro-highlight">Australia</span> for 15 years before moving to <span className="v2-intro-highlight">Vancouver, Canada</span> in 2021. I enjoy building software to make daily life
+              easier and better, even in just a small way.
+
+              <br></br>
+              <br></br>
+              I&apos;m currently studying
               <span className="v2-intro-highlight"> Computer Engineering</span> at the <span className="v2-intro-highlight">University of British Columbia</span> and interning
                at <span className="v2-intro-highlight">ScalePad</span>.
 
@@ -129,6 +137,7 @@ export default function Home() {
         </section>
 
         <section className="v2-section" aria-labelledby="experience-heading">
+          <img className="v2-cartoon v2-cartoon-rocket" src="/assets/cartoons/rocket.png" alt="" aria-hidden="true" />
           <div className="v2-section-heading">
             <h2 id="experience-heading">Experience</h2>
             <img alt="" aria-hidden="true" src="/assets/icons/work.svg" />
@@ -150,6 +159,7 @@ export default function Home() {
         </section>
 
         <section className="v2-section" aria-labelledby="projects-heading">
+          <img className="v2-cartoon v2-cartoon-trumpet" src="/assets/cartoons/trumpet.png" alt="" aria-hidden="true" />
           <div className="v2-section-heading">
             <h2 id="projects-heading">Projects</h2>
             <img alt="" aria-hidden="true" src="/assets/icons/projects.svg" />
@@ -158,13 +168,14 @@ export default function Home() {
         </section>
 
         <section className="v2-section v2-connect-section" aria-labelledby="connect-heading">
+          <img className="v2-cartoon v2-cartoon-tennis" src="/assets/cartoons/tennis.png" alt="" aria-hidden="true" />
           <div className="v2-section-heading">
             <h2 id="connect-heading">Connect</h2>
             <img alt="" aria-hidden="true" src="/assets/icons/connect.svg" />
           </div>
           <div className="v2-connect-card v2-card">
             <p className="v2-seeking">Seeking Summer 2027 internships.</p>
-            <p>Have something in mind? I&apos;d love to hear about it.</p>
+            <p>Have something in mind? Whether it’s an internship opportunity, a coffee chat, or an overly competitive game of pickleball, I’d love to hear from you! </p>
             <ContactLinks label="Connect with Anson" />
           </div>
         </section>

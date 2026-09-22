@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Patrick_Hand } from "next/font/google";
-import MenuBar from "@/components/MenuBar";
+// import MenuBar from "@/components/MenuBar";
 import "./globals.css";
 
 const patrickHand = Patrick_Hand({
@@ -36,7 +36,7 @@ export default function RootLayout({
         />
       </head>
       <body className={patrickHand.variable}>
-        <MenuBar />
+        {/* <MenuBar /> */}
         {children}
         <Analytics />
       </body>
