@@ -1,10 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { type MouseEvent, useRef } from "react";
+import { type MouseEvent, useRef, useState } from "react";
 
 export default function SpinningPortrait() {
   const reactionRef = useRef<HTMLSpanElement>(null);
+  const nextDamageId = useRef(0);
+  const [damageHits, setDamageHits] = useState<number[]>([]);
 
   function reactToPoke(event: MouseEvent<HTMLButtonElement>) {
     const reaction = reactionRef.current;
@@ -27,6 +29,7 @@ export default function SpinningPortrait() {
     reaction.style.setProperty("--bonk-left", `${50 + Math.cos(bonkAngle) * 52}%`);
     reaction.style.setProperty("--bonk-top", `${50 + Math.sin(bonkAngle) * 52}%`);
     reaction.style.setProperty("--bonk-rotation", `${Math.round(Math.random() * 32 - 16)}deg`);
+    setDamageHits((hits) => [...hits, nextDamageId.current++]);
     reaction.classList.remove("is-reacting");
     void reaction.offsetWidth;
     reaction.classList.add("is-reacting");
@@ -61,9 +64,16 @@ export default function SpinningPortrait() {
           <b>BONK!</b>
           <i className="v2-bonk-line v2-bonk-line-right" />
         </span>
-        <span className="v2-portrait-damage" aria-hidden="true">
-          <i>−1 HP</i>
-        </span>
+        {damageHits.map((hit) => (
+          <i
+            aria-hidden="true"
+            className="v2-portrait-damage"
+            key={hit}
+            onAnimationEnd={() => setDamageHits((hits) => hits.filter((id) => id !== hit))}
+          >
+            −1 HP
+          </i>
+        ))}
       </span>
       <Image
         alt=""
