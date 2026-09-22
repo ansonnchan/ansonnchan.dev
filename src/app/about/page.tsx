@@ -10,51 +10,37 @@ export const metadata: Metadata = {
 
 const sections = [
   {
-    number: "01",
-    title: "Right now",
-    note: "the short version",
+    title: "On Repeat",
+    icon: "♫",
     items: [
-      { label: "Home", detail: "Vancouver, Canada" },
-      { label: "Studying", detail: "Computer Engineering at UBC" },
-      { label: "Working", detail: "Software Engineering Intern at ScalePad" }
+      { label: "Jay Chou", detail: "the permanent favourite" },
+      { label: "JJ Lin", detail: "for the ballads" },
+      { label: "K-pop", detail: "for energy" },
+      { label: "Classical", detail: "for focus" }
     ]
   },
   {
-    number: "02",
-    title: "Listening",
-    note: "headphones on",
-    items: [
-      { label: "Jay Chou", detail: "A permanent fixture in the queue" },
-      { label: "K-pop", detail: "For energy" },
-      { label: "Classical", detail: "For slower, quieter work" }
-    ]
-  },
-  {
-    number: "03",
-    title: "Watching",
-    note: "one more episode",
+    title: "On Screen",
+    icon: "✦",
     items: [
       { label: "Anime", detail: "Cyberpunk: Edgerunners · Link Click" },
       { label: "C-dramas", detail: "Pursuit of Jade · When I Fly Towards You" }
     ]
   },
   {
-    number: "04",
-    title: "Reading list",
-    note: "shelf in progress",
+    title: "Reading List",
+    icon: "⌑",
     items: [
       { label: "The Three-Body Problem", detail: "Liu Cixin" },
-      { label: "Next up", detail: "Always open to a good recommendation" }
+      { label: "Next up", detail: "always open to a good recommendation" }
     ]
   },
   {
-    number: "05",
     title: "Hobbies",
-    note: "away from the desk",
+    icon: "◌",
     items: [
-      { label: "On court", detail: "Tennis · Table tennis · Pickleball" },
-      { label: "At the board", detail: "Chess" },
-      { label: "Default state", detail: "Headphones on, racquet nearby" }
+      { label: "Racket sports", detail: "Tennis · Table tennis · Pickleball" },
+      { label: "Chess", detail: "a quieter kind of competition" }
     ]
   }
 ];
@@ -69,43 +55,37 @@ export default function AboutPage() {
       </div>
 
       <main className="about-main">
-        <header className="about-index-hero">
-          <span className="about-margin-note" aria-hidden="true">the non-code bits ↘</span>
-          <p className="about-eyebrow">a little more about me</p>
-          <h1 id="about-heading">Hello, I&apos;m Anson.</h1>
-          <p>
-            Hong Kong-born, Australia-raised, and now in Vancouver. This page is the quieter side of
-            the portfolio: what I&apos;m enjoying, learning, and doing when I step away from the keyboard.
-          </p>
-          <span className="about-flags" aria-label="Hong Kong and Australia">🇭🇰 🇦🇺</span>
+        <header className="about-simple-hero">
+          <h1 id="about-heading">About Me</h1>
+          <div className="about-journey" aria-label="Hong Kong to Australia to Canada">
+            <span>🇭🇰</span>
+            <span className="about-route-arrow" aria-hidden="true">↝</span>
+            <span>🇦🇺</span>
+            <span className="about-route-arrow" aria-hidden="true">↝</span>
+            <span>🇨🇦</span>
+          </div>
         </header>
 
-        <div className="about-directory" aria-labelledby="about-heading">
+        <div className="about-sections" aria-labelledby="about-heading">
           {sections.map((section) => (
-            <section className="about-directory-section" key={section.number}>
-              <span className="about-section-number" aria-hidden="true">{section.number}</span>
-              <div className="about-directory-heading">
+            <section className="about-topic-section" key={section.title}>
+              <div className="about-topic-heading">
                 <h2>{section.title}</h2>
-                <p>{section.note}</p>
+                <span aria-hidden="true">{section.icon}</span>
               </div>
-              <ul>
-                {section.items.map((item) => (
-                  <li key={item.label}>
-                    <strong>{item.label}</strong>
-                    <span>{item.detail}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="about-topic-card">
+                <ul>
+                  {section.items.map((item) => (
+                    <li key={item.label}>
+                      <strong>{item.label}</strong>
+                      <span>{item.detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </section>
           ))}
         </div>
-
-        <nav className="about-elsewhere" aria-label="Find Anson elsewhere">
-          <span>elsewhere</span>
-          <a href="mailto:ac1800@student.ubc.ca">email</a>
-          <a href="https://github.com/ansonnchan" rel="noreferrer" target="_blank">github</a>
-          <a href="https://www.linkedin.com/in/ansonnchan" rel="noreferrer" target="_blank">linkedin</a>
-        </nav>
 
         <footer className="v2-footer about-footer">
           <p>© 2026 Anson Chan <img alt="" aria-hidden="true" src="/assets/icons/rocket.png" /></p>
