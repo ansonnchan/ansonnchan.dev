@@ -114,7 +114,6 @@ export default function Home() {
         <ContactLinks className="v2-intro-contact-links" label="Contact links" />
 
         <section className="v2-section" aria-labelledby="education-heading">
-          <img className="v2-cartoon v2-cartoon-education" src="/assets/cartoons/education.png" alt="" aria-hidden="true" />
           <div className="v2-section-heading">
             <h2 id="education-heading">Education</h2>
             <img alt="" aria-hidden="true" src="/assets/icons/education.svg" />
