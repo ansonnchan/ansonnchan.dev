@@ -128,7 +128,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .v2-hero-cartoons { position: absolute; z-index: 0; inset: 0 0 auto; height: 15rem; pointer-events: none; }
 .v2-cartoon { position: absolute; z-index: 0; display: block; max-width: none; object-fit: contain; pointer-events: none; user-select: none; }
-.v2-cartoon-moon { top: 1rem; left: -12rem; width: 11rem; transform: rotate(-7deg); }
+.v2-cartoon-moon { top: 3.75rem; left: -14rem; width: 11rem; transform: rotate(-7deg); }
 .v2-cartoon-planet { top: 1.25rem; right: -11.5rem; width: 10.5rem; transform: rotate(8deg); }
 .v2-cartoon-education { top: -2.5rem; right: -11.5rem; width: 9.5rem; transform: rotate(3deg); }
 .v2-cartoon-rocket { top: -2.5rem; left: -13.5rem; width: 10.5rem; transform: rotate(-8deg); }
@@ -454,7 +454,7 @@ html[data-theme="dark"] .v2-menu-resume img { filter: invert(77%) sepia(18%) sat
 @media (max-width: 840px) {
   .v2-main { width: min(calc(100% - 2.5rem), 43rem); }
   .v2-top-controls { right: 1.25rem; }
-  .v2-cartoon-moon { top: 1.25rem; left: -4.75rem; width: 7.25rem; opacity: 0.72; }
+  .v2-cartoon-moon { top: 3rem; left: -5.5rem; width: 7.25rem; opacity: 0.72; }
   .v2-cartoon-planet { top: 1.5rem; right: -4.25rem; width: 6.75rem; opacity: 0.72; }
   .v2-cartoon-education,
   .v2-cartoon-trumpet,
@@ -487,7 +487,7 @@ html[data-theme="dark"] .v2-menu-resume img { filter: invert(77%) sepia(18%) sat
   .v2-cartoon-rocket,
   .v2-cartoon-trumpet,
   .v2-cartoon-tennis { display: none; }
-  .v2-cartoon-moon { top: 0.5rem; left: -2rem; width: 4.75rem; opacity: 0.5; }
+  .v2-cartoon-moon { top: 2rem; left: -2.75rem; width: 4.75rem; opacity: 0.5; }
   .v2-cartoon-planet { top: 0.75rem; right: -1.75rem; width: 4.5rem; opacity: 0.5; }
 }
 
