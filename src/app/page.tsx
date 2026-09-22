@@ -156,8 +156,7 @@ export default function Home() {
         </section>
 
         <section className="v2-section" aria-labelledby="projects-heading">
-          <img className="v2-cartoon v2-cartoon-stars v2-cartoon-stars-left" src="/assets/cartoons/stars.png" alt="" aria-hidden="true" />
-          <img className="v2-cartoon v2-cartoon-stars v2-cartoon-stars-right" src="/assets/cartoons/stars.png" alt="" aria-hidden="true" />
+          <img className="v2-cartoon v2-cartoon-trumpet" src="/assets/cartoons/trumpet.png" alt="" aria-hidden="true" />
           <div className="v2-section-heading">
             <h2 id="projects-heading">Projects</h2>
             <img alt="" aria-hidden="true" src="/assets/icons/projects.svg" />

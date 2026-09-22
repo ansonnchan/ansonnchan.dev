@@ -89,49 +89,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.v2-placeholder-page { display: grid; min-height: 100svh; padding: 6rem 1.5rem; place-items: center; }
-.v2-placeholder-page > main { position: relative; z-index: 1; width: min(100%, 28rem); padding: 2rem; border: 1px solid var(--v2-border); border-radius: 1rem; background: var(--v2-surface); text-align: center; }
-.v2-placeholder-page h1 { margin: 0.2rem 0 0.65rem; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 2rem; font-weight: 500; }
-.v2-placeholder-page p { margin: 0; color: var(--v2-muted); font-size: 0.88rem; }
-.v2-placeholder-page > main > p:first-child { color: #315f8d; font-family: var(--font-hand), cursive; font-size: 0.9rem; }
-.v2-placeholder-page a { display: inline-block; margin-top: 1.25rem; border-bottom: 1px solid currentColor; color: #315f8d; font-size: 0.78rem; }
-
-.about-main {
-  position: relative;
-  z-index: 1;
-  width: min(calc(100% - 3rem), 43rem);
-  margin: 0 auto;
-  padding: 6rem 0 3rem;
-}
-
-.about-simple-hero { animation: v2-fade-down 420ms cubic-bezier(0.22, 1, 0.36, 1) both; }
-.about-simple-hero h1 { width: fit-content; margin: 0; border-bottom: 1px solid currentColor; font-size: 1.7rem; font-weight: 500; line-height: 1.4; }
-.about-journey { display: flex; align-items: center; gap: 0.65rem; margin-top: 1.25rem; font-size: 1.25rem; }
-.about-route-arrow { color: #315f8d; font-family: var(--font-hand), cursive; font-size: 1.65rem; line-height: 1; transform: rotate(-5deg); }
-.about-route-arrow:nth-of-type(4) { transform: rotate(5deg); }
-
-.about-sections { margin-top: 4.5rem; }
-.about-topic-section { margin-top: 4.5rem; animation: v2-fade-down 420ms cubic-bezier(0.22, 1, 0.36, 1) both; }
-.about-topic-section:first-child { margin-top: 0; animation-delay: 60ms; }
-.about-topic-section:nth-child(2) { animation-delay: 110ms; }
-.about-topic-section:nth-child(3) { animation-delay: 160ms; }
-.about-topic-section:nth-child(4) { animation-delay: 210ms; }
-.about-topic-heading { display: flex; align-items: center; gap: 0.55rem; margin-bottom: 1.45rem; }
-.about-topic-heading h2 { margin: 0; border-bottom: 1px solid currentColor; font-size: 1.5rem; font-weight: 500; line-height: 1.4; }
-.about-topic-heading > span { width: 1.35rem; height: 1.35rem; display: grid; color: var(--v2-muted); font-size: 1rem; place-items: center; }
-.about-topic-card { padding: 1.2rem 1.4rem; border: 1px solid var(--v2-border); border-radius: 0.85rem; background: var(--v2-surface); transition: border-color 200ms ease-out, background 200ms ease-out, box-shadow 200ms ease-out, transform 200ms ease-out; }
-.about-topic-card:hover { border-color: #aaa69f; background: var(--v2-surface); box-shadow: 0 7px 20px rgba(39, 35, 29, 0.045); transform: translateY(-2px); }
-.about-topic-card ul { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
-.about-topic-card li { position: relative; display: grid; grid-template-columns: minmax(8.5rem, 0.75fr) minmax(0, 1.25fr); gap: 1rem; padding: 0.82rem 0 0.82rem 1rem; border-bottom: 1px solid var(--v2-divider); font-size: 0.84rem; line-height: 1.5; }
-.about-topic-card li:first-child { padding-top: 0.2rem; }
-.about-topic-card li:last-child { padding-bottom: 0.2rem; border-bottom: 0; }
-.about-topic-card li::before { position: absolute; top: 1.12rem; left: 0; width: 0.28rem; height: 0.28rem; border-radius: 50%; background: #315f8d; content: ""; transition: transform 160ms ease; }
-.about-topic-card li:first-child::before { top: 0.62rem; }
-.about-topic-card li:hover::before { transform: scale(1.7); }
-.about-topic-card strong { color: var(--v2-ink); font-weight: 600; }
-.about-topic-card li > span { color: var(--v2-muted); }
-.about-footer { margin-top: 4.5rem; animation: v2-fade-down 420ms 260ms cubic-bezier(0.22, 1, 0.36, 1) both; }
-
 .v2-page {
   --v2-ink: #16191f;
   --v2-muted: #74777f;
@@ -171,14 +128,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .v2-hero-cartoons { position: absolute; z-index: 0; inset: 0 0 auto; height: 15rem; pointer-events: none; }
 .v2-cartoon { position: absolute; z-index: 0; display: block; max-width: none; object-fit: contain; pointer-events: none; user-select: none; }
-.v2-cartoon-moon { top: -4.25rem; left: -10.5rem; width: 9rem; transform: rotate(-7deg); }
-.v2-cartoon-planet { top: -2rem; right: -10rem; width: 8.5rem; transform: rotate(8deg); }
-.v2-cartoon-education { top: -2rem; right: -9.5rem; width: 7.5rem; transform: rotate(3deg); }
-.v2-cartoon-rocket { top: -1.5rem; left: -9.25rem; width: 7.4rem; transform: rotate(-8deg); }
-.v2-cartoon-stars { width: 6.8rem; }
-.v2-cartoon-stars-left { top: 0.35rem; left: -8.5rem; transform: rotate(-10deg); }
-.v2-cartoon-stars-right { top: 7.5rem; right: -8.25rem; transform: rotate(9deg) scale(0.88); }
-.v2-cartoon-tennis { top: 0.2rem; right: -9.5rem; width: 7.8rem; transform: rotate(5deg); }
+.v2-cartoon-moon { top: 1rem; left: -12rem; width: 11rem; transform: rotate(-7deg); }
+.v2-cartoon-planet { top: 1.25rem; right: -11.5rem; width: 10.5rem; transform: rotate(8deg); }
+.v2-cartoon-education { top: -2.5rem; right: -11.5rem; width: 9.5rem; transform: rotate(3deg); }
+.v2-cartoon-rocket { top: -2.5rem; left: -13.5rem; width: 10.5rem; transform: rotate(-8deg); }
+.v2-cartoon-trumpet { top: 1rem; right: -11.5rem; width: 9.5rem; transform: rotate(4deg); }
+.v2-cartoon-tennis { top: 0.2rem; right: -11.25rem; width: 9rem; transform: rotate(5deg); }
 .v2-hero,
 .v2-section > :not(.v2-cartoon) { position: relative; z-index: 1; }
 
@@ -496,21 +451,15 @@ html[data-theme="dark"] .v2-menu-links a:hover,
 html[data-theme="dark"] .v2-menu-links a[aria-current="page"] { background: #20242a; color: #f1f3f5; }
 html[data-theme="dark"] .v2-menu-resume { border-color: #30343a; color: #82acd2; }
 html[data-theme="dark"] .v2-menu-resume img { filter: invert(77%) sepia(18%) saturate(836%) hue-rotate(167deg) brightness(89%); }
-html[data-theme="dark"] .about-route-arrow { color: #82acd2; }
-html[data-theme="dark"] .about-topic-card:hover { border-color: #727982; background: #191c20; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24); }
-html[data-theme="dark"] .about-topic-card li::before { background: #82acd2; }
-
 @media (max-width: 840px) {
-  .v2-main,
-  .about-main { width: min(calc(100% - 2.5rem), 43rem); }
+  .v2-main { width: min(calc(100% - 2.5rem), 43rem); }
   .v2-top-controls { right: 1.25rem; }
-  .v2-cartoon-moon { left: -4.25rem; width: 6.25rem; opacity: 0.72; }
-  .v2-cartoon-planet { right: -3.8rem; width: 5.75rem; opacity: 0.72; }
+  .v2-cartoon-moon { top: 1.25rem; left: -4.75rem; width: 7.25rem; opacity: 0.72; }
+  .v2-cartoon-planet { top: 1.5rem; right: -4.25rem; width: 6.75rem; opacity: 0.72; }
   .v2-cartoon-education,
-  .v2-cartoon-tennis { right: -3.6rem; width: 5.5rem; opacity: 0.7; }
-  .v2-cartoon-rocket,
-  .v2-cartoon-stars-left { left: -3.8rem; width: 5.5rem; opacity: 0.7; }
-  .v2-cartoon-stars-right { right: -3.5rem; width: 5.25rem; opacity: 0.7; }
+  .v2-cartoon-trumpet,
+  .v2-cartoon-tennis { right: -4rem; width: 6.5rem; opacity: 0.7; }
+  .v2-cartoon-rocket { left: -4.5rem; width: 7rem; opacity: 0.7; }
 }
 
 @media (max-width: 620px) {
@@ -534,18 +483,12 @@ html[data-theme="dark"] .about-topic-card li::before { background: #82acd2; }
   .v2-menu-bar { top: 1rem; left: 0.75rem; }
   .v2-audio-player { right: 0; left: auto; }
   .v2-footer { margin-top: 4rem; padding-bottom: 1.5rem; }
-  .about-main { width: calc(100% - 2rem); padding-top: 5rem; }
-  .about-simple-hero h1 { font-size: 1.55rem; }
-  .about-sections { margin-top: 3.75rem; }
-  .about-topic-section { margin-top: 3.75rem; }
-  .about-topic-card { padding: 0.9rem 1rem; }
-  .about-topic-card li { grid-template-columns: 1fr; gap: 0.08rem; }
   .v2-cartoon-education,
   .v2-cartoon-rocket,
-  .v2-cartoon-stars,
+  .v2-cartoon-trumpet,
   .v2-cartoon-tennis { display: none; }
-  .v2-cartoon-moon { top: -2.8rem; left: -2rem; width: 4.5rem; opacity: 0.5; }
-  .v2-cartoon-planet { top: -1.5rem; right: -1.75rem; width: 4.2rem; opacity: 0.5; }
+  .v2-cartoon-moon { top: 0.5rem; left: -2rem; width: 4.75rem; opacity: 0.5; }
+  .v2-cartoon-planet { top: 0.75rem; right: -1.75rem; width: 4.5rem; opacity: 0.5; }
 }
 
 @media (max-width: 440px) {
