@@ -90,6 +90,10 @@ export default function Home() {
         <NowPlaying />
       </div>
       <main className="v2-main">
+        <div className="v2-hero-cartoons" aria-hidden="true">
+          <img className="v2-cartoon v2-cartoon-moon" src="/assets/cartoons/moon.png" alt="" />
+          <img className="v2-cartoon v2-cartoon-planet" src="/assets/cartoons/planet.png" alt="" />
+        </div>
         <section className="v2-hero" aria-labelledby="intro-heading">
           <div className="v2-hero-copy">
             <h1 id="intro-heading">Anson Chan (陳雋希)</h1>
@@ -110,6 +114,7 @@ export default function Home() {
         <ContactLinks className="v2-intro-contact-links" label="Contact links" />
 
         <section className="v2-section" aria-labelledby="education-heading">
+          <img className="v2-cartoon v2-cartoon-education" src="/assets/cartoons/education.png" alt="" aria-hidden="true" />
           <div className="v2-section-heading">
             <h2 id="education-heading">Education</h2>
             <img alt="" aria-hidden="true" src="/assets/icons/education.svg" />
@@ -129,6 +134,7 @@ export default function Home() {
         </section>
 
         <section className="v2-section" aria-labelledby="experience-heading">
+          <img className="v2-cartoon v2-cartoon-rocket" src="/assets/cartoons/rocket.png" alt="" aria-hidden="true" />
           <div className="v2-section-heading">
             <h2 id="experience-heading">Experience</h2>
             <img alt="" aria-hidden="true" src="/assets/icons/work.svg" />
@@ -150,6 +156,8 @@ export default function Home() {
         </section>
 
         <section className="v2-section" aria-labelledby="projects-heading">
+          <img className="v2-cartoon v2-cartoon-stars v2-cartoon-stars-left" src="/assets/cartoons/stars.png" alt="" aria-hidden="true" />
+          <img className="v2-cartoon v2-cartoon-stars v2-cartoon-stars-right" src="/assets/cartoons/stars.png" alt="" aria-hidden="true" />
           <div className="v2-section-heading">
             <h2 id="projects-heading">Projects</h2>
             <img alt="" aria-hidden="true" src="/assets/icons/projects.svg" />
@@ -158,6 +166,7 @@ export default function Home() {
         </section>
 
         <section className="v2-section v2-connect-section" aria-labelledby="connect-heading">
+          <img className="v2-cartoon v2-cartoon-tennis" src="/assets/cartoons/tennis.png" alt="" aria-hidden="true" />
           <div className="v2-section-heading">
             <h2 id="connect-heading">Connect</h2>
             <img alt="" aria-hidden="true" src="/assets/icons/connect.svg" />
