@@ -8,55 +8,54 @@ export const metadata: Metadata = {
   description: "A little more about Anson Chan—what he builds, watches, reads, listens to, and plays."
 };
 
-const interests = [
+const sections = [
   {
-    eyebrow: "on repeat",
-    icon: "♫",
-    title: "Music",
-    copy: "Jay Chou is a constant, with K-pop and classical music filling the spaces in between.",
-    tags: ["Jay Chou", "K-pop", "Classical"]
+    number: "01",
+    title: "Right now",
+    note: "the short version",
+    items: [
+      { label: "Home", detail: "Vancouver, Canada" },
+      { label: "Studying", detail: "Computer Engineering at UBC" },
+      { label: "Working", detail: "Software Engineering Intern at ScalePad" }
+    ]
   },
   {
-    eyebrow: "on screen",
-    icon: "✦",
-    title: "Stories",
-    copy: "Anime and C-dramas with memorable worlds, warm friendships, and just enough heartbreak.",
-    tags: ["Cyberpunk", "Link Click", "Pursuit of Jade", "When I Fly Towards You"]
+    number: "02",
+    title: "Listening",
+    note: "headphones on",
+    items: [
+      { label: "Jay Chou", detail: "A permanent fixture in the queue" },
+      { label: "K-pop", detail: "For energy" },
+      { label: "Classical", detail: "For slower, quieter work" }
+    ]
   },
   {
-    eyebrow: "on the shelf",
-    icon: "♟",
-    title: "Books & chess",
-    copy: "Science fiction that makes the universe feel bigger, followed by a quiet game of chess.",
-    tags: ["The Three-Body Problem", "Chess"]
+    number: "03",
+    title: "Watching",
+    note: "one more episode",
+    items: [
+      { label: "Anime", detail: "Cyberpunk: Edgerunners · Link Click" },
+      { label: "C-dramas", detail: "Pursuit of Jade · When I Fly Towards You" }
+    ]
   },
   {
-    eyebrow: "on the court",
-    icon: "◌",
-    title: "Racket sports",
-    copy: "I will happily pick up almost anything with a racquet and convince someone to play.",
-    tags: ["Tennis", "Table tennis", "Pickleball"]
-  }
-];
-
-const socialLinks = [
-  {
-    href: "mailto:ac1800@student.ubc.ca",
-    icon: "/assets/icons/mail.png",
-    label: "email",
-    className: "about-social-mail"
+    number: "04",
+    title: "Reading list",
+    note: "shelf in progress",
+    items: [
+      { label: "The Three-Body Problem", detail: "Liu Cixin" },
+      { label: "Next up", detail: "Always open to a good recommendation" }
+    ]
   },
   {
-    href: "https://github.com/ansonnchan",
-    icon: "/assets/icons/github.png",
-    label: "github",
-    className: ""
-  },
-  {
-    href: "https://www.linkedin.com/in/ansonnchan",
-    icon: "/assets/icons/linkedin.png",
-    label: "linkedin",
-    className: ""
+    number: "05",
+    title: "Hobbies",
+    note: "away from the desk",
+    items: [
+      { label: "On court", detail: "Tennis · Table tennis · Pickleball" },
+      { label: "At the board", detail: "Chess" },
+      { label: "Default state", detail: "Headphones on, racquet nearby" }
+    ]
   }
 ];
 
@@ -70,61 +69,43 @@ export default function AboutPage() {
       </div>
 
       <main className="about-main">
-        <section className="about-intro" aria-labelledby="about-heading">
-          <span className="about-stamp" aria-hidden="true">a little more ↘</span>
-          <p className="about-eyebrow">nice to meet you</p>
-          <h1 id="about-heading">Anson Chan <span>(陳雋希)</span></h1>
-          <p className="about-subtitle">Software Engineer · 🇭🇰 🇦🇺</p>
-          <p className="about-lede">
-            I&apos;m Hong Kong-born, Australia-raised, and now based in Vancouver. I study
-            <strong> Computer Engineering at UBC</strong> and currently intern at
-            <strong> ScalePad</strong>. I like building thoughtful software that people actually use—small,
-            practical things that make everyday life a little easier and a little better.
+        <header className="about-index-hero">
+          <span className="about-margin-note" aria-hidden="true">the non-code bits ↘</span>
+          <p className="about-eyebrow">a little more about me</p>
+          <h1 id="about-heading">Hello, I&apos;m Anson.</h1>
+          <p>
+            Hong Kong-born, Australia-raised, and now in Vancouver. This page is the quieter side of
+            the portfolio: what I&apos;m enjoying, learning, and doing when I step away from the keyboard.
           </p>
+          <span className="about-flags" aria-label="Hong Kong and Australia">🇭🇰 🇦🇺</span>
+        </header>
 
-          <nav className="about-socials" aria-label="Contact Anson">
-            {socialLinks.map((link) => (
-              <a
-                className={link.className}
-                href={link.href}
-                key={link.label}
-                rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                target={link.href.startsWith("http") ? "_blank" : undefined}
-              >
-                <span><img alt="" aria-hidden="true" src={link.icon} /></span>
-                {link.label}
-              </a>
-            ))}
-          </nav>
-        </section>
+        <div className="about-directory" aria-labelledby="about-heading">
+          {sections.map((section) => (
+            <section className="about-directory-section" key={section.number}>
+              <span className="about-section-number" aria-hidden="true">{section.number}</span>
+              <div className="about-directory-heading">
+                <h2>{section.title}</h2>
+                <p>{section.note}</p>
+              </div>
+              <ul>
+                {section.items.map((item) => (
+                  <li key={item.label}>
+                    <strong>{item.label}</strong>
+                    <span>{item.detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
 
-        <section className="about-interests" aria-labelledby="interests-heading">
-          <div className="about-section-heading">
-            <p>when I&apos;m away from the keyboard</p>
-            <h2 id="interests-heading">A few things I like</h2>
-          </div>
-
-          <div className="about-interest-grid">
-            {interests.map((interest) => (
-              <article className="about-interest-card" key={interest.title}>
-                <div className="about-interest-topline">
-                  <span className="about-interest-icon" aria-hidden="true">{interest.icon}</span>
-                  <small>{interest.eyebrow}</small>
-                </div>
-                <h3>{interest.title}</h3>
-                <p>{interest.copy}</p>
-                <ul aria-label={`${interest.title} favourites`}>
-                  {interest.tags.map((tag) => <li key={tag}>{tag}</li>)}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <aside className="about-note">
-          <span aria-hidden="true">✎</span>
-          <p>Usually found with headphones on, a racquet nearby, or one more chapter left.</p>
-        </aside>
+        <nav className="about-elsewhere" aria-label="Find Anson elsewhere">
+          <span>elsewhere</span>
+          <a href="mailto:ac1800@student.ubc.ca">email</a>
+          <a href="https://github.com/ansonnchan" rel="noreferrer" target="_blank">github</a>
+          <a href="https://www.linkedin.com/in/ansonnchan" rel="noreferrer" target="_blank">linkedin</a>
+        </nav>
 
         <footer className="v2-footer about-footer">
           <p>© 2026 Anson Chan <img alt="" aria-hidden="true" src="/assets/icons/rocket.png" /></p>
