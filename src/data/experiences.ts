@@ -31,7 +31,7 @@ export const volunteerExperiences: Experience[] = [
     company: "Borrow’d",
     role: "Software Engineer",
     startDate: "2026-01",
-    dateLabel: "January 2026 — April 2026",
+    dateLabel: "January 2026 — May 2026",
     logo: "/assets/logos/borrowd.jpeg",
     logoAlt: "Borrow’d logo"
   }
