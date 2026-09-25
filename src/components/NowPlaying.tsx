@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 
-const fallbackDuration = 3 * 60 + 59;
+const fallbackDuration = 2 * 60 + 12;
 const defaultVolume = 0.33;
 
 function formatTime(seconds: number) {
@@ -109,7 +109,7 @@ export default function NowPlaying() {
           </button>
 
           <Image
-            alt="Blue and White Porcelain cover"
+            alt="NOT CUTE ANYMORE cover artwork"
             className="v2-audio-cover"
             height={300}
             src="/assets/audio/song-cover.jpeg"
@@ -118,8 +118,8 @@ export default function NowPlaying() {
 
           <div className="v2-audio-details">
             <span>currently listening to</span>
-            <strong>青花瓷</strong>
-            <small>Jay Chou</small>
+            <strong>NOT CUTE ANYMORE</strong>
+            <small>ILLIT</small>
           </div>
 
           <div className="v2-audio-progress-wrap">
@@ -158,7 +158,7 @@ export default function NowPlaying() {
               value={volume}
             />
             <button
-              aria-label={isPlaying ? "Pause Blue and White Porcelain" : "Play Blue and White Porcelain"}
+              aria-label={isPlaying ? "Pause NOT CUTE ANYMORE" : "Play NOT CUTE ANYMORE"}
               className="v2-audio-play-button"
               onClick={() => void togglePlayback()}
               type="button"
