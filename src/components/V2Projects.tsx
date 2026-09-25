@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { projects, type Project } from "@/data/projects";
 
 const projectTechnologies: Record<string, string[]> = {
@@ -12,34 +13,32 @@ const projectTechnologies: Record<string, string[]> = {
 
 export default function V2Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const dialogRef = useRef<HTMLDialogElement>(null);
-  const scrollPositionRef = useRef(0);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
-  function restoreScrollPosition() {
-    const previousScrollBehavior = document.documentElement.style.scrollBehavior;
-    document.documentElement.style.scrollBehavior = "auto";
-    window.scrollTo(0, scrollPositionRef.current);
-    document.documentElement.style.scrollBehavior = previousScrollBehavior;
-  }
+  useEffect(() => {
+    if (!selectedProject) return;
 
-  useLayoutEffect(() => {
-    const dialog = dialogRef.current;
-    if (selectedProject && dialog && !dialog.open) {
-      dialog.showModal();
-      dialog.querySelector<HTMLButtonElement>(".v2-project-dialog-close")?.focus({ preventScroll: true });
-      restoreScrollPosition();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus({ preventScroll: true });
+
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") setSelectedProject(null);
     }
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
   }, [selectedProject]);
 
   function openPreview(project: Project) {
-    scrollPositionRef.current = window.scrollY;
     setSelectedProject(project);
   }
 
   function closePreview() {
-    dialogRef.current?.close();
     setSelectedProject(null);
-    requestAnimationFrame(restoreScrollPosition);
   }
 
   return (
@@ -82,31 +81,36 @@ export default function V2Projects() {
         ))}
       </div>
 
-      <dialog
-        aria-label={selectedProject ? `${selectedProject.name} video demo` : "Project video demo"}
-        className="v2-project-dialog"
-        onCancel={(event) => {
-          event.preventDefault();
-          closePreview();
-        }}
-        onClick={(event) => {
-          if (event.target === event.currentTarget) closePreview();
-        }}
-        onClose={() => {
-          setSelectedProject(null);
-          requestAnimationFrame(restoreScrollPosition);
-        }}
-        ref={dialogRef}
-      >
-        {selectedProject?.demoVideo ? (
-          <div className="v2-project-dialog-inner">
-            <button aria-label="Close video" className="v2-project-dialog-close" onClick={closePreview} type="button">
-              <Image alt="" aria-hidden="true" height={24} src="/assets/icons/cancel.png" width={24} />
-            </button>
-            <video autoPlay controls loop muted playsInline src={selectedProject.demoVideo} />
+      {selectedProject?.demoVideo && typeof document !== "undefined"
+        ? createPortal(
+          <div
+            className="v2-project-dialog-backdrop"
+            onClick={(event) => {
+              if (event.target === event.currentTarget) closePreview();
+            }}
+          >
+            <div
+              aria-label={`${selectedProject.name} video demo`}
+              aria-modal="true"
+              className="v2-project-dialog"
+              role="dialog"
+            >
+              <div className="v2-project-dialog-inner">
+                <button
+                  aria-label="Close video"
+                  className="v2-project-dialog-close"
+                  onClick={closePreview}
+                  ref={closeButtonRef}
+                  type="button"
+                >
+                  <Image alt="" aria-hidden="true" height={24} src="/assets/icons/cancel.png" width={24} />
+                </button>
+                <video autoPlay controls loop muted playsInline src={selectedProject.demoVideo} />
+              </div>
+            </div>
           </div>
-        ) : null}
-      </dialog>
+          , document.body)
+        : null}
     </>
   );
 }

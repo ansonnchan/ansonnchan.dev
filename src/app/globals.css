@@ -346,8 +346,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .v2-tips-list h3 { margin: 0 0 0.45rem; color: var(--tip-accent); font-size: 1rem; }
 .v2-tips-list p { margin: 0; }
 
-.v2-project-dialog { position: fixed; inset: 0; width: min(calc(100% - 2rem), 62rem); max-width: none; max-height: calc(100svh - 2rem); margin: auto; padding: 0; overflow: auto; border: 0; border-radius: 1rem; background: transparent; }
-.v2-project-dialog::backdrop { background: rgba(22, 25, 31, 0.5); backdrop-filter: blur(3px); }
+.v2-project-dialog-backdrop { --v2-border: #e5e2dc; --v2-surface: #fff; position: fixed; z-index: 20; inset: 0; display: grid; padding: 1rem; overflow: auto; background: rgba(22, 25, 31, 0.5); backdrop-filter: blur(3px); place-items: center; }
+.v2-project-dialog { width: min(100%, 62rem); max-height: calc(100svh - 2rem); overflow: auto; border-radius: 1rem; }
 .v2-project-dialog-inner { position: relative; overflow: hidden; padding: 0.55rem; border: 1px solid var(--v2-border); border-radius: 1rem; background: var(--v2-surface); box-shadow: 0 24px 70px rgba(22, 25, 31, 0.24); }
 .v2-project-dialog video { width: 100%; max-height: calc(100svh - 4rem); border-radius: 0.7rem; background: #111; }
 .v2-project-dialog-close { position: absolute; z-index: 2; top: 0.9rem; right: 0.9rem; width: 2rem; height: 2rem; display: grid; padding: 0.32rem; border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 50%; background: rgba(255, 255, 255, 0.88); cursor: pointer; place-items: center; }
@@ -497,6 +497,7 @@ html[data-theme="dark"] .v2-page {
 }
 
 html[data-theme="dark"] .v2-top-controls { --v2-ink: #e8eaed; --v2-muted: #a9aeb7; --v2-border: #30343a; --v2-divider: #292d32; --v2-surface: #111316; }
+html[data-theme="dark"] .v2-project-dialog-backdrop { --v2-border: #30343a; --v2-surface: #111316; }
 
 html[data-theme="dark"] .v2-cursor-dots span { background: #f1f3f5; }
 html[data-theme="dark"] .v2-card:hover,
