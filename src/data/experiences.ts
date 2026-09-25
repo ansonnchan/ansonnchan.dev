@@ -19,14 +19,14 @@ export const professionalExperiences: Experience[] = [
 ];
 
 export const volunteerExperiences: Experience[] = [
-  {
-    company: "Atria",
-    role: "Software Engineer",
-    startDate: "2027-01",
-    dateLabel: "Starting January 2027",
-    logo: "/assets/logos/atria.jpg",
-    logoAlt: "Atria logo"
-  },
+  // {
+  //   company: "Atria",
+  //   role: "Software Engineer",
+  //   startDate: "2027-01",
+  //   dateLabel: "Starting January 2027",
+  //   logo: "/assets/logos/atria.jpg",
+  //   logoAlt: "Atria logo"
+  // },
   {
     company: "Borrow’d",
     role: "Software Engineer",
