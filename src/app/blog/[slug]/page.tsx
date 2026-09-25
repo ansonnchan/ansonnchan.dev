@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
   const post = getBlogPost((await params).slug);
 
   return {
-    title: post ? `${post.title} | Anson Chan` : "Blog | Anson Chan"
+    title: post?.title ?? "Blog"
   };
 }
 
@@ -43,12 +43,17 @@ export default async function BlogPage({ params }: BlogPageProps) {
         </div>
         <header className="v2-blog-page-header">
           <Link href="/">Anson Chan (陳雋希)</Link>
+          <p className="v2-tagline">Software Engineer</p>
+          <p className="v2-flags" aria-label="Hong Kong and Australia">🇭🇰 🇦🇺</p>
         </header>
         {post.slug === "getting-the-first-co-op" ? (
           <GettingFirstCoop />
         ) : (
           <article className="v2-blog-article" aria-label={post.title} />
         )}
+        <footer className="v2-footer">
+          <p>© 2026 Anson Chan <img alt="" aria-hidden="true" src="/assets/icons/rocket.png" /></p>
+        </footer>
       </main>
     </div>
   );
