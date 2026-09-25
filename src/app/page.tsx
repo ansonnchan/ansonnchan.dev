@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CursorDots from "@/components/CursorDots";
-import NowPlaying from "@/components/NowPlaying";
 import SpinningPortrait from "@/components/SpinningPortrait";
-import ThemeToggle from "@/components/ThemeToggle";
 import V2Projects from "@/components/V2Projects";
 import { blogPosts } from "@/data/blogs";
 import { contactCards } from "@/data/contacts";
@@ -87,13 +85,6 @@ export default function Home() {
   return (
     <div className="v2-page">
       <CursorDots />
-      <div className="v2-top-controls">
-        <Link aria-label="Home" aria-current="page" className="v2-home-link" href="/">
-          <img alt="" aria-hidden="true" src="/assets/icons/home.svg" />
-        </Link>
-        <ThemeToggle />
-        <NowPlaying />
-      </div>
       <main className="v2-main">
         <div className="v2-hero-cartoons" aria-hidden="true">
           <img className="v2-cartoon v2-cartoon-moon" src="/assets/cartoons/moon.png" alt="" />

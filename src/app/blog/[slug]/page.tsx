@@ -3,8 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import CursorDots from "@/components/CursorDots";
 import GettingFirstCoop from "@/components/blog/GettingFirstCoop";
-import NowPlaying from "@/components/NowPlaying";
-import ThemeToggle from "@/components/ThemeToggle";
 import { blogPosts, getBlogPost } from "@/data/blogs";
 
 type BlogPageProps = {
@@ -30,13 +28,6 @@ export default async function BlogPage({ params }: BlogPageProps) {
   return (
     <div className="v2-page">
       <CursorDots />
-      <div className="v2-top-controls">
-        <Link aria-label="Return to home page" className="v2-home-link" href="/">
-          <img alt="" aria-hidden="true" src="/assets/icons/home.svg" />
-        </Link>
-        <ThemeToggle />
-        <NowPlaying />
-      </div>
       <main className="v2-main v2-blog-page-main">
         <div className="v2-hero-cartoons" aria-hidden="true">
           <img className="v2-cartoon v2-cartoon-moon" src="/assets/cartoons/moon.png" alt="" />
