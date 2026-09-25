@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { projects, type Project } from "@/data/projects";
 
 const projectTechnologies: Record<string, string[]> = {
@@ -13,15 +13,33 @@ const projectTechnologies: Record<string, string[]> = {
 export default function V2Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const scrollPositionRef = useRef(0);
 
-  useEffect(() => {
+  function restoreScrollPosition() {
+    const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = "auto";
+    window.scrollTo(0, scrollPositionRef.current);
+    document.documentElement.style.scrollBehavior = previousScrollBehavior;
+  }
+
+  useLayoutEffect(() => {
     const dialog = dialogRef.current;
-    if (selectedProject && dialog && !dialog.open) dialog.showModal();
+    if (selectedProject && dialog && !dialog.open) {
+      dialog.showModal();
+      dialog.querySelector<HTMLButtonElement>(".v2-project-dialog-close")?.focus({ preventScroll: true });
+      restoreScrollPosition();
+    }
   }, [selectedProject]);
+
+  function openPreview(project: Project) {
+    scrollPositionRef.current = window.scrollY;
+    setSelectedProject(project);
+  }
 
   function closePreview() {
     dialogRef.current?.close();
     setSelectedProject(null);
+    requestAnimationFrame(restoreScrollPosition);
   }
 
   return (
@@ -33,7 +51,7 @@ export default function V2Projects() {
               <button
                 aria-label={`Open a larger ${project.name} demo`}
                 className="v2-project-video-button"
-                onClick={() => setSelectedProject(project)}
+                onClick={() => openPreview(project)}
                 type="button"
               >
                 <video autoPlay loop muted playsInline preload="metadata" src={project.demoVideo} />
@@ -67,11 +85,17 @@ export default function V2Projects() {
       <dialog
         aria-label={selectedProject ? `${selectedProject.name} video demo` : "Project video demo"}
         className="v2-project-dialog"
-        onCancel={closePreview}
+        onCancel={(event) => {
+          event.preventDefault();
+          closePreview();
+        }}
         onClick={(event) => {
           if (event.target === event.currentTarget) closePreview();
         }}
-        onClose={() => setSelectedProject(null)}
+        onClose={() => {
+          setSelectedProject(null);
+          requestAnimationFrame(restoreScrollPosition);
+        }}
         ref={dialogRef}
       >
         {selectedProject?.demoVideo ? (
