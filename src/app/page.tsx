@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CursorDots from "@/components/CursorDots";
 import NowPlaying from "@/components/NowPlaying";
 import SpinningPortrait from "@/components/SpinningPortrait";
 import ThemeToggle from "@/components/ThemeToggle";
 import V2Projects from "@/components/V2Projects";
+import { blogPosts } from "@/data/blogs";
 import { contactCards } from "@/data/contacts";
 import { professionalExperiences, volunteerExperiences, type Experience } from "@/data/experiences";
 
@@ -162,6 +164,20 @@ export default function Home() {
             <img alt="" aria-hidden="true" src="/assets/icons/projects.svg" />
           </div>
           <V2Projects />
+        </section>
+
+        <section className="v2-section" aria-labelledby="blog-heading">
+          <div className="v2-section-heading">
+            <h2 id="blog-heading">Blog</h2>
+          </div>
+          <div className="v2-blog-list">
+            {blogPosts.map((post) => (
+              <Link className="v2-blog-entry" href={`/blog/${post.slug}`} key={post.slug}>
+                <h3>{post.title}</h3>
+                <span aria-hidden="true">↗</span>
+              </Link>
+            ))}
+          </div>
         </section>
 
         <section className="v2-section v2-connect-section" aria-labelledby="connect-heading">
