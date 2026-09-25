@@ -346,7 +346,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .v2-tips-list h3 { margin: 0 0 0.45rem; color: var(--tip-accent); font-size: 1rem; }
 .v2-tips-list p { margin: 0; }
 
-.v2-project-dialog { width: min(calc(100% - 2rem), 62rem); max-width: none; padding: 0; border: 0; border-radius: 1rem; background: transparent; }
+.v2-project-dialog { position: fixed; inset: 0; width: min(calc(100% - 2rem), 62rem); max-width: none; max-height: calc(100svh - 2rem); margin: auto; padding: 0; overflow: auto; border: 0; border-radius: 1rem; background: transparent; }
 .v2-project-dialog::backdrop { background: rgba(22, 25, 31, 0.5); backdrop-filter: blur(3px); }
 .v2-project-dialog-inner { position: relative; overflow: hidden; padding: 0.55rem; border: 1px solid var(--v2-border); border-radius: 1rem; background: var(--v2-surface); box-shadow: 0 24px 70px rgba(22, 25, 31, 0.24); }
 .v2-project-dialog video { width: 100%; max-height: calc(100svh - 4rem); border-radius: 0.7rem; background: #111; }
