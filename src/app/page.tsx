@@ -88,6 +88,9 @@ export default function Home() {
     <div className="v2-page">
       <CursorDots />
       <div className="v2-top-controls">
+        <Link aria-label="Home" aria-current="page" className="v2-home-link" href="/">
+          <img alt="" aria-hidden="true" src="/assets/icons/home.svg" />
+        </Link>
         <ThemeToggle />
         <NowPlaying />
       </div>
@@ -175,6 +178,11 @@ export default function Home() {
             {blogPosts.map((post) => (
               <Link className="v2-blog-entry v2-card" href={`/blog/${post.slug}`} key={post.slug}>
                 <h3>{post.title}</h3>
+                <p className="v2-blog-meta">
+                  <time dateTime={post.publishedAt}>{post.publishedLabel}</time>
+                  <span aria-hidden="true">·</span>
+                  <span>{post.readingTime}</span>
+                </p>
               </Link>
             ))}
           </div>
