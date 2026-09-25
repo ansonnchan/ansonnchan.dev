@@ -3,14 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import CursorDots from "@/components/CursorDots";
 import GettingFirstCoop from "@/components/blog/GettingFirstCoop";
-import { blogPosts, getBlogPost } from "@/data/blogs";
+import { activeBlogPosts, getBlogPost } from "@/data/blogs";
 
 type BlogPageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
-  return blogPosts.map(({ slug }) => ({ slug }));
+  return activeBlogPosts.map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {

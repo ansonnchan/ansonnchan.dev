@@ -4,6 +4,7 @@ export type BlogPost = {
   publishedAt: string;
   publishedLabel: string;
   readingTime: string;
+  active: boolean;
 };
 
 export const blogPosts: BlogPost[] = [
@@ -12,10 +13,13 @@ export const blogPosts: BlogPost[] = [
     title: "Getting the First Co-op",
     publishedAt: "2026-09-24",
     publishedLabel: "September 24, 2026",
-    readingTime: "5 min read"
+    readingTime: "5 min read",
+    active: false
   }
 ];
 
+export const activeBlogPosts = blogPosts.filter((post) => post.active);
+
 export function getBlogPost(slug: string) {
-  return blogPosts.find((post) => post.slug === slug);
+  return activeBlogPosts.find((post) => post.slug === slug);
 }

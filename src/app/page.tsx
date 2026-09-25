@@ -3,7 +3,7 @@ import Link from "next/link";
 import CursorDots from "@/components/CursorDots";
 import SpinningPortrait from "@/components/SpinningPortrait";
 import V2Projects from "@/components/V2Projects";
-import { blogPosts } from "@/data/blogs";
+import { activeBlogPosts } from "@/data/blogs";
 import { contactCards } from "@/data/contacts";
 import { professionalExperiences, volunteerExperiences, type Experience } from "@/data/experiences";
 
@@ -159,24 +159,26 @@ export default function Home() {
           <V2Projects />
         </section>
 
-        <section className="v2-section" aria-labelledby="blog-heading">
-          <div className="v2-section-heading">
-            <h2 id="blog-heading">Blog</h2>
-            <img alt="" aria-hidden="true" src="/assets/icons/blog.svg" />
-          </div>
-          <div className="v2-blog-list">
-            {blogPosts.map((post) => (
-              <Link className="v2-blog-entry v2-card" href={`/blog/${post.slug}`} key={post.slug}>
-                <h3>{post.title}</h3>
-                <p className="v2-blog-meta">
-                  <time dateTime={post.publishedAt}>{post.publishedLabel}</time>
-                  <span aria-hidden="true">·</span>
-                  <span>{post.readingTime}</span>
-                </p>
-              </Link>
-            ))}
-          </div>
-        </section>
+        {activeBlogPosts.length > 0 ? (
+          <section className="v2-section" aria-labelledby="blog-heading">
+            <div className="v2-section-heading">
+              <h2 id="blog-heading">Blog</h2>
+              <img alt="" aria-hidden="true" src="/assets/icons/blog.svg" />
+            </div>
+            <div className="v2-blog-list">
+              {activeBlogPosts.map((post) => (
+                <Link className="v2-blog-entry v2-card" href={`/blog/${post.slug}`} key={post.slug}>
+                  <h3>{post.title}</h3>
+                  <p className="v2-blog-meta">
+                    <time dateTime={post.publishedAt}>{post.publishedLabel}</time>
+                    <span aria-hidden="true">·</span>
+                    <span>{post.readingTime}</span>
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         <section className="v2-section v2-connect-section" aria-labelledby="connect-heading">
           <div className="v2-section-heading">
