@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CursorDots from "@/components/CursorDots";
+import GettingFirstCoop from "@/components/blog/GettingFirstCoop";
 import NowPlaying from "@/components/NowPlaying";
 import ThemeToggle from "@/components/ThemeToggle";
 import { blogPosts, getBlogPost } from "@/data/blogs";
@@ -30,6 +31,9 @@ export default async function BlogPage({ params }: BlogPageProps) {
     <div className="v2-page">
       <CursorDots />
       <div className="v2-top-controls">
+        <Link aria-label="Return to home page" className="v2-home-link" href="/">
+          <img alt="" aria-hidden="true" src="/assets/icons/home.svg" />
+        </Link>
         <ThemeToggle />
         <NowPlaying />
       </div>
@@ -40,7 +44,11 @@ export default async function BlogPage({ params }: BlogPageProps) {
         <header className="v2-blog-page-header">
           <Link href="/">Anson Chan (陳雋希)</Link>
         </header>
-        <article className="v2-blog-article" aria-label={post.title} />
+        {post.slug === "getting-the-first-co-op" ? (
+          <GettingFirstCoop />
+        ) : (
+          <article className="v2-blog-article" aria-label={post.title} />
+        )}
       </main>
     </div>
   );

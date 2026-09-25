@@ -5,8 +5,8 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "ubc-course-review-computer-engineering-edition",
-    title: "UBC Course Review (Computer Engineering Edition)"
+    slug: "getting-the-first-co-op",
+    title: "Getting the First Co-op"
   }
 ];
 

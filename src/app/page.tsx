@@ -169,12 +169,12 @@ export default function Home() {
         <section className="v2-section" aria-labelledby="blog-heading">
           <div className="v2-section-heading">
             <h2 id="blog-heading">Blog</h2>
+            <img alt="" aria-hidden="true" src="/assets/icons/blog.svg" />
           </div>
           <div className="v2-blog-list">
             {blogPosts.map((post) => (
-              <Link className="v2-blog-entry" href={`/blog/${post.slug}`} key={post.slug}>
+              <Link className="v2-blog-entry v2-card" href={`/blog/${post.slug}`} key={post.slug}>
                 <h3>{post.title}</h3>
-                <span aria-hidden="true">↗</span>
               </Link>
             ))}
           </div>
