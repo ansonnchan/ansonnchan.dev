@@ -105,9 +105,8 @@ export default function Home() {
             <p className="v2-flags" aria-label="Hong Kong and Australia">🇭🇰 🇦🇺</p>
             <p className="v2-intro-about">
               Hi! I&apos;m Anson. I was born in <span className="v2-intro-highlight">Hong Kong</span> and
-              raised in <span className="v2-intro-highlight">Australia</span> for 15 years before moving to <span className="v2-intro-highlight">Vancouver, Canada</span> in 2021. I enjoy building software to make daily life
-              easier and better, even in just a small way.
-
+              raised in <span className="v2-intro-highlight">Australia</span> for 15 years before moving to <span className="v2-intro-highlight">Vancouver</span> in 2021. I enjoy building software to make daily life
+              easier and better, even in just a small way. I'm also a huge fan of <span className="v2-intro-highlight">ILLIT</span> ✨.
               <br></br>
               <br></br>
               I&apos;m currently studying
