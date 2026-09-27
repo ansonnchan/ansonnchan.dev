@@ -12,7 +12,7 @@ export const professionalExperiences: Experience[] = [
     company: "ScalePad",
     role: "Software Engineer Intern",
     startDate: "2026-06",
-    dateLabel: "June 2026 — December 2026",
+    dateLabel: "June 2026 — Present",
     logo: "/assets/logos/scalepad.jpeg",
     logoAlt: "ScalePad logo"
   }
@@ -27,6 +27,14 @@ export const volunteerExperiences: Experience[] = [
   //   logo: "/assets/logos/atria.jpg",
   //   logoAlt: "Atria logo"
   // },
+  {
+    company: "UBC Launch Pad",
+    role: "Software Engineer",
+    startDate: "2026-09",
+    dateLabel: "September 2026 — Present",
+    logo: "/assets/logos/ubc-launchpad.png",
+    logoAlt: "UBC Launch Pad logo"
+  },
   {
     company: "Borrow’d",
     role: "Software Engineer",

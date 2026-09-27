@@ -19,10 +19,11 @@ const experienceTags: Record<string, string[]> = {
   "Borrow’d": ["Python", "Django", "CI/CD (GitHub Actions)", "PostgreSQL"]
 };
 
-const experienceOrder = ["Atria", "ScalePad", "Borrow’d"];
+const experienceOrder = ["Atria", "UBC Launch Pad", "ScalePad", "Borrow’d"];
 const companyUrls: Record<string, string> = {
   Atria: "https://www.atriacommunity.com/",
   ScalePad: "https://www.scalepad.com/",
+  "UBC Launch Pad": "https://www.ubclaunchpad.com/",
   "Borrow’d": "https://borrowd.org/"
 };
 const allExperiences = [...professionalExperiences, ...volunteerExperiences].sort(
@@ -62,6 +63,8 @@ function ContactLinks({ className = "", label }: { className?: string; label: st
 }
 
 function ExperienceSummary({ experience }: { experience: Experience }) {
+  const tags = experienceTags[experience.company];
+
   return (
     <>
       <div className="v2-experience-topline">
@@ -74,9 +77,11 @@ function ExperienceSummary({ experience }: { experience: Experience }) {
         </div>
         <time dateTime={experience.startDate}>{experience.dateLabel}</time>
       </div>
-      <ul className="v2-tags" aria-label={`${experience.company} technologies`}>
-        {experienceTags[experience.company]?.map((tag) => <li key={tag}>{tag}</li>)}
-      </ul>
+      {tags?.length ? (
+        <ul className="v2-tags" aria-label={`${experience.company} technologies`}>
+          {tags.map((tag) => <li key={tag}>{tag}</li>)}
+        </ul>
+      ) : null}
     </>
   );
 }
