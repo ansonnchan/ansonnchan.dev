@@ -31,15 +31,16 @@ const allExperiences = [...professionalExperiences, ...volunteerExperiences].sor
 );
 
 const contactLinks = [
-  ...contactCards,
-  {
-    label: "resume",
-    value: "view résumé",
-    href: "/resume",
-    icon: "/assets/icons/resume.png",
-    iconClassName: "contact-card-resume",
-    openInNewTab: true
-  }
+  ...contactCards
+  // Archived résumé link:
+  // {
+  //   label: "resume",
+  //   value: "view résumé",
+  //   href: "/resume",
+  //   icon: "/assets/icons/resume.png",
+  //   iconClassName: "contact-card-resume",
+  //   openInNewTab: true
+  // }
 ];
 
 function ContactLinks({ className = "", label }: { className?: string; label: string }) {

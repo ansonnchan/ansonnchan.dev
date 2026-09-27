@@ -66,6 +66,7 @@ export default function MenuBar() {
               </Link>
             ))}
           </div>
+          {/* Archived résumé link:
           <Link
             className="v2-menu-resume"
             href="/resume"
@@ -82,6 +83,7 @@ export default function MenuBar() {
             />
             <span>View Resume</span>
           </Link>
+          */}
         </nav>
       ) : null}
     </div>
