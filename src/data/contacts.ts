@@ -10,8 +10,8 @@ export type ContactCard = {
 export const contactCards: ContactCard[] = [
   {
     label: "email",
-    value: "ansonnchan905@gmail.com",
-    href: "mailto:ansonnchan905@gmail.com",
+    value: "ansonnchan95@gmail.com",
+    href: "mailto:ansonnchan95@gmail.com",
     icon: "/assets/icons/mail.png",
     iconClassName: "contact-card-mail"
   },
