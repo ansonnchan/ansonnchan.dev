@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CursorDots from "@/components/CursorDots";
+import GitHubContributions from "@/components/GitHubContributions";
 import SpinningPortrait from "@/components/SpinningPortrait";
 import V2Projects from "@/components/V2Projects";
 import { activeBlogPosts } from "@/data/blogs";
@@ -100,6 +101,9 @@ export default function Home() {
             <h1 id="intro-heading">Anson Chan (陳雋希)</h1>
             <p className="v2-tagline">Software Engineer</p>
             <p className="v2-flags" aria-label="Hong Kong and Australia">🇭🇰 🇦🇺</p>
+            <a className="v2-hero-seeking" href="#connect">
+              Seeking Summer 2027 internships <span aria-hidden="true">↓</span>
+            </a>
             <p className="v2-intro-about">
               Hi! I&apos;m Anson. I was born in <span className="v2-intro-highlight">Hong Kong</span> and
               raised in <span className="v2-intro-highlight">Australia</span> for 15 years before moving to <span className="v2-intro-highlight">Vancouver</span> in 2021. I enjoy building software to make daily life
@@ -116,6 +120,8 @@ export default function Home() {
         </section>
 
         <ContactLinks className="v2-intro-contact-links" label="Contact links" />
+
+        <GitHubContributions />
 
         <section className="v2-section" aria-labelledby="education-heading">
           <div className="v2-section-heading">
@@ -186,7 +192,7 @@ export default function Home() {
           </section>
         ) : null}
 
-        <section className="v2-section v2-connect-section" aria-labelledby="connect-heading">
+        <section className="v2-section v2-connect-section" id="connect" aria-labelledby="connect-heading">
           <div className="v2-section-heading">
             <h2 id="connect-heading">Connect</h2>
             <img alt="" aria-hidden="true" src="/assets/icons/connect.svg" />
