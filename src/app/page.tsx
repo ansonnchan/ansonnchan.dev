@@ -115,12 +115,13 @@ export default function Home() {
 
             </p>
           </div>
-          <SpinningPortrait />
+          <div className="v2-hero-aside">
+            <GitHubContributions />
+            <SpinningPortrait />
+          </div>
         </section>
 
         <ContactLinks className="v2-intro-contact-links" label="Contact links" />
-
-        <GitHubContributions />
 
         <section className="v2-section" aria-labelledby="education-heading">
           <div className="v2-section-heading">
