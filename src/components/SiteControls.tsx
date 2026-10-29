@@ -1,5 +1,5 @@
 import Link from "next/link";
-import NowPlaying from "@/components/NowPlaying";
+// import NowPlaying from "@/components/NowPlaying";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default function SiteControls() {
@@ -9,7 +9,7 @@ export default function SiteControls() {
         <img alt="" aria-hidden="true" src="/assets/icons/home.svg" />
       </Link>
       <ThemeToggle />
-      <NowPlaying />
+      {/* <NowPlaying /> */}
     </div>
   );
 }
