@@ -2,8 +2,10 @@ export type Project = {
   slug: string;
   name: string;
   description: string;
-  demoVideo: string;
+  demoVideo?: string;
+  demoImage?: string;
   liveUrl?: string;
+  releaseUrl?: string;
   githubUrl: string;
 };
 
@@ -23,6 +25,14 @@ export const projects: Project[] = [
     demoVideo: "/assets/videos/pear-programming.m4v",
     liveUrl: "https://pear-programming.vercel.app/",
     githubUrl: "https://github.com/ansonnchan/PearProgramming"
+  },
+  {
+    slug: "sloth",
+    name: "Sloth · HTTP Performance Diagnostics",
+    description: "Built a Go CLI that breaks down HTTP latency across DNS, TCP/TLS, first-byte, and transfer phases, benchmarks reuse and concurrency, and fails CI on regressions.",
+    demoImage: "/assets/videos/sloth-demo.png",
+    releaseUrl: "https://github.com/ansonnchan/sloth/releases/tag/v1.0.0",
+    githubUrl: "https://github.com/ansonnchan/sloth"
   },
   {
     slug: "personal-portfolio",

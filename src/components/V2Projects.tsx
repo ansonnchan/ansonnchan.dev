@@ -8,6 +8,7 @@ import { projects, type Project } from "@/data/projects";
 const projectTechnologies: Record<string, string[]> = {
   nemu: ["Go", "TypeScript", "React", "AWS"],
   "pear-programming": ["Java", "Spring Boot", "React", "PostgreSQL"],
+  sloth: ["Go", "Cobra", "HTTP tracing", "GitHub Actions"],
   "personal-portfolio": ["Next.js", "React", "TypeScript"]
 };
 
@@ -46,14 +47,18 @@ export default function V2Projects() {
       <div className="v2-project-grid">
         {projects.map((project) => (
           <article className="v2-project" key={project.slug}>
-            {project.demoVideo ? (
+            {project.demoVideo || project.demoImage ? (
               <button
                 aria-label={`Open a larger ${project.name} demo`}
                 className="v2-project-video-button"
                 onClick={() => openPreview(project)}
                 type="button"
               >
-                <video autoPlay loop muted playsInline preload="metadata" src={project.demoVideo} />
+                {project.demoVideo ? (
+                  <video autoPlay loop muted playsInline preload="metadata" src={project.demoVideo} />
+                ) : (
+                  <img alt="" aria-hidden="true" src={project.demoImage} />
+                )}
               </button>
             ) : null}
             <div className="v2-project-copy">
@@ -65,6 +70,17 @@ export default function V2Projects() {
                     <a aria-label={`Open live ${project.name}`} href={project.liveUrl} rel="noreferrer" target="_blank">
                       <Image alt="" aria-hidden="true" height={48} src="/assets/icons/live.png" width={48} />
                       <span>live</span>
+                    </a>
+                  ) : null}
+                  {project.releaseUrl ? (
+                    <a
+                      aria-label={`Open ${project.name} release`}
+                      href={project.releaseUrl}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <Image alt="" aria-hidden="true" height={48} src="/assets/icons/release.png" width={48} />
+                      <span>release</span>
                     </a>
                   ) : null}
                   <a aria-label={`Open ${project.name} source code`} href={project.githubUrl} rel="noreferrer" target="_blank">
@@ -81,7 +97,7 @@ export default function V2Projects() {
         ))}
       </div>
 
-      {selectedProject?.demoVideo && typeof document !== "undefined"
+      {(selectedProject?.demoVideo || selectedProject?.demoImage) && typeof document !== "undefined"
         ? createPortal(
           <div
             className="v2-project-dialog-backdrop"
@@ -90,14 +106,14 @@ export default function V2Projects() {
             }}
           >
             <div
-              aria-label={`${selectedProject.name} video demo`}
+              aria-label={`${selectedProject.name} demo`}
               aria-modal="true"
               className="v2-project-dialog"
               role="dialog"
             >
               <div className="v2-project-dialog-inner">
                 <button
-                  aria-label="Close video"
+                  aria-label="Close demo"
                   className="v2-project-dialog-close"
                   onClick={closePreview}
                   ref={closeButtonRef}
@@ -105,7 +121,11 @@ export default function V2Projects() {
                 >
                   <Image alt="" aria-hidden="true" height={24} src="/assets/icons/cancel.png" width={24} />
                 </button>
-                <video autoPlay controls loop muted playsInline src={selectedProject.demoVideo} />
+                {selectedProject.demoVideo ? (
+                  <video autoPlay controls loop muted playsInline src={selectedProject.demoVideo} />
+                ) : (
+                  <img alt={`${selectedProject.name} demo`} src={selectedProject.demoImage} />
+                )}
               </div>
             </div>
           </div>
