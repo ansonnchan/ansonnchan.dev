@@ -138,7 +138,7 @@ export default function Home() {
               <h3>University of British Columbia</h3>
               <p>BASc Computer Engineering · Co-op Program · Dean&apos;s List</p>
             </div>
-            <span className="v2-card-note">2024 – 2029</span>
+            <span className="v2-card-note">2024 – 2028</span>
           </a>
         </section>
 
