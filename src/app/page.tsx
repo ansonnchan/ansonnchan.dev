@@ -21,12 +21,6 @@ const experienceTags: Record<string, string[]> = {
 };
 
 const experienceOrder = ["Atria", "UBC Launch Pad", "ScalePad", "Borrow’d"];
-const companyUrls: Record<string, string> = {
-  Atria: "https://www.atriacommunity.com/",
-  ScalePad: "https://www.scalepad.com/",
-  "UBC Launch Pad": "https://www.ubclaunchpad.com/",
-  "Borrow’d": "https://borrowd.org/"
-};
 const allExperiences = [...professionalExperiences, ...volunteerExperiences].sort(
   (a, b) => experienceOrder.indexOf(a.company) - experienceOrder.indexOf(b.company)
 );
@@ -149,16 +143,9 @@ export default function Home() {
           </div>
           <div className="v2-experience-list">
             {allExperiences.map((experience) => (
-              <a
-                aria-label={`Visit ${experience.company}`}
-                className="v2-experience-card v2-card"
-                href={companyUrls[experience.company]}
-                key={experience.company}
-                rel="noreferrer"
-                target="_blank"
-              >
+              <article className="v2-experience-card v2-card" key={experience.company}>
                 <ExperienceSummary experience={experience} />
-              </a>
+              </article>
             ))}
           </div>
         </section>
